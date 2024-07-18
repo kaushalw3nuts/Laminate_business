@@ -39,6 +39,7 @@ function bluesticky()
 
 jQuery(window).on('load' ,function() {
 	bluesticky();
+	jQuery('body').addClass('load-content');
 });
 jQuery(window).resize(function() {
 	bluesticky();
@@ -57,4 +58,62 @@ jQuery(document).ready(function(){
     }, 1200);
 
 	// product_listing_page section 1 aimation: End (By Kaushal)
+	/*Mobile Menu Start  by Mit*/
+	jQuery(".hamburger_btn").click(function() {
+		'use strict';
+		jQuery(this).toggleClass('active');
+		jQuery('.navigation_main').toggleClass('show');
+		jQuery('body').toggleClass('open_menu');
+		if(jQuery('body').hasClass('open_menu')){
+            lenisScroll.stop();
+        }
+        else{
+            lenisScroll.start();
+
+        }
+	});
+	/*Mobile Menu End  by Mit*/
+	gsap.registerPlugin(ScrollTrigger);
+	// SplitText Animation Start by Mit
+	const animEls = document.querySelectorAll(".split_word");
+    animEls.forEach((el) => {
+        var splitEl = new SplitText(el, { 
+			type: "words , chars", 
+			linesClass: "line" 
+		});
+        var splitTl = gsap.timeline({
+			scrollTrigger: { 
+				trigger: el, 
+				start: "top 100%"
+			} 
+		});
+        splitTl.from(splitEl.chars, { 
+			duration: 0.3, 
+			yPercent: '100', 
+			stagger: 0.04, 
+			scrub: 3 
+		});
+    });
+	// SplitText Animation Start by Mit
+
+	// Home Banner Animation Start by Mit
+	gsap.registerPlugin(ScrollTrigger);
+
+	let sections = gsap.utils.toArray(".scroll_ani_img");
+
+	gsap.to(sections, {
+	xPercent: -100 * (sections.length - 1),
+	ease: "none",
+	scrollTrigger: {
+		trigger: ".home_hori_pin",
+		pin: '.home_hori_wrap',
+		scrub: true,
+		snap: 1 / (sections.length - 1),
+		end: () => "+=" + document.querySelector(".home_hori_pin").offsetWidth,
+		invalidateOnRefresh: true
+	}
+	});
+	// Home Banner Animation End by Mit
+	
+	
 });
