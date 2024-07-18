@@ -345,3 +345,109 @@ body.open_menu .bg_menu_shap { -webkit-transform: scale(75) translate3d(1%, 1%, 
 .home_hori_pin { display: -ms-flexbox; display: flex; width: 100%; }
 .home_hori_pin .main_hori_img { width: 100vw; min-width: 100vw; }
 /* Home Scroll Section End */
+
+/* section 1 css about page hardik */
+.about_page {position: relative;}
+.about_page .about_section {padding: 224px 0 60px; max-width: 1800px; margin: 0 auto;}
+.section_content {display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; padding-bottom: 32px;}
+.section_content .section_head {width: 50%; max-width: 691px;}
+.section_content .section_head h1 {font-size: var(--fz164); color: var(--blacktxt); line-height: auto; font-family: 'Gilroy-ExtraBold'; text-transform: uppercase;}
+.section_content .sec_dtl {width: 50%; max-width: 840px;}
+.section_content .sec_dtl p {font-family: 'Montserrat-Medium';}
+
+.who_img{padding: 32px 0 0 0; position: relative;}
+.who_img .img_sec {position: relative; width: 100%; transition: all ease-in-out 0.3s;}
+.who_img .img_sec::after{content: ''; display: block; padding-bottom: 77.80%;}
+.who_img .img_sec img {width: 100%; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover;}
+@media (min-width: 1921px) {
+	.about_page .about_section {padding: 11.667vw 0 3.123vw;max-width: 93.75vw;}
+	.about_page .about_section .section_content {padding-bottom: 1.667vw;}
+	.section_content .section_head {max-width: 35.99vw;}
+	.section_content .sec_dtl {max-width: 43.75vw;}
+	
+	.who_img{padding: 1.667vw 0 0 0;}
+}
+/* section 1 css about page hardik */
+/* ===================================================================== */
+/* section 2 css about page hardik */
+.story_wrap {padding: 96px 0;}
+.story_wrap .story_content {max-width: 1800px; margin: 0 auto; display: flex; justify-content: space-between;}
+.story_wrap .story_content .story_head {max-width: 555px; width: 35.83%;}
+.story_wrap .story_content .story_head h2 {font-size: var(--fz96); font-family: 'Gilroy-ExtraBold'; text-transform: uppercase; line-height: 1;}
+.story_wrap .story_content .story_head h2 span { font-size: 150px; font-family: 'Hurricane-Regular'; text-transform: capitalize; display: block;}
+.story_wrap .story_content .story_head h2 strong {font-size: var(--fz164);font-family: 'Gilroy-ExtraBold'; padding-left: 50px; display: block; line-height: 1.4;}
+.story_img {position: relative; width: 64.17%; transition: all ease-in-out 0.3s; padding-top: 118px;}
+.story_img .img_wrap {max-width: 1155px; position: relative; transition: all ease-in-out 0.3s;}
+.story_img .img_wrap::after{content: ''; display: block; padding-bottom: 54.55%;}
+.story_img .img_wrap img {width: 100%; height: 100%; position: absolute; top: 0; left: 0; object-fit: cover; transition: all ease-in-out 0.3s; filter: grayscale(1);}
+.img_content {padding-top: 44px;}
+.img_content p {font-family: 'Montserrat-Medium';}
+.story_img .img_wrap:hover img{filter: grayscale(0); }
+@media (min-width: 1921px) {
+	.story_wrap {padding: 4.997vw 0;}
+	.story_wrap .story_content {max-width: 93.75vw;}
+	.story_wrap .story_content .story_head {max-width: 28.891vw;}
+	.story_wrap .story_content .story_head h2 strong {padding-left: 2.603vw;}
+	.story_img {padding-top: 6.143vw;}
+	.story_img .img_wrap {max-width: 60.125vw;}
+	.img_content {padding-top: 2.29vw;}
+	.story_wrap .story_content .story_head h2 span {font-size: 7.808vw;}
+}
+/* section 2 css about page hardik */
+/* ===================================================================== */
+/* section 3 css about page hardik */
+
+/* section 3 css about page hardik */
+/* ===================================================================== */
+/* section 4 css about page hardik */
+
+/* section 4 css about page hardik */
+/* ===================================================================== */
+/* section 5 css about page hardik */
+.trusted_wrap {background-color: var(--blackbg); padding: 96px 0;}
+.trusted_wrap .trusted_grp {max-width: 1800px; margin: 0 auto;}
+.trusted_wrap .trusted_grp .trust_head {padding-bottom: 96px; text-align: center;}
+.trusted_wrap .trusted_grp .trust_head h4 {font-size: 64px; color: var(--whitetxt); text-transform: uppercase; font-family: 'Gilroy-ExtraBold';}
+.trust_logo{position: relative;}
+.trust_logo ul {display: flex; justify-content: center; align-items: center; flex-wrap: wrap; column-gap: 158px; row-gap: 100px;}
+.trust_logo ul li {max-width: 300px; display: block; }
+.trust_logo ul li i {display: inline-flex;  justify-content: center;}
+.trust_logo ul li i img{object-fit: cover; width: 100%;}
+@media (min-width: 1921px) {
+	.trusted_wrap {padding: 4.997vw 0;}
+	.trusted_wrap .trusted_grp {max-width: 93.75vw;}
+	.trusted_wrap .trusted_grp .trust_head {padding-top: 4.997vw;}
+	.trusted_wrap .trusted_grp .trust_head h4 {font-size: 3.332vw;}
+	.trust_logo ul {column-gap: 8.225vw; row-gap: 5.206vw;}
+	.trust_logo ul li {max-width: 15.617vw;}
+}
+/* section 5 css about page hardik */
+/* ===================================================================== */
+/* section 6 css about page hardik */
+.team_wrap {max-width: 1800px; margin: 0 auto; padding: 128px 0; }
+.team_wrap .section_content {padding-bottom: 100px;}
+.team_wrap .section_content .section_head {width: 60%; max-width: 775px;}
+.team_wrap .section_content .sec_dtl {width: 40%; max-width: 600px;}
+.team_wrap .container {max-width: 1800px; width: 1800px;}
+.team_wrap .our_team {position: relative;}
+.team_wrap .our_team .row {row-gap: 64px;}
+.team_wrap .our_team .team_dtl {position: relative;}
+.team_wrap .our_team .team_dtl .team_img {height: 100%;}
+.team_wrap .our_team .team_dtl .team_img img {width: 100%; filter: grayscale(1); transition: all ease-in-out 0.3s;}
+.team_wrap .our_team a {display: flex; flex-direction: column;}
+.team_wrap .our_team a:hover .team_dtl .team_img img {filter: grayscale(0);}
+.team_wrap .our_team .team_dtl .team_content {padding-top: 32px;}
+.team_wrap .our_team .team_dtl .team_content h6 {font-size: var(--fz32); color: var(--blacktxt); font-family: 'Montserrat-Bold'; padding-bottom: 16px; text-transform: uppercase;}
+.team_wrap .our_team .team_dtl .team_content span {display: block; font-size: var(--fz20);color: var(--blacktxt); font-family: 'Montserrat-Regular';}
+@media (min-width: 1921px) {
+	.team_wrap {max-width: 93.75vw; padding: 6.663vw 0;}
+	.team_wrap .section_content {padding-bottom: 5.206vw;}
+	.team_wrap .section_content .section_head {max-width: 40.344vw;}
+	.team_wrap .section_content .sec_dtl {max-width: 31.234vw;} 
+	.team_wrap .container {max-width: 93.75vw; width: 93.75vw;}
+	.team_wrap .our_team .row {row-gap: 3.332vw;}
+	.team_wrap .our_team .team_dtl .team_content {padding-top: 1.666vw;}
+	.team_wrap .our_team .team_dtl .team_content h6 {padding-bottom: 0.833vw;}
+}
+/* section 6 css about page hardik */
+/* ===================================================================== */
