@@ -47,4 +47,14 @@ jQuery(window).resize(function() {
 
 jQuery(document).ready(function(){
 	
+	// product_listing_page section 1 aimation: Start (By Kaushal)
+
+	$(".kv-ttl-line").addClass("start");
+
+    setTimeout(function() {
+        $(".kv-spacer").addClass("active");
+		$(".kv-img").addClass("active");
+    }, 1200);
+
+	// product_listing_page section 1 aimation: End (By Kaushal)
 });
