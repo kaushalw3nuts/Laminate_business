@@ -254,7 +254,10 @@ ul li { list-style: none; }
 
 @media (min-width: 1921px) {
 
-
+	.kv-sec .kv-inner .kv-ttlWrap { margin-top: 16.866vw; padding-bottom: 4.997vw; padding-left: 3.123vw; padding-right: 3.123vw; }
+	.kv-sec .kv-inner .kv-ttlWrap .kv-ttl-line { max-width: 52.056vw; }
+	.kv-sec .kv-inner .kv-ttlWrap .kv-ttl-line h1 { perspective: 52.056vw; }
+	.kv-sec .kv-inner .kv-ttlWrap .kv-ttl-line p { perspective: 52.056vw; margin-top: 1.666vw; }
 }
 
 /* ========== product_listing_page section 1 style: End (By Kaushal) ========== */
