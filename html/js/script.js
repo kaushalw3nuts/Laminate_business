@@ -53,8 +53,41 @@ jQuery(document).ready(function(){
 	$(".kv-ttl-line").addClass("start");
 
     setTimeout(function() {
-        $(".kv-spacer").addClass("active");
-		$(".kv-img").addClass("active");
+
+		var bar = new ProgressBar.Line(loading_text, {
+			strokeWidth: 0,
+			duration: 1600,
+			trailWidth: 0,
+			text: {
+				style: {
+					//position:'absolute',
+					//left:'50%',
+					//top:'50%',
+					//margin:'0',
+					//transform:'translate(-50%,-50%)',
+					'font-family':'Cabinet Grotesk',
+					'font-size':'clamp(40px, 4.4270833333vw, 85px)',
+					color:'#6A6A6A',
+				},
+				autoStyleContainer: false
+			},
+			step: function(state, bar) {
+				var value = Math.round(bar.value() * 100);
+				bar.setText(value);
+				//$('.kv-spacer').css('padding-top', value/2.5 + 'vh');
+			}
+		});
+		
+        $(".kv-spacer").addClass("active posset");
+
+		bar.animate(1.0, function () {			  
+			setTimeout(function() {
+				$(".kv-spacer").addClass("end");
+				$(".kv-img").addClass("active");
+				lenisScroll.resize();
+				lenisScroll.start();
+			}, 400);
+		}); 
     }, 1200);
 
 	// product_listing_page section 1 aimation: End (By Kaushal)
