@@ -39,6 +39,7 @@ ScrollTrigger.defaults({ scroller: "[data-scroll-container]" });
 // --------------------------------------------------------------------------
 // Lenis End (By Mit)
 
+gsap.registerPlugin(ScrollTrigger);
 
 // View port Height Generate Start
 
@@ -75,11 +76,6 @@ jQuery(document).ready(function(){
 			trailWidth: 0,
 			text: {
 				style: {
-					//position:'absolute',
-					//left:'50%',
-					//top:'50%',
-					//margin:'0',
-					//transform:'translate(-50%,-50%)',
 					'font-family':'Cabinet Grotesk',
 					'font-size':'clamp(40px, 4.4270833333vw, 85px)',
 					color:'#6A6A6A',
@@ -89,7 +85,6 @@ jQuery(document).ready(function(){
 			step: function(state, bar) {
 				var value = Math.round(bar.value() * 100);
 				bar.setText(value);
-				//$('.kv-spacer').css('padding-top', value/2.5 + 'vh');
 			}
 		});
 		
@@ -99,13 +94,59 @@ jQuery(document).ready(function(){
 			setTimeout(function() {
 				$(".kv-spacer").addClass("end");
 				$(".kv-img").addClass("active");
-				lenisScroll.resize();
-				lenisScroll.start();
+				locoscrolls.start();
 			}, 400);
 		}); 
     }, 1200);
 
 	// product_listing_page section 1 aimation: End (By Kaushal)
+
+	// product_listing_page section 2 aimation: Start (By Kaushal)
+
+	// On page load set image to first collection item image
+	$(".image-sticky").attr("src", $(".our-works-item").eq(0).find(".works-img").attr("src"));
+
+	function updateImages(currentItem) {
+		$(".our-works-item").removeClass("active");
+		currentItem.addClass("active");
+		let imageSrc = currentItem.find(".works-img").attr("src");
+		$(".image-sticky").attr("src", imageSrc);
+	};
+
+	$(".our-works-item").each(function (index) {
+		let triggerElement = $(this);
+		let tl = gsap.timeline ({
+			scrollTrigger: {
+				trigger: triggerElement,
+				start: "top center",
+				end: "bottom center",
+				onEnter: () => {
+					updateImages(triggerElement);
+				},
+				onEnterBack: () => {
+					updateImages(triggerElement);
+				}
+			},
+		})
+	});
+
+	function stickyImgFun(){
+		gsap.to(".our-works", 
+		{
+			scrollTrigger: {
+				trigger: ".container-draggable",
+				pin: true,
+				start: 'top 20%',
+				end: "bottom 40%", 
+			}
+		});
+	} 
+
+	setTimeout(() => {
+		stickyImgFun()
+	}, 2000)	
+
+	// product_listing_page section 2 aimation: End (By Kaushal)
 
 	/*Mobile Menu Start  by Mit*/
 	jQuery(".hamburger_btn").click(function() {
@@ -124,7 +165,6 @@ jQuery(document).ready(function(){
 	/*Mobile Menu End  by Mit*/
 
 	// SplitText Animation Start by Mit
-	// let windowWidth = window.outerWidth;
 	jQuery(".split_word").each(function (index) {
 		let myText = jQuery(this);
 		let mySplitText;
@@ -136,13 +176,6 @@ jQuery(document).ready(function(){
 			});
 		}
 		createSplits();
-		// jQuery(window).resize(function () {
-		// 	if (window.outerWidth !== windowWidth) {
-		// 		mySplitText.revert();
-		// 			location.reload();
-		// 	}
-		// 	windowWidth = window.outerWidth;
-		// });
     });
 
 
@@ -162,7 +195,6 @@ jQuery(document).ready(function(){
         tl.from(targetElement, {
             duration: 0.25,
             y: "100%",
-            // rotationX: -90,
             opacity: 1,
             ease: "power2.inOut",
             stagger: {
@@ -174,8 +206,7 @@ jQuery(document).ready(function(){
 	// SplitText Animation End by Mit
 
 	// Home Banner Animation Start by Mit
-	gsap.registerPlugin(ScrollTrigger);
-
+	
 	const sections = gsap.utils.toArray(".scroll_ani_img");
 	let maxWidth = 0;
 	
@@ -198,9 +229,7 @@ jQuery(document).ready(function(){
 		end: () => `+=${maxWidth}`,
 		invalidateOnRefresh: true
 	  }
-	});
-	
-
+	});	
 
 	// Home Banner Animation End by Mit
 	
