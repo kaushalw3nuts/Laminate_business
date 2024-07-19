@@ -307,9 +307,7 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 .our-works .our-works-list .our-works-item.active h2 { font-family: 'Gilroy-ExtraBold'; color: var(--blacktxt); }
 .our-works .our-works-list .our-works-item + .our-works-item { margin-top: 32px; }
 .our-works .draggable-wrapper { z-index: 0; pointer-events: none; width: 100%; height: 100%; padding-top: 176px; padding-bottom: 124px; display: block; position: absolute; top: 0%; bottom: 0%; left: 0%; right: 0%; }
-.our-works .draggable-wrapper .container-draggable { z-index: 1; width: 100%; padding: 0 60px; position: sticky; 
-	/* top: calc(50vh - 176px) !important;  */
-}
+.our-works .draggable-wrapper .container-draggable { z-index: 1; width: 100%; padding: 0 60px; position: sticky; }
 .our-works .draggable-wrapper .container-draggable .box-contain { justify-content: flex-start; align-items: center; width: 400px; height: 500px; margin-left: 255px; display: flex; overflow: hidden; }
 .our-works .draggable-wrapper .container-draggable .box-contain .box { object-fit: fill; width: 100%; height: 100%; position: relative; }
 .our-works .draggable-wrapper .container-draggable .box-contain .box .box-inner { z-index: 0; background-color: rgba(0, 0, 0, .62); width: 100%; height: 100%; position: relative; overflow: hidden; }
@@ -322,7 +320,7 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 	.our-works .our-works-list .title { margin-bottom: 1.666vw; margin-top: -2.707vw; }
 	.our-works .our-works-list .our-works-item + .our-works-item { margin-top: 1.666vw; }
 	.our-works .draggable-wrapper { padding-top: 9.162vw; padding-bottom: 6.455vw; }
-	.our-works .draggable-wrapper .container-draggable { padding: 0 3.123vw; top: calc(50vh - 9.162vw); }
+	.our-works .draggable-wrapper .container-draggable { padding: 0 3.123vw; }
 	.our-works .draggable-wrapper .container-draggable .box-contain { width: 20.822vw; height: 26.028vw; margin-left: 13.274vw; }
 }
 
