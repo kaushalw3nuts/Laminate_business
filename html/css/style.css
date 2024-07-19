@@ -265,6 +265,21 @@ ul li { list-style: none; }
 }
 
 /* ========== product_listing_page section 1 style: End (By Kaushal) ========== */
+html.has-scroll-smooth { overflow: hidden; }
+html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.has-scroll-smooth body { overflow: hidden; }
+.has-scroll-smooth [data-scroll-container] { min-height: 100vh; }
+[data-scroll-direction="horizontal"] [data-scroll-container] { height: 100vh; display: inline-block; white-space: nowrap; }
+[data-scroll-direction="horizontal"] [data-scroll-section] { display: inline-block; vertical-align: top; white-space: nowrap; height: 100%; }
+.c-scrollbar { position: absolute; right: 0; top: 0; width: 11px; height: 100%; transform-origin: center right; transition: transform 0.3s, opacity 0.3s; opacity: 0; }
+.c-scrollbar:hover { transform: scaleX(1.45); }
+.c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar { opacity: 1; }
+[data-scroll-direction="horizontal"] .c-scrollbar { width: 100%; height: 10px; top: auto; bottom: 0; transform: scaleY(1); }
+[data-scroll-direction="horizontal"] .c-scrollbar:hover { transform: scaleY(1.3); }
+.c-scrollbar_thumb { position: absolute; top: 0; right: 0; background-color: black; opacity: 0.5; width: 7px; border-radius: 10px; margin: 2px; cursor: -webkit-grab; cursor: grab; }
+.has-scroll-dragging .c-scrollbar_thumb { cursor: -webkit-grabbing; cursor: grabbing; }
+[data-scroll-direction="horizontal"] .c-scrollbar_thumb { right: auto; bottom: 0; }
+
 
 /* ========== product_listing_page section 2 style: Start (By Kaushal) ========== */
 
@@ -388,10 +403,23 @@ body.open_menu .bg_menu_shap { -webkit-transform: scale(75) translate3d(1%, 1%, 
 }
 
 /* Home Banner End */
+
 /* Home Scroll Section Start */
 .home_hori_wrap { width: 100%; position: relative; }
 .home_hori_pin { display: -ms-flexbox; display: flex; width: 100%; }
-.home_hori_pin .main_hori_img { width: 100vw; min-width: 100vw; }
+.home_hori_pin .main_hori_img { width: 100vw; min-width: 100vw; height: 100vh; }
+.home_hori_pin .main_hori_img > img { width: 100%; height: 100%; object-fit: cover; }
+
+.crafting_wrap { width: 1091px; min-width: 1091px; }
+.crafting_wrap .crafting_blk { width: 100%; position: relative; }
+.crafting_blk .crafting_img_wrap { width: 500px; }
+.crafting_blk .crafting_img_wrap .img_box_crafting { width: 100%; position: relative; overflow: hidden; }
+.crafting_blk .crafting_img_wrap .img_box_crafting::after { content: ''; display: block; padding: 40% 50%; }
+.crafting_blk .crafting_img_wrap .img_box_crafting img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+.crafting_blk .crafting_img_dtl { width: 100%; position: relative; padding: 44px 0 0 44px; }
+.crafting_blk .crafting_img_dtl .sub_title_crafting { position: relative; padding: 0 0 0 32px; font-family: 'Montserrat-SemiBold'; font-size: 16px; line-height: 1.5; color: var(--blacktxt); }
+.crafting_blk .crafting_img_dtl .sub_title_crafting:after { content: ''; position: absolute; left: 0; top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); width: 23px; height: 1px; background-color: var(--blackbg); margin-bottom: 24px; }
+.crafting_img_dtl h4 { font-family: 'Gilroy-ExtraBold'; font-size: 54px; line-height: normal; color: var(--blacktxt); }
 /* Home Scroll Section End */
 
 /* section 1 css about page hardik */
