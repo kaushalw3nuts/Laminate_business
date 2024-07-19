@@ -1,27 +1,42 @@
 "use strict";
 // Lenis Start (By Mit) 
+// Scroll Animation Start
+const locoscrolls = new LocomotiveScroll({
+	el: document.querySelector('[data-scroll-container]'),
+	smooth: true,
+	scrollFromAnywhere: false,
+	multiplier: 1,
+	getDirection: true,
+	reloadOnContextChange: true,
+	touchMultiplier: 3,
+	smoothMobile: 0,
+	smartphone: {
+	  smooth: !0,
+	  breakpoint: 766
+	},
+	tablet: {
+	  smooth: !0,
+	  breakpoint: 1010
+	},
+  });
 
-const lenisScroll = new Lenis({
-    lerp: 0.1
-})
+  locoscrolls.on("scroll", ScrollTrigger.update);
 
-lenisScroll.on('scroll', (e) => {});
-
-lenisScroll.on('scroll', ScrollTrigger.update);
-
-function raf(time) {
-    lenisScroll.raf(time);
-    requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf)
-
-gsap.ticker.add((time)=>{
-	lenisScroll.raf(time * 1000);
+// --------------------------------------------------------------------------
+ScrollTrigger.scrollerProxy("[data-scroll-container]", {
+  scrollTop(value) {
+	return arguments.length ? locoscrolls.scrollTo(value, {duration: 0, disableLerp: true}) : locoscrolls.scroll.instance.scroll.y;
+  }, 
+  getBoundingClientRect() {
+	return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+  },
+  pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
 });
-  
-gsap.ticker.lagSmoothing(0);
 
+ScrollTrigger.addEventListener("refresh", () => locoscrolls.update());
+ScrollTrigger.defaults({ scroller: "[data-scroll-container]" });
+// --- SETUP END ---
+// --------------------------------------------------------------------------
 // Lenis End (By Mit)
 
 
@@ -58,6 +73,7 @@ jQuery(document).ready(function(){
     }, 1200);
 
 	// product_listing_page section 1 aimation: End (By Kaushal)
+
 	/*Mobile Menu Start  by Mit*/
 	jQuery(".hamburger_btn").click(function() {
 		'use strict';
@@ -65,54 +81,94 @@ jQuery(document).ready(function(){
 		jQuery('.navigation_main').toggleClass('show');
 		jQuery('body').toggleClass('open_menu');
 		if(jQuery('body').hasClass('open_menu')){
-            lenisScroll.stop();
+            locoscrolls.stop();
         }
         else{
-            lenisScroll.start();
+            locoscrolls.start();
 
         }
 	});
 	/*Mobile Menu End  by Mit*/
-	gsap.registerPlugin(ScrollTrigger);
+
 	// SplitText Animation Start by Mit
-	const animEls = document.querySelectorAll(".split_word");
-    animEls.forEach((el) => {
-        var splitEl = new SplitText(el, { 
-			type: "words , chars", 
-			linesClass: "line" 
-		});
-        var splitTl = gsap.timeline({
-			scrollTrigger: { 
-				trigger: el, 
-				start: "top 100%"
-			} 
-		});
-        splitTl.from(splitEl.chars, { 
-			duration: 0.3, 
-			yPercent: '100', 
-			stagger: 0.04, 
-			scrub: 3 
-		});
+	// let windowWidth = window.outerWidth;
+	jQuery(".split_word").each(function (index) {
+		let myText = jQuery(this);
+		let mySplitText;
+		function createSplits() {
+			mySplitText = new SplitText(myText, {
+			type: "words , chars ",
+			wordsClass: "split-words",
+			charsClass: "chars-words"
+			});
+		}
+		createSplits();
+		// jQuery(window).resize(function () {
+		// 	if (window.outerWidth !== windowWidth) {
+		// 		mySplitText.revert();
+		// 			location.reload();
+		// 	}
+		// 	windowWidth = window.outerWidth;
+		// });
     });
-	// SplitText Animation Start by Mit
+
+
+    jQuery(".split_word").each(function (index) {
+        let triggerElement = jQuery(this);
+        let targetElement = jQuery(this).find(".chars-words");
+
+
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: triggerElement,
+                start: "top 85%",
+                end: "bottom top",
+                toggleActions: "restart none none none",
+            }
+        });
+        tl.from(targetElement, {
+            duration: 0.25,
+            y: "100%",
+            // rotationX: -90,
+            opacity: 1,
+            ease: "power2.inOut",
+            stagger: {
+                amount: 0.5,
+                from: "0"
+            }
+        });
+    });
+	// SplitText Animation End by Mit
 
 	// Home Banner Animation Start by Mit
 	gsap.registerPlugin(ScrollTrigger);
 
-	let sections = gsap.utils.toArray(".scroll_ani_img");
-
+	const sections = gsap.utils.toArray(".scroll_ani_img");
+	let maxWidth = 0;
+	
+	const getMaxWidth = () => {
+	  maxWidth = 0;
+	  sections.forEach((section) => {
+		maxWidth += section.offsetWidth;
+	  });
+	};
+	getMaxWidth();
+	ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
+	
 	gsap.to(sections, {
-	xPercent: -100 * (sections.length - 1),
-	ease: "none",
-	scrollTrigger: {
+	  x: () => `-${maxWidth - window.innerWidth}`,
+	  ease: "none",
+	  scrollTrigger: {
 		trigger: ".home_hori_pin",
-		pin: '.home_hori_wrap',
-		scrub: true,
-		snap: 1 / (sections.length - 1),
-		end: () => "+=" + document.querySelector(".home_hori_pin").offsetWidth,
+		pin: true,
+		scrub: 1,
+		end: () => `+=${maxWidth}`,
 		invalidateOnRefresh: true
-	}
+	  }
 	});
+	
+
+
 	// Home Banner Animation End by Mit
 	
 	
