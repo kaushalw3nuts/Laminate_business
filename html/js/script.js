@@ -166,6 +166,19 @@ jQuery(document).ready(function(){
 
 	// product_detail_page section 1 Slider: End (By Kaushal)
 
+	// product_detail_page section 3 Slider: End (By Kaushal)
+
+	var similarSlider = new Swiper(".similar_slider", {
+        slidesPerView: 5,
+        spaceBetween: 68,
+		navigation: {
+			nextEl: ".similar-button-next",
+			prevEl: ".similar-button-prev",
+		},
+    });
+
+	// product_detail_page section 3 Slider: End (By Kaushal)
+
 	/*Mobile Menu Start  by Mit*/
 	jQuery(".hamburger_btn").click(function() {
 		'use strict';
