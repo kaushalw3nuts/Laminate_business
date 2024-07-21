@@ -70,7 +70,7 @@ jQuery(document).ready(function(){
 
     setTimeout(function() {
 
-		var bar = new ProgressBar.Line(loading_text, {
+		let bar = new ProgressBar.Line(loading_text, {
 			strokeWidth: 0,
 			duration: 1600,
 			trailWidth: 0,
@@ -83,7 +83,7 @@ jQuery(document).ready(function(){
 				autoStyleContainer: false
 			},
 			step: function(state, bar) {
-				var value = Math.round(bar.value() * 100);
+				let value = Math.round(bar.value() * 100);
 				bar.setText(value);
 			}
 		});
@@ -147,6 +147,24 @@ jQuery(document).ready(function(){
 	}, 2000)	
 
 	// product_listing_page section 2 aimation: End (By Kaushal)
+
+	// product_detail_page section 1 Slider: Start (By Kaushal)
+
+	let productDetail = new Swiper(".product_detail_thumb", {
+		slidesPerView: 4,
+		freeMode: true,
+		watchSlidesProgress: true,
+	});
+	let productDetail2 = new Swiper(".product_detail_slider", {
+		loop: false,
+		effect: "fade",
+		speed: 1000,
+		thumbs: {
+		  	swiper: productDetail,
+		},
+	});
+
+	// product_detail_page section 1 Slider: End (By Kaushal)
 
 	/*Mobile Menu Start  by Mit*/
 	jQuery(".hamburger_btn").click(function() {
