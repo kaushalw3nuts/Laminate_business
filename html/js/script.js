@@ -99,8 +99,7 @@ jQuery(document).ready(function(){
 			setTimeout(function() {
 				$(".kv-spacer").addClass("end");
 				$(".kv-img").addClass("active");
-				lenisScroll.resize();
-				lenisScroll.start();
+				locoscrolls.start();
 			}, 400);
 		}); 
     }, 1200);
@@ -122,6 +121,49 @@ jQuery(document).ready(function(){
         }
 	});
 	/*Mobile Menu End  by Mit*/
+
+	/*Mouse with Image Start by Mit*/
+	if(jQuery('.about_dtl_list').length > 0){
+
+
+		let menuItem = document.querySelectorAll(".dtl_list_txt");
+			let menuImageBox = document.querySelectorAll(".img_on_hover");
+		
+			// adding eventListeners to all the menuItems.
+			for (let i = 0; i < jQuery('.dtl_list_txt').length; i++) {
+			//   image reveal animation
+			const animation = gsap.to(menuImageBox[i], {
+				opacity: 1,
+				visibility:'visible',
+				duration: 0.2,
+				scale: 1,
+				ease: "ease-in-out",
+				// left: 0,
+			});
+		
+			menuItem[i].addEventListener("mouseenter", () => animation.play());
+			menuItem[i].addEventListener("mouseleave", () => animation.reverse());
+		
+			//   initialization
+			animation.reverse();
+			}
+			let menuItemx = document.querySelectorAll(".dtl_list_txt").clientHeight;
+			//   to move image along with cursor
+			function moveText(e) {
+			gsap.to(document.querySelectorAll(".img_on_hover"), {
+				css: {
+				left: e.pageX - 50,
+				top: e.menuItemx,
+				},
+				duration: 0.3,
+			});
+			}
+		
+			menuItem.forEach((el) => {
+			el.addEventListener("mousemove", moveText);
+			});
+		}
+	/*Mouse with Image End by Mit*/
 
 	// SplitText Animation Start by Mit
 	// let windowWidth = window.outerWidth;
@@ -174,6 +216,8 @@ jQuery(document).ready(function(){
 	// SplitText Animation End by Mit
 
 	// Home Banner Animation Start by Mit
+
+	/*
 	gsap.registerPlugin(ScrollTrigger);
 
 	const sections = gsap.utils.toArray(".scroll_ani_img");
@@ -188,7 +232,7 @@ jQuery(document).ready(function(){
 	getMaxWidth();
 	ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
 	
-	gsap.to(sections, {
+	let scrollTween = gsap.to(sections, {
 	  x: () => `-${maxWidth - window.innerWidth}`,
 	  ease: "none",
 	  scrollTrigger: {
@@ -199,10 +243,89 @@ jQuery(document).ready(function(){
 		invalidateOnRefresh: true
 	  }
 	});
-	
 
+	let allImgs = document.querySelectorAll(".img_mian_hori");
+	allImgs.forEach((img, i) => {
+		// the intended parallax animation
+		gsap.fromTo(img, {
+		  scale: 1.5
+		}, {
+			scale: 1,
+		  scrollTrigger: {
+			trigger: img.parentNode, //.panel-wide
+			containerAnimation: scrollTween,
+			start: "left right",
+			end: "right left",
+			scrub: true,
+			invalidateOnRefresh: true,
+			onRefresh: self => {
+			  if (self.start < 0) {
+				self.animation.progress(gsap.utils.mapRange(self.start, self.end, 0, 1, 0));
+			  }
+			},
+			id: "id-two"
+		  },
+		});
+	  });
+	*/
 
 	// Home Banner Animation End by Mit
+	gsap.registerPlugin(ScrollTrigger);
+
+	const sections = gsap.utils.toArray(".scroll_ani_img");
+	let maxWidth = 0;
+	console.log();
+
+	const getMaxWidth = () => {
+	maxWidth = 0;
+	sections.forEach((section) => {
+		maxWidth += section.offsetWidth;
+	});
+	};
+	getMaxWidth();
+	ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
+
+
+	ScrollTrigger.defaults({
+	// Defaults are used by all ScrollTriggers
+	toggleActions: "restart pause resume pause", // Scoll effect Forward, Leave, Back, Back Leave
+	markers: true // Easaly remove markers for production 
+	});
+
 	
+
+	// const timelineHeader = gsap.timeline({
+	// 	x:() => `-${maxWidth - window.innerWidth}`,
+	// scrollTrigger: {
+	// 	id: "ZOOM", // Custom label to the marker
+	// 	trigger: ".home_hori_track", // What element triggers the scroll
+	// 	scrub: 0.5, // Add a small delay of scrolling and animation. `true` is direct
+	// 	// start: "top top", // Start at top of Trigger and at the top of the viewport
+	// 	end: `+=${maxWidth}`, // The element is 500px hight and end 50px from the top of the viewport
+	// 	pin: true, // Pin the element true or false
+	// 	invalidateOnRefresh: true,
+	// }
+	// });
+	// gsap.set(".main_hori_img", { scale: 1.3 });
+
+	gsap.to(sections, {
+		x: () => `-${maxWidth - window.innerWidth}`,
+		ease: "none",
+		scrollTrigger: {
+		  trigger: ".home_hori_track",
+		  pin: true,
+		  scrub: 1,
+		  end: () => `+=${maxWidth}`,
+		  invalidateOnRefresh: true
+		}
+	  });
+
+
+
+	// timelineHeader
+	// .to(".main_hori_img",{ scale: 1.3, x:'0', duration: 0},0.1)
+	// .to(".main_hori_img",{scale: 1.15, x:'-50%', duration: 0.5},0.3) 
+	// .to(".main_hori_img",{scale: 1,x:'-100%',  duration: 1})
+	// .to(".crafting_wrap",{x:'-100%'},"sameTime");
 	
 });
