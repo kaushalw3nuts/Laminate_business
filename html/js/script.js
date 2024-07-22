@@ -179,6 +179,12 @@ jQuery(document).ready(function(){
 
 	// product_detail_page section 3 Slider: End (By Kaushal)
 
+	// niceselect: Start (By Kaushal)
+
+	$('select').niceSelect();
+	
+	// niceselect: End (By Kaushal)
+
 	/*Mobile Menu Start  by Mit*/
 	jQuery(".hamburger_btn").click(function() {
 		'use strict';
