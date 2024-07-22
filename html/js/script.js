@@ -39,7 +39,7 @@ ScrollTrigger.defaults({ scroller: "[data-scroll-container]" });
 // --------------------------------------------------------------------------
 // Lenis End (By Mit)
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 // View port Height Generate Start
 
@@ -273,12 +273,12 @@ jQuery(document).ready(function(){
             }
         });
         tl.from(targetElement, {
-            duration: 0.25,
+            duration: 0.6,
             y: "100%",
             opacity: 1,
             ease: "power2.inOut",
             stagger: {
-                amount: 0.5,
+                amount: 2,
                 from: "0"
             }
         });
@@ -388,7 +388,7 @@ jQuery(document).ready(function(){
 		  end: () => `+=${maxWidth}`,
 		  invalidateOnRefresh: true
 		}
-	  });
+	});
 
 
 
@@ -397,5 +397,127 @@ jQuery(document).ready(function(){
 	// .to(".main_hori_img",{scale: 1.15, x:'-50%', duration: 0.5},0.3) 
 	// .to(".main_hori_img",{scale: 1,x:'-100%',  duration: 1})
 	// .to(".crafting_wrap",{x:'-100%'},"sameTime");
+
+
+
+	// Home page Manufacturer text Animation Start by Mit
+
+	const splitmanufacturer = new SplitText(".line_animation_wrap", { type: "lines ,words", wordsClass: "split-words", linesClass: "line-txt", });
+
+	gsap.set('.line_animation_wrap .split-words', { yPercent: 100 });
+	splitmanufacturer.lines.forEach((target) => {
+		gsap.to('.line_animation_wrap .split-words', {
+			yPercent: 0,
+			ease: "none",
+			autoAlpha: 1,
+			scrollTrigger: {
+				trigger: '.line_animation_wrap .split-words',
+				scrub: 1,
+				start: "-80% 90%",
+				end: "bottom 90%"
+			}
+		});
+	});
+
+	// Home page Manufacturer text Animation End by Mit
+
+	// Section Parallax Animation Start by Mit
+	const sectionParallax = document.querySelector('.manufacturer_inner');
+	gsap.to(sectionParallax, {
+		yPercent: -10,
+		ease: "none",
+		autoAlpha: 1,
+		scrollTrigger: {
+			// markers:true,
+			trigger: '.manufacturer_sec',
+			scrub: 1,
+			start: "top center",
+			end: "80% center"
+		}
+	});
+	// Section Parallax Animation End by Mit
+
+	// Section Image with text Horizontal Animation Start by Mit
+	console.clear();
+
+	const tracks = document.querySelectorAll(".side_scroll_img_pin");
+
+	tracks.forEach((track, i) => {
+		let sectionsImage = gsap.utils.toArray(".side_scroll_img_box");
+		let allImgs = track.querySelectorAll(".side_scroll_img_title");
+		
+		let scrollTweenImage = gsap.to(sectionsImage, {
+			xPercent: -100 * (sectionsImage.length - 1),
+			ease: "none",
+			scrollTrigger: {
+				trigger: ".side_scroll_img_pin",
+				pin: true,
+				scrub: 1,
+				end: () => "+=" + (track.scrollWidth - window.innerWidth)
+			}
+		});
+		
+		allImgs.forEach((txtPara, i) => {
+				gsap.fromTo(txtPara, {
+				x: "10vw"
+				}, {
+				x: "-10vw",
+				scrollTrigger: {
+					trigger: txtPara.parentNode,
+					containerAnimation: scrollTweenImage,
+					start: "left center",
+					end: "right left",
+					scrub: true,
+					invalidateOnRefresh: true,
+				},
+				});
+			});
+		});
+
+		// Section Image with text Horizontal Animation End by Mit
+		// Selected Section mouse hover Effect Start by Mit
+			//Page cursors
+
+			document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
+				t.style.left = n.clientX + "px", 
+				t.style.top = n.clientY + "px", 
+				e.style.left = n.clientX + "px", 
+				e.style.top = n.clientY + "px"
+			});
+			var t = document.getElementById("cursor"),
+				e = document.getElementById("cursor2");
+			function n(t) {
+				e.classList.add("hover")
+			}
+			function s(t) {
+				e.classList.remove("hover")
+			}
+			s();
+			for (var r = document.querySelectorAll(".side_scroll_img_box"), a = r.length - 1; a >= 0; a--) {
+				o(r[a])
+			}
+			function o(t) {
+				t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
+			}
+		
+			//Color change on scroll
+		
+			$('.side_scroll_img_pin').on('mouseover', function(event) {				
+				$('.mouse_hover').addClass('hover_img');
+				
+			});				
+			$('.side_scroll_img_pin').on('mouseout', function(event) {			
+				$('.mouse_hover').removeClass('hover_img');
+			});	
+
+			$('.side_scroll_img_pin .side_scroll_img_box').on('mouseover', function(event) {				
+				jQuery('.mouse_hover .image_data_hover img').attr('src',jQuery(this).attr('data-img-hover'))
+				
+			});				
+			$('.side_scroll_img_pin .side_scroll_img_box').on('mouseout', function(event) {			
+				$('.mouse_hover').removeClass('hover_img');
+			});			
+			
+		// Selected Section mouse hover Effect End by Mit
 	
 });
