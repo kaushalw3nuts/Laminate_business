@@ -353,7 +353,7 @@ jQuery(document).ready(function(){
 	ScrollTrigger.defaults({
 	// Defaults are used by all ScrollTriggers
 	toggleActions: "restart pause resume pause", // Scoll effect Forward, Leave, Back, Back Leave
-	markers: true // Easaly remove markers for production 
+	// markers: true // Easaly remove markers for production 
 	});
 
 	
