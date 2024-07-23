@@ -199,10 +199,8 @@ jQuery(document).ready(function(){
 		invalidateOnRefresh: true
 	  }
 	});
-	
-
-
 	// Home Banner Animation End by Mit
+
 	
 	
 });

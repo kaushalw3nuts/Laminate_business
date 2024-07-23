@@ -472,6 +472,11 @@ body.open_menu .bg_menu_shap { -webkit-transform: scale(75) translate3d(1%, 1%, 
 /* section 2 css about page hardik */
 /* ===================================================================== */
 /* section 3 css about page hardik */
+.journy_wrap {padding: 96px 0;}
+.journy_wrap .journy_sec {max-width: 1800px; margin: 0 auto;}
+.journy_wrap .journy_sec .journy_heading {padding-bottom: 64px;}
+.journy_wrap .journy_sec .journy_heading h2 {font-size: var(--fz164); text-transform: uppercase; font-family: 'Gilroy-ExtraBold';}
+.journy_wrap .journy_sec .journy_heading h2 span {font-size: var(--fz96); display: block;}
 
 /* section 3 css about page hardik */
 /* ===================================================================== */
