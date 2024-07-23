@@ -65,40 +65,38 @@ jQuery(window).resize(function() {
 jQuery(document).ready(function(){
 	
 	// product_listing_page section 1 aimation: Start (By Kaushal)
-
-	$(".kv-ttl-line").addClass("start");
-
-    setTimeout(function() {
-
-		let bar = new ProgressBar.Line(loading_text, {
-			strokeWidth: 0,
-			duration: 1600,
-			trailWidth: 0,
-			text: {
-				style: {
-					'font-family':'Cabinet Grotesk',
-					'font-size':'clamp(40px, 4.4270833333vw, 85px)',
-					color:'#6A6A6A',
+	if(jQuery('.kv-ttl-line').length > 0){
+		$(".kv-ttl-line").addClass("start");
+		setTimeout(function() {
+			let bar = new ProgressBar.Line(loading_text, {
+				strokeWidth: 0,
+				duration: 1600,
+				trailWidth: 0,
+				text: {
+					style: {
+						'font-family':'Cabinet Grotesk',
+						'font-size':'clamp(40px, 4.4270833333vw, 85px)',
+						color:'#6A6A6A',
+					},
+					autoStyleContainer: false
 				},
-				autoStyleContainer: false
-			},
-			step: function(state, bar) {
-				let value = Math.round(bar.value() * 100);
-				bar.setText(value);
-			}
-		});
-		
-        $(".kv-spacer").addClass("active posset");
+				step: function(state, bar) {
+					let value = Math.round(bar.value() * 100);
+					bar.setText(value);
+				}
+			});
+			
+			$(".kv-spacer").addClass("active posset");
 
-		bar.animate(1.0, function () {			  
-			setTimeout(function() {
-				$(".kv-spacer").addClass("end");
-				$(".kv-img").addClass("active");
-				locoscrolls.start();
-			}, 400);
-		}); 
-    }, 1200);
-
+			bar.animate(1.0, function () {			  
+				setTimeout(function() {
+					$(".kv-spacer").addClass("end");
+					$(".kv-img").addClass("active");
+					locoscrolls.start();
+				}, 400);
+			}); 
+		}, 1200);
+	}
 	// product_listing_page section 1 aimation: End (By Kaushal)
 
 	// product_listing_page section 2 aimation: Start (By Kaushal)
@@ -438,86 +436,106 @@ jQuery(document).ready(function(){
 	// Section Parallax Animation End by Mit
 
 	// Section Image with text Horizontal Animation Start by Mit
-	console.clear();
+	if(jQuery('.side_scroll_img_pin').length > 0){
+		const tracks = document.querySelectorAll(".side_scroll_img_pin");
 
-	const tracks = document.querySelectorAll(".side_scroll_img_pin");
-
-	tracks.forEach((track, i) => {
-		let sectionsImage = gsap.utils.toArray(".side_scroll_img_box");
-		let allImgs = track.querySelectorAll(".side_scroll_img_title");
-		
-		let scrollTweenImage = gsap.to(sectionsImage, {
-			xPercent: -100 * (sectionsImage.length - 1),
-			ease: "none",
-			scrollTrigger: {
-				trigger: ".side_scroll_img_pin",
-				pin: true,
-				scrub: 1,
-				end: () => "+=" + (track.scrollWidth - window.innerWidth)
-			}
-		});
-		
-		allImgs.forEach((txtPara, i) => {
-				gsap.fromTo(txtPara, {
-				x: "10vw"
-				}, {
-				x: "-10vw",
+		tracks.forEach((track, i) => {
+			let sectionsImage = gsap.utils.toArray(".side_scroll_img_box");
+			let allImgs = track.querySelectorAll(".side_scroll_img_title");
+			
+			let scrollTweenImage = gsap.to(sectionsImage, {
+				xPercent: -100 * (sectionsImage.length - 1),
+				ease: "none",
 				scrollTrigger: {
-					trigger: txtPara.parentNode,
-					containerAnimation: scrollTweenImage,
-					start: "left center",
-					end: "right left",
-					scrub: true,
-					invalidateOnRefresh: true,
-				},
+					trigger: ".side_scroll_img_pin",
+					pin: true,
+					scrub: 1,
+					end: () => "+=" + (track.scrollWidth - window.innerWidth)
+				}
+			});
+			
+			allImgs.forEach((txtPara, i) => {
+					gsap.fromTo(txtPara, {
+					x: "10vw"
+					}, {
+					x: "-10vw",
+					scrollTrigger: {
+						trigger: txtPara.parentNode,
+						containerAnimation: scrollTweenImage,
+						start: "left center",
+						end: "right left",
+						scrub: true,
+						invalidateOnRefresh: true,
+					},
+					});
 				});
 			});
-		});
+		}
 
 		// Section Image with text Horizontal Animation End by Mit
+		// Section Text color change Horizontal Animation Start by Mit
+		if(jQuery('.black_white_text_separate').length > 0){
+
+			const tl = gsap.timeline({
+				scrollTrigger: {
+					trigger: ".black_white_text_separate_pin",
+					// start: "top center",
+					scrub: true,
+					// pin: ".purple",
+					pin: true,
+					end: () => `+=${$(".black_white_text_separate_pin").height()}`,
+				}
+			})
+			.fromTo(".black_bgover",{ width: '0vw',ease: "none"}, {width: '100vw',ease: "none" })
+		}
+
+		// Section Text color change Horizontal Animation End by Mit
 		// Selected Section mouse hover Effect Start by Mit
-			//Page cursors
-
-			document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
-				t.style.left = n.clientX + "px", 
-				t.style.top = n.clientY + "px", 
-				e.style.left = n.clientX + "px", 
-				e.style.top = n.clientY + "px"
-			});
-			var t = document.getElementById("cursor"),
-				e = document.getElementById("cursor2");
-			function n(t) {
-				e.classList.add("hover")
-			}
-			function s(t) {
-				e.classList.remove("hover")
-			}
-			s();
-			for (var r = document.querySelectorAll(".side_scroll_img_box"), a = r.length - 1; a >= 0; a--) {
-				o(r[a])
-			}
-			function o(t) {
-				t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
+			if(jQuery('.side_scroll_img_sec').length > 0){
+				document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
+					t.style.left = n.clientX + "px", 
+					t.style.top = n.clientY + "px", 
+					e.style.left = n.clientX + "px", 
+					e.style.top = n.clientY + "px"
+				});
+				var t = document.getElementById("cursor"),
+					e = document.getElementById("cursor2");
+				function n(t) {
+					e.classList.add("hover")
+				}
+				function s(t) {
+					e.classList.remove("hover")
+				}
+				s();
+				for (var r = document.querySelectorAll(".side_scroll_img_box"), a = r.length - 1; a >= 0; a--) {
+					o(r[a])
+				}
+				function o(t) {
+					t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
+				}
+			
+				$('.side_scroll_img_pin').on('mouseover', function(event) {				
+					$('.mouse_hover').addClass('hover_img');
+					
+				});				
+				$('.side_scroll_img_pin').on('mouseout', function(event) {			
+					$('.mouse_hover').removeClass('hover_img');
+				});	
+	
+				$('.side_scroll_img_pin .side_scroll_img_box').on('mouseover', function(event) {				
+					jQuery('.mouse_hover .image_data_hover img').attr('src',jQuery(this).attr('data-img-hover'))
+					
+				});				
+				$('.side_scroll_img_pin .side_scroll_img_box').on('mouseout', function(event) {			
+					$('.mouse_hover').removeClass('hover_img');
+				});	
 			}
 		
-			//Color change on scroll
-		
-			$('.side_scroll_img_pin').on('mouseover', function(event) {				
-				$('.mouse_hover').addClass('hover_img');
-				
-			});				
-			$('.side_scroll_img_pin').on('mouseout', function(event) {			
-				$('.mouse_hover').removeClass('hover_img');
-			});	
-
-			$('.side_scroll_img_pin .side_scroll_img_box').on('mouseover', function(event) {				
-				jQuery('.mouse_hover .image_data_hover img').attr('src',jQuery(this).attr('data-img-hover'))
-				
-			});				
-			$('.side_scroll_img_pin .side_scroll_img_box').on('mouseout', function(event) {			
-				$('.mouse_hover').removeClass('hover_img');
-			});			
+					
 			
 		// Selected Section mouse hover Effect End by Mit
 	
 });
+
+
+
