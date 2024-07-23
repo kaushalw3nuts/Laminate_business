@@ -9,9 +9,12 @@
 		<!--Stylesheet-->
 		<link href="css/swiper-bundle.min.css" rel="stylesheet">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/nice-select.css" rel="stylesheet">
 		<link href="fonts/fonts.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 		<link href="css/responsive.css" rel="stylesheet">
+		<link href="css/splitting.css" rel="stylesheet">
+		<link href="css/splitting-cells.css" rel="stylesheet">
 		<!--Stylesheet-->
 	</head>
 	<body>
@@ -27,7 +30,7 @@
 					<div class="about_section">
 						<div class="section_content">
 							<div class="section_head">
-								<h1 class="splitword">WHO WE ARE</h1>
+								<h1><span data-splitting>WHO WE ARE</span></h1>
 							</div>
 							<div class="sec_dtl">
 								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
@@ -259,11 +262,14 @@
 	<script src="js/locomotive-scroll.min.js"></script>
 	<script src="js/swiper-bundle.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.nice-select.min.js"></script>
 	<script src="js/ProgressBar.js"></script>
 	<script src="js/gsap.min.js"></script>
 	<script src="js/ScrollTrigger.min.js"></script>
 	<script src="js/SplitText.min.js"></script>
+	<script src="js/splitting.min.js"></script>
 	<script src="js/script.js"></script>
 	<!--JavaScript-->
+	<script>Splitting(); </script>
 	</body>
 </html>

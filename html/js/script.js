@@ -519,5 +519,15 @@ jQuery(document).ready(function(){
 			});			
 			
 		// Selected Section mouse hover Effect End by Mit
+
+		// split word js hdj
+		
+		// let t1 = gsap.timeline({defaults: {ease: "SlowMo.easeOut"}});
+		// t1.to("#splitWord", {opacity:1, duration:0.7, stagger:0.2});
+		// t1.to('#splitWord', {y:'100%', duration:1.5, delay:0.5});
+		
+		
+
+
 	
 });
