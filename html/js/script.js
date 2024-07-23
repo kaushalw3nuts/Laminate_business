@@ -65,40 +65,38 @@ jQuery(window).resize(function() {
 jQuery(document).ready(function(){
 	
 	// product_listing_page section 1 aimation: Start (By Kaushal)
-
-	$(".kv-ttl-line").addClass("start");
-
-    setTimeout(function() {
-
-		let bar = new ProgressBar.Line(loading_text, {
-			strokeWidth: 0,
-			duration: 1600,
-			trailWidth: 0,
-			text: {
-				style: {
-					'font-family':'Cabinet Grotesk',
-					'font-size':'clamp(40px, 4.4270833333vw, 85px)',
-					color:'#6A6A6A',
+	if(jQuery('.kv-ttl-line').length > 0){
+		$(".kv-ttl-line").addClass("start");
+		setTimeout(function() {
+			let bar = new ProgressBar.Line(loading_text, {
+				strokeWidth: 0,
+				duration: 1600,
+				trailWidth: 0,
+				text: {
+					style: {
+						'font-family':'Cabinet Grotesk',
+						'font-size':'clamp(40px, 4.4270833333vw, 85px)',
+						color:'#6A6A6A',
+					},
+					autoStyleContainer: false
 				},
-				autoStyleContainer: false
-			},
-			step: function(state, bar) {
-				let value = Math.round(bar.value() * 100);
-				bar.setText(value);
-			}
-		});
-		
-        $(".kv-spacer").addClass("active posset");
+				step: function(state, bar) {
+					let value = Math.round(bar.value() * 100);
+					bar.setText(value);
+				}
+			});
+			
+			$(".kv-spacer").addClass("active posset");
 
-		bar.animate(1.0, function () {			  
-			setTimeout(function() {
-				$(".kv-spacer").addClass("end");
-				$(".kv-img").addClass("active");
-				locoscrolls.start();
-			}, 400);
-		}); 
-    }, 1200);
-
+			bar.animate(1.0, function () {			  
+				setTimeout(function() {
+					$(".kv-spacer").addClass("end");
+					$(".kv-img").addClass("active");
+					locoscrolls.start();
+				}, 400);
+			}); 
+		}, 1200);
+	}
 	// product_listing_page section 1 aimation: End (By Kaushal)
 
 	// product_listing_page section 2 aimation: Start (By Kaushal)
@@ -168,7 +166,7 @@ jQuery(document).ready(function(){
 
 	// product_detail_page section 3 Slider: End (By Kaushal)
 
-	var similarSlider = new Swiper(".similar_slider", {
+	let similarSlider = new Swiper(".similar_slider", {
         slidesPerView: 5,
         spaceBetween: 68,
 		navigation: {
@@ -184,6 +182,157 @@ jQuery(document).ready(function(){
 	$('select').niceSelect();
 	
 	// niceselect: End (By Kaushal)
+
+	// product_detail_page section 4 Slider: Start (By Kaushal)
+
+	$(function() {
+		if ($(".product-peculiarities__list").length && window.matchMedia("(min-width:768px)").matches) {
+			let prPeculiaritiesItems = $(".product-peculiarities__list").html(),
+				prPeculiaritiesItemsLength = $(".product-peculiarities__item").length,
+				prPeculiaritiesDopContaner = $('<div class="product-peculiarities__preview-list-wr"><div class="product-peculiarities__preview-list-box"><div class="product-peculiarities__preview-list"></div></div><div class="product-peculiarities__preview-list-box"><div class="product-peculiarities__preview-list2"></div></div></div>'),
+				sliderControls = $('<div class="product-peculiarities__slide-controls"><button class="product-peculiarities__slide-prev js-aware-btn"><i><svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.99885 1L1 6L5.99885 11M15 5.99986H1.13994" stroke="black" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></i></button><button class="product-peculiarities__slide-next js-aware-btn"><i><svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.0012 1L15 6L10.0012 11M1 5.99986H14.8601" stroke="black" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></i></button></div>'),
+        		slideLength = $(".product-peculiarities__item").length;
+			prPeculiaritiesDopContaner.appendTo(".product-peculiarities__body");
+
+			if (prPeculiaritiesItemsLength > 1) {
+				$(".product-peculiarities__preview-list").html(prPeculiaritiesItems);
+			}
+		
+			if (prPeculiaritiesItemsLength > 2) {
+				$(".product-peculiarities__preview-list2").html(prPeculiaritiesItems);
+			}
+
+			var sliderPeculiarities = tns({
+				container: ".product-peculiarities__list",
+				nav: false,
+				controls: false,
+				gutter: 0,
+				items: 1,
+				autoplay: 0,
+				axis: "horizontal",
+				mouseDrag: false,
+				mode: "gallery",
+				animateIn: "slideIn",
+				animateOut: "slideOut",
+				speed: 800,
+				onInit: function onInit() {
+					$(".product-peculiarities__counter").addClass("fadeIn");
+				},
+			});
+
+			if (prPeculiaritiesItemsLength > 1) {
+				var sliderPeculiaritiesPreview = tns({
+					container: ".product-peculiarities__preview-list",
+					nav: false,
+					startIndex: 1,
+					controls: false,
+					controlsPosition: true,
+					gutter: 0,
+					items: 1,
+					autoplay: 0,
+					axis: "horizontal",
+					mouseDrag: false,
+					mode: "gallery",
+					animateIn: "slideIn",
+					animateOut: "slideOut",
+					speed: 800,
+				});
+			}
+
+			if (prPeculiaritiesItemsLength > 2) {
+				var sliderPeculiaritiesPreview2 = tns({
+					container: ".product-peculiarities__preview-list2",
+					nav: false,
+					startIndex: 2,
+					controls: false,
+					controlsPosition: true,
+					gutter: 0,
+					items: 1,
+					autoplay: 0,
+					axis: "horizontal",
+					mouseDrag: false,
+					mode: "gallery",
+					animateIn: "slideIn",
+					animateOut: "slideOut",
+					speed: 800,
+					onInit: function onInit() {
+						$(".product-peculiarities__counter").addClass("fadeIn");
+					},
+				});
+			}
+
+			sliderControls.appendTo(".product-peculiarities__list-wr");
+			$(".product-peculiarities__slide-next").on("click", function (e) {
+				e.preventDefault();
+
+				if (prPeculiaritiesItemsLength > 1) {
+					sliderPeculiaritiesPreview.goTo("next");
+				}
+
+				if (prPeculiaritiesItemsLength > 2) {
+					sliderPeculiaritiesPreview2.goTo("next");
+				}
+
+				setTimeout(function () {
+					sliderPeculiarities.goTo("next");
+				}, 100);
+			});
+			$(".product-peculiarities__slide-prev").on("click", function (e) {
+				e.preventDefault();
+
+				if (prPeculiaritiesItemsLength > 1) {
+					sliderPeculiaritiesPreview.goTo("prev");
+				}
+
+				if (prPeculiaritiesItemsLength > 2) {
+					sliderPeculiaritiesPreview2.goTo("prev");
+				}
+
+				sliderPeculiarities.goTo("prev");
+			});
+			sliderPeculiarities.events.on("transitionStart", function () {
+				var info = sliderPeculiarities.getInfo(),
+				count = info.displayIndex < 10 ? "0" + info.displayIndex : info.displayIndex,
+				countContainer = $(".product-peculiarities__counter .product-peculiarities__count-active");
+				$(".product-peculiarities__counter").removeClass("fadeIn");
+				$(".product-peculiarities__counter").addClass("fadeOut");
+				setTimeout(function () {
+					countContainer.text(count);
+					$(".product-peculiarities__counter").removeClass("fadeOut");
+				}, 200);
+				setTimeout(function () {
+					$(".product-peculiarities__counter").addClass("fadeIn");
+				}, 400);
+			});
+			$(document).on("click",".product-peculiarities__preview-list-wr .product-peculiarities-thumbs", function (e) {
+				var nextSlider = $(this).closest(".product-peculiarities__item").index() % slideLength,
+					nextSlider2 = ($(this).closest(".product-peculiarities__item").index() + 1) % slideLength,
+					nextSlider3 = ($(this).closest(".product-peculiarities__item").index() + 2) % slideLength;
+				sliderPeculiarities.goTo(nextSlider);
+		
+				if (prPeculiaritiesItemsLength > 1) {
+					sliderPeculiaritiesPreview.goTo(nextSlider2);
+				}
+		
+				if (prPeculiaritiesItemsLength > 2) {
+					sliderPeculiaritiesPreview2.goTo(nextSlider3);
+				}
+			});
+		} else if ($(".product-peculiarities__list").length && window.matchMedia("(max-width:767px)").matches) {
+			var swiper = new Swiper('.product-peculiarities__list', {
+				slidesPerView: 1,
+				draggable: true,
+	 	        freeMode: true,
+				loop: true,
+				// navigation: {
+				// 	nextEl: '.swiper-button-next',
+				// 	prevEl: '.swiper-button-prev',
+				// },
+			});
+		}
+	});
+
+	// product_detail_page section 4 Slider: End (By Kaushal)
 
 	/*Mobile Menu Start  by Mit*/
 	jQuery(".hamburger_btn").click(function() {
@@ -438,85 +587,102 @@ jQuery(document).ready(function(){
 	// Section Parallax Animation End by Mit
 
 	// Section Image with text Horizontal Animation Start by Mit
-	console.clear();
+	if(jQuery('.side_scroll_img_pin').length > 0){
+		const tracks = document.querySelectorAll(".side_scroll_img_pin");
 
-	const tracks = document.querySelectorAll(".side_scroll_img_pin");
-
-	tracks.forEach((track, i) => {
-		let sectionsImage = gsap.utils.toArray(".side_scroll_img_box");
-		let allImgs = track.querySelectorAll(".side_scroll_img_title");
-		
-		let scrollTweenImage = gsap.to(sectionsImage, {
-			xPercent: -100 * (sectionsImage.length - 1),
-			ease: "none",
-			scrollTrigger: {
-				trigger: ".side_scroll_img_pin",
-				pin: true,
-				scrub: 1,
-				end: () => "+=" + (track.scrollWidth - window.innerWidth)
-			}
-		});
-		
-		allImgs.forEach((txtPara, i) => {
-				gsap.fromTo(txtPara, {
-				x: "10vw"
-				}, {
-				x: "-10vw",
+		tracks.forEach((track, i) => {
+			let sectionsImage = gsap.utils.toArray(".side_scroll_img_box");
+			let allImgs = track.querySelectorAll(".side_scroll_img_title");
+			
+			let scrollTweenImage = gsap.to(sectionsImage, {
+				xPercent: -100 * (sectionsImage.length - 1),
+				ease: "none",
 				scrollTrigger: {
-					trigger: txtPara.parentNode,
-					containerAnimation: scrollTweenImage,
-					start: "left center",
-					end: "right left",
-					scrub: true,
-					invalidateOnRefresh: true,
-				},
+					trigger: ".side_scroll_img_pin",
+					pin: true,
+					scrub: 1,
+					end: () => "+=" + (track.scrollWidth - window.innerWidth)
+				}
+			});
+			
+			allImgs.forEach((txtPara, i) => {
+					gsap.fromTo(txtPara, {
+					x: "10vw"
+					}, {
+					x: "-10vw",
+					scrollTrigger: {
+						trigger: txtPara.parentNode,
+						containerAnimation: scrollTweenImage,
+						start: "left center",
+						end: "right left",
+						scrub: true,
+						invalidateOnRefresh: true,
+					},
+					});
 				});
 			});
-		});
+		}
 
 		// Section Image with text Horizontal Animation End by Mit
+		// Section Text color change Horizontal Animation Start by Mit
+		if(jQuery('.black_white_text_separate').length > 0){
+
+			const tl = gsap.timeline({
+				scrollTrigger: {
+					trigger: ".black_white_text_separate_pin",
+					// start: "top center",
+					scrub: true,
+					// pin: ".purple",
+					pin: true,
+					end: () => `+=${$(".black_white_text_separate_pin").height()}`,
+				}
+			})
+			.fromTo(".black_bgover",{ width: '0vw',ease: "none"}, {width: '100vw',ease: "none" })
+		}
+
+		// Section Text color change Horizontal Animation End by Mit
 		// Selected Section mouse hover Effect Start by Mit
-			//Page cursors
-
-			document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
-				t.style.left = n.clientX + "px", 
-				t.style.top = n.clientY + "px", 
-				e.style.left = n.clientX + "px", 
-				e.style.top = n.clientY + "px"
-			});
-			var t = document.getElementById("cursor"),
-				e = document.getElementById("cursor2");
-			function n(t) {
-				e.classList.add("hover")
-			}
-			function s(t) {
-				e.classList.remove("hover")
-			}
-			s();
-			for (var r = document.querySelectorAll(".side_scroll_img_box"), a = r.length - 1; a >= 0; a--) {
-				o(r[a])
-			}
-			function o(t) {
-				t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
+			if(jQuery('.side_scroll_img_sec').length > 0){
+				document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
+					t.style.left = n.clientX + "px", 
+					t.style.top = n.clientY + "px", 
+					e.style.left = n.clientX + "px", 
+					e.style.top = n.clientY + "px"
+				});
+				var t = document.getElementById("cursor"),
+					e = document.getElementById("cursor2");
+				function n(t) {
+					e.classList.add("hover")
+				}
+				function s(t) {
+					e.classList.remove("hover")
+				}
+				s();
+				for (var r = document.querySelectorAll(".side_scroll_img_box"), a = r.length - 1; a >= 0; a--) {
+					o(r[a])
+				}
+				function o(t) {
+					t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
+				}
+			
+				$('.side_scroll_img_pin').on('mouseover', function(event) {				
+					$('.mouse_hover').addClass('hover_img');
+					
+				});				
+				$('.side_scroll_img_pin').on('mouseout', function(event) {			
+					$('.mouse_hover').removeClass('hover_img');
+				});	
+	
+				$('.side_scroll_img_pin .side_scroll_img_box').on('mouseover', function(event) {				
+					jQuery('.mouse_hover .image_data_hover img').attr('src',jQuery(this).attr('data-img-hover'))
+					
+				});				
+				$('.side_scroll_img_pin .side_scroll_img_box').on('mouseout', function(event) {			
+					$('.mouse_hover').removeClass('hover_img');
+				});	
 			}
 		
-			//Color change on scroll
-		
-			$('.side_scroll_img_pin').on('mouseover', function(event) {				
-				$('.mouse_hover').addClass('hover_img');
-				
-			});				
-			$('.side_scroll_img_pin').on('mouseout', function(event) {			
-				$('.mouse_hover').removeClass('hover_img');
-			});	
-
-			$('.side_scroll_img_pin .side_scroll_img_box').on('mouseover', function(event) {				
-				jQuery('.mouse_hover .image_data_hover img').attr('src',jQuery(this).attr('data-img-hover'))
-				
-			});				
-			$('.side_scroll_img_pin .side_scroll_img_box').on('mouseout', function(event) {			
-				$('.mouse_hover').removeClass('hover_img');
-			});			
+					
 			
 		// Selected Section mouse hover Effect End by Mit
 
@@ -531,3 +697,6 @@ jQuery(document).ready(function(){
 
 	
 });
+
+
+
