@@ -166,7 +166,7 @@ jQuery(document).ready(function(){
 
 	// product_detail_page section 3 Slider: End (By Kaushal)
 
-	var similarSlider = new Swiper(".similar_slider", {
+	let similarSlider = new Swiper(".similar_slider", {
         slidesPerView: 5,
         spaceBetween: 68,
 		navigation: {
@@ -182,6 +182,157 @@ jQuery(document).ready(function(){
 	$('select').niceSelect();
 	
 	// niceselect: End (By Kaushal)
+
+	// product_detail_page section 4 Slider: Start (By Kaushal)
+
+	$(function() {
+		if ($(".product-peculiarities__list").length && window.matchMedia("(min-width:768px)").matches) {
+			let prPeculiaritiesItems = $(".product-peculiarities__list").html(),
+				prPeculiaritiesItemsLength = $(".product-peculiarities__item").length,
+				prPeculiaritiesDopContaner = $('<div class="product-peculiarities__preview-list-wr"><div class="product-peculiarities__preview-list-box"><div class="product-peculiarities__preview-list"></div></div><div class="product-peculiarities__preview-list-box"><div class="product-peculiarities__preview-list2"></div></div></div>'),
+				sliderControls = $('<div class="product-peculiarities__slide-controls"><button class="product-peculiarities__slide-prev js-aware-btn"><i><svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.99885 1L1 6L5.99885 11M15 5.99986H1.13994" stroke="black" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></i></button><button class="product-peculiarities__slide-next js-aware-btn"><i><svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.0012 1L15 6L10.0012 11M1 5.99986H14.8601" stroke="black" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></i></button></div>'),
+        		slideLength = $(".product-peculiarities__item").length;
+			prPeculiaritiesDopContaner.appendTo(".product-peculiarities__body");
+
+			if (prPeculiaritiesItemsLength > 1) {
+				$(".product-peculiarities__preview-list").html(prPeculiaritiesItems);
+			}
+		
+			if (prPeculiaritiesItemsLength > 2) {
+				$(".product-peculiarities__preview-list2").html(prPeculiaritiesItems);
+			}
+
+			var sliderPeculiarities = tns({
+				container: ".product-peculiarities__list",
+				nav: false,
+				controls: false,
+				gutter: 0,
+				items: 1,
+				autoplay: 0,
+				axis: "horizontal",
+				mouseDrag: false,
+				mode: "gallery",
+				animateIn: "slideIn",
+				animateOut: "slideOut",
+				speed: 800,
+				onInit: function onInit() {
+					$(".product-peculiarities__counter").addClass("fadeIn");
+				},
+			});
+
+			if (prPeculiaritiesItemsLength > 1) {
+				var sliderPeculiaritiesPreview = tns({
+					container: ".product-peculiarities__preview-list",
+					nav: false,
+					startIndex: 1,
+					controls: false,
+					controlsPosition: true,
+					gutter: 0,
+					items: 1,
+					autoplay: 0,
+					axis: "horizontal",
+					mouseDrag: false,
+					mode: "gallery",
+					animateIn: "slideIn",
+					animateOut: "slideOut",
+					speed: 800,
+				});
+			}
+
+			if (prPeculiaritiesItemsLength > 2) {
+				var sliderPeculiaritiesPreview2 = tns({
+					container: ".product-peculiarities__preview-list2",
+					nav: false,
+					startIndex: 2,
+					controls: false,
+					controlsPosition: true,
+					gutter: 0,
+					items: 1,
+					autoplay: 0,
+					axis: "horizontal",
+					mouseDrag: false,
+					mode: "gallery",
+					animateIn: "slideIn",
+					animateOut: "slideOut",
+					speed: 800,
+					onInit: function onInit() {
+						$(".product-peculiarities__counter").addClass("fadeIn");
+					},
+				});
+			}
+
+			sliderControls.appendTo(".product-peculiarities__list-wr");
+			$(".product-peculiarities__slide-next").on("click", function (e) {
+				e.preventDefault();
+
+				if (prPeculiaritiesItemsLength > 1) {
+					sliderPeculiaritiesPreview.goTo("next");
+				}
+
+				if (prPeculiaritiesItemsLength > 2) {
+					sliderPeculiaritiesPreview2.goTo("next");
+				}
+
+				setTimeout(function () {
+					sliderPeculiarities.goTo("next");
+				}, 100);
+			});
+			$(".product-peculiarities__slide-prev").on("click", function (e) {
+				e.preventDefault();
+
+				if (prPeculiaritiesItemsLength > 1) {
+					sliderPeculiaritiesPreview.goTo("prev");
+				}
+
+				if (prPeculiaritiesItemsLength > 2) {
+					sliderPeculiaritiesPreview2.goTo("prev");
+				}
+
+				sliderPeculiarities.goTo("prev");
+			});
+			sliderPeculiarities.events.on("transitionStart", function () {
+				var info = sliderPeculiarities.getInfo(),
+				count = info.displayIndex < 10 ? "0" + info.displayIndex : info.displayIndex,
+				countContainer = $(".product-peculiarities__counter .product-peculiarities__count-active");
+				$(".product-peculiarities__counter").removeClass("fadeIn");
+				$(".product-peculiarities__counter").addClass("fadeOut");
+				setTimeout(function () {
+					countContainer.text(count);
+					$(".product-peculiarities__counter").removeClass("fadeOut");
+				}, 200);
+				setTimeout(function () {
+					$(".product-peculiarities__counter").addClass("fadeIn");
+				}, 400);
+			});
+			$(document).on("click",".product-peculiarities__preview-list-wr .product-peculiarities-thumbs", function (e) {
+				var nextSlider = $(this).closest(".product-peculiarities__item").index() % slideLength,
+					nextSlider2 = ($(this).closest(".product-peculiarities__item").index() + 1) % slideLength,
+					nextSlider3 = ($(this).closest(".product-peculiarities__item").index() + 2) % slideLength;
+				sliderPeculiarities.goTo(nextSlider);
+		
+				if (prPeculiaritiesItemsLength > 1) {
+					sliderPeculiaritiesPreview.goTo(nextSlider2);
+				}
+		
+				if (prPeculiaritiesItemsLength > 2) {
+					sliderPeculiaritiesPreview2.goTo(nextSlider3);
+				}
+			});
+		} else if ($(".product-peculiarities__list").length && window.matchMedia("(max-width:767px)").matches) {
+			var swiper = new Swiper('.product-peculiarities__list', {
+				slidesPerView: 1,
+				draggable: true,
+	 	        freeMode: true,
+				loop: true,
+				// navigation: {
+				// 	nextEl: '.swiper-button-next',
+				// 	prevEl: '.swiper-button-prev',
+				// },
+			});
+		}
+	});
+
+	// product_detail_page section 4 Slider: End (By Kaushal)
 
 	/*Mobile Menu Start  by Mit*/
 	jQuery(".hamburger_btn").click(function() {
