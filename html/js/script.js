@@ -65,41 +65,6 @@ jQuery(window).resize(function() {
 jQuery(document).ready(function(){
 	
 	// product_listing_page section 1 aimation: Start (By Kaushal)
-	if(jQuery('.kv-ttl-line').length > 0){
-		$(".kv-ttl-line").addClass("start");
-		setTimeout(function() {
-			let bar = new ProgressBar.Line(loading_text, {
-				strokeWidth: 0,
-				duration: 1600,
-				trailWidth: 0,
-				text: {
-					style: {
-						'font-family':'Cabinet Grotesk',
-						'font-size':'clamp(40px, 4.4270833333vw, 85px)',
-						color:'#6A6A6A',
-					},
-					autoStyleContainer: false
-				},
-				step: function(state, bar) {
-					let value = Math.round(bar.value() * 100);
-					bar.setText(value);
-				}
-			});
-			
-			$(".kv-spacer").addClass("active posset");
-
-			bar.animate(1.0, function () {			  
-				setTimeout(function() {
-					$(".kv-spacer").addClass("end");
-					$(".kv-img").addClass("active");
-					locoscrolls.start();
-				}, 400);
-			}); 
-		}, 1200);
-	}
-	// product_listing_page section 1 aimation: End (By Kaushal)
-
-	// product_listing_page section 2 aimation: Start (By Kaushal)
 
 	// On page load set image to first collection item image
 	$(".image-sticky").attr("src", $(".our-works-item").eq(0).find(".works-img").attr("src"));
@@ -144,7 +109,7 @@ jQuery(document).ready(function(){
 		stickyImgFun()
 	}, 2000)	
 
-	// product_listing_page section 2 aimation: End (By Kaushal)
+	// product_listing_page section 1 aimation: End (By Kaushal)
 
 	// product_detail_page section 1 Slider: Start (By Kaushal)
 
