@@ -1,6 +1,7 @@
 "use strict";
 // Lenis Start (By Mit) 
 // Scroll Animation Start
+gsap.config({ nullTargetWarn: false });
 const locoscrolls = new LocomotiveScroll({
 	el: document.querySelector('[data-scroll-container]'),
 	smooth: true,
@@ -672,7 +673,35 @@ jQuery(document).ready(function(){
 				$('.side_scroll_img_pin').on('mouseout', function(event) {			
 					$('.mouse_hover').removeClass('hover_img');
 				});	
-	
+				
+				locoscrolls.on('scroll', (instance) => {
+					// Get the current scroll position
+				// 	let scrollTop = instance.scroll.y;
+					
+				// 	// Example element to add/remove class
+				// 	let element = jQuery('.broser_box:first-child');
+				// 	// jQuery('.broser_box').css('--offtop', scrollTop)
+		  
+				// // Add or remove class based on scroll position
+				// if (scrollTop > projectoffset) {
+				// 	console.log('scroll Top' +scrollTop);
+				// 	console.log('Get offset Top' +getofftop);
+				// 	let onscroll = scrollTop - getofftop - get_window_height
+				// 	console.log('Total Scroll'+ onscroll);
+				//   element.addClass('actived');
+				//   element.find(' .broser_dtl').css('transform', 'translateY('+onscroll+'px)');
+				// } else {
+				//   element.removeClass('actived');
+				// }
+				$('.side_scroll_img_pin .side_scroll_img_box').on('mouseover', function(event) {				
+					jQuery('.mouse_hover .image_data_hover img').attr('src',jQuery(this).attr('data-img-hover'))
+					
+				});				
+				$('.side_scroll_img_pin .side_scroll_img_box').on('mouseout', function(event) {			
+					$('.mouse_hover').removeClass('hover_img');
+				});	
+			});
+
 				$('.side_scroll_img_pin .side_scroll_img_box').on('mouseover', function(event) {				
 					jQuery('.mouse_hover .image_data_hover img').attr('src',jQuery(this).attr('data-img-hover'))
 					
@@ -691,7 +720,107 @@ jQuery(document).ready(function(){
 		// let t1 = gsap.timeline({defaults: {ease: "SlowMo.easeOut"}});
 		// t1.to("#splitWord", {opacity:1, duration:0.7, stagger:0.2});
 		// t1.to('#splitWord', {y:'100%', duration:1.5, delay:0.5});
+
+		// Borser Section Start
 		
+		// gsap.set(".broser_dtl", {
+		// 	zIndex: (i) => document.querySelectorAll('.broser_dtl').length - i,
+		// 	clipPath: function () {
+		// 	  return "inset(0px 0px 0px 0px)";
+		// 	}
+		//   });
+		
+		//   const animation = gsap.to(".broser_dtl:not(:last-child)", {
+		// 	clipPath: function () {
+		// 	  return "inset(0px 0px 100% 0px)";
+		// 	},
+		// 	stagger: 0.5,
+		// 	ease: "none"
+		//   });
+		
+		//   ScrollTrigger.create({
+		// 	trigger: ".broser_wrap	",
+		// 	start: "top top",
+		// 	end: "bottom bottom",
+		// 	// markers: true,
+		// 	animation: animation,
+		// 	scrub: true
+		//   });
+
+		if(jQuery('.broser_box').length > 1){
+			// let get_window_height = jQuery(window).height();
+			// // console.log(get_window_height);
+			// var projectoffset = jQuery('.broser_box:first-child .broser_dtl').offset().top + get_window_height;
+			// var getofftop = jQuery('.broser_box:first-child .broser_dtl').offset().top;
+			// locoscrolls.on( "scroll", function() {
+			// 	// 	console.log(project1);
+			// 	// 	if (locoscrolls >= project1) {
+			// 		// 		jQuery(".broser_dtl").addClass("project1");
+			// 		// 	}
+					
+			// 	});
+				
+			// 	locoscrolls.on('scroll', (instance) => {
+			// 		// Get the current scroll position
+			// 		let scrollTop = instance.scroll.y;
+					
+			// 		// Example element to add/remove class
+			// 		let element = jQuery('.broser_box:first-child');
+			// 		// jQuery('.broser_box').css('--offtop', scrollTop)
+		  
+			// 	// Add or remove class based on scroll position
+			// 	if (scrollTop > projectoffset) {
+			// 		console.log('scroll Top' +scrollTop);
+			// 		console.log('Get offset Top' +getofftop);
+			// 		let onscroll = scrollTop - getofftop - get_window_height
+			// 		console.log('Total Scroll'+ onscroll);
+			// 	  element.addClass('actived');
+			// 	  element.find(' .broser_dtl').css('transform', 'translateY('+onscroll+'px)');
+			// 	} else {
+			// 	  element.removeClass('actived');
+			// 	}
+			// });
+		}
+
+
+		// Borser Section End
+		
+
+		// Accordian script start by mit
+		jQuery('#faq_main').on('shown.bs.collapse', function () {
+			locoscrolls.update()
+		});
+		jQuery('#faq_main').on('hidden.bs.collapse', function () {
+			locoscrolls.update()
+		});
+		// Accordian script End by mit
+
+		// Galley script Start by mit
+		// var swiper = new Swiper(".gallery_thumb", {
+		// 	loop: true,
+		// 	spaceBetween: 30,
+		// 	// slidesPerView: 4,
+		// 	slidesPerView: "auto",
+		//   });
+		var swiper_main = new Swiper(".gallery_thumb", {
+			loop: true,
+			spaceBetween: 30,
+			slidesPerView: "auto",
+			freeMode: true,
+			watchSlidesProgress: true,
+		});
+		var swiper2 = new Swiper(".gallery_slider_main", {
+			loop: true,
+			spaceBetween: 0,
+			navigation: {
+			  nextEl: ".right_arrow_gallery_slider a",
+			  prevEl: ".left_arrow_gallery_slider a",
+			},
+			thumbs: {
+			  swiper: swiper_main,
+			},
+		  });
+		// Galley script End by mit
 		
 
 
