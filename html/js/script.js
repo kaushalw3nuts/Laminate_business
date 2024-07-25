@@ -1,43 +1,60 @@
 "use strict";
 // Lenis Start (By Mit) 
-// Scroll Animation Start
+// // Scroll Animation Start
 gsap.config({ nullTargetWarn: false });
-const locoscrolls = new LocomotiveScroll({
-	el: document.querySelector('[data-scroll-container]'),
-	smooth: true,
-	scrollFromAnywhere: false,
-	multiplier: 1,
-	getDirection: true,
-	reloadOnContextChange: true,
-	touchMultiplier: 3,
-	smoothMobile: 0,
-	smartphone: {
-	  smooth: !0,
-	  breakpoint: 766
-	},
-	tablet: {
-	  smooth: !0,
-	  breakpoint: 1010
-	},
-  });
+// const locoscrolls = new LocomotiveScroll({
+// 	el: document.querySelector('[data-scroll-container]'),
+// 	smooth: true,
+// 	scrollFromAnywhere: false,
+// 	multiplier: 1,
+// 	getDirection: true,
+// 	reloadOnContextChange: true,
+// 	touchMultiplier: 3,
+// 	smoothMobile: 0,
+// 	smartphone: {
+// 	  smooth: !0,
+// 	  breakpoint: 766
+// 	},
+// 	tablet: {
+// 	  smooth: !0,
+// 	  breakpoint: 1010
+// 	},
+//   });
 
-  locoscrolls.on("scroll", ScrollTrigger.update);
+//   locoscrolls.on("scroll", ScrollTrigger.update);
 
-// --------------------------------------------------------------------------
-ScrollTrigger.scrollerProxy("[data-scroll-container]", {
-  scrollTop(value) {
-	return arguments.length ? locoscrolls.scrollTo(value, {duration: 0, disableLerp: true}) : locoscrolls.scroll.instance.scroll.y;
-  }, 
-  getBoundingClientRect() {
-	return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-  },
-  pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
+// // --------------------------------------------------------------------------
+// ScrollTrigger.scrollerProxy("[data-scroll-container]", {
+//   scrollTop(value) {
+// 	return arguments.length ? locoscrolls.scrollTo(value, {duration: 0, disableLerp: true}) : locoscrolls.scroll.instance.scroll.y;
+//   }, 
+//   getBoundingClientRect() {
+// 	return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+//   },
+//   pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
+// });
+
+// ScrollTrigger.addEventListener("refresh", () => locoscrolls.update());
+// ScrollTrigger.defaults({ scroller: "[data-scroll-container]" });
+// // --- SETUP END ---
+// // --------------------------------------------------------------------------
+
+const locoscrolls = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
+    direction: 'vertical', // 'vertical' or 'horizontal'
+    smooth: true,
 });
 
-ScrollTrigger.addEventListener("refresh", () => locoscrolls.update());
-ScrollTrigger.defaults({ scroller: "[data-scroll-container]" });
-// --- SETUP END ---
-// --------------------------------------------------------------------------
+// Scroll Trigger for Lenis
+locoscrolls.on('scroll', ScrollTrigger.update);
+
+// Update ScrollTrigger on Lenis scroll
+gsap.ticker.add((time) => {
+    locoscrolls.raf(time * 1000);
+});
+
+
 // Lenis End (By Mit)
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -454,9 +471,9 @@ jQuery(document).ready(function(){
 	  });
 	*/
 
-	// Home Banner Animation End by Mit
 	gsap.registerPlugin(ScrollTrigger);
-
+	if(jQuery('.home_hori_track').length > 0){
+		
 	const sections = gsap.utils.toArray(".scroll_ani_img");
 	let maxWidth = 0;
 	console.log();
@@ -479,40 +496,33 @@ jQuery(document).ready(function(){
 
 	
 
-	// const timelineHeader = gsap.timeline({
-	// 	x:() => `-${maxWidth - window.innerWidth}`,
-	// scrollTrigger: {
-	// 	id: "ZOOM", // Custom label to the marker
-	// 	trigger: ".home_hori_track", // What element triggers the scroll
-	// 	scrub: 0.5, // Add a small delay of scrolling and animation. `true` is direct
-	// 	// start: "top top", // Start at top of Trigger and at the top of the viewport
-	// 	end: `+=${maxWidth}`, // The element is 500px hight and end 50px from the top of the viewport
-	// 	pin: true, // Pin the element true or false
-	// 	invalidateOnRefresh: true,
-	// }
-	// });
-	// gsap.set(".main_hori_img", { scale: 1.3 });
-
-	gsap.to(sections, {
-		x: () => `-${maxWidth - window.innerWidth}`,
-		ease: "none",
+	const timelineHeader = gsap.timeline({
+		x:() => `-${maxWidth - window.innerWidth}`,
 		scrollTrigger: {
-		  trigger: ".home_hori_track",
-		  pin: true,
-		  scrub: 1,
-		  end: () => `+=${maxWidth}`,
-		  invalidateOnRefresh: true
+			id: "ZOOM", // Custom label to the marker
+			trigger: ".home_hori_track", // What element triggers the scroll
+			scrub: 0.5, // Add a small delay of scrolling and animation. `true` is direct
+			// start: "top top", // Start at top of Trigger and at the top of the viewport
+			end: `+=${maxWidth}`, // The element is 500px hight and end 50px from the top of the viewport
+			pin: true, // Pin the element true or false
+			invalidateOnRefresh: true,
 		}
 	});
+	gsap.set(".main_hori_img", { scale: 1.3 });
 
-
-
-	// timelineHeader
+		timelineHeader
 	// .to(".main_hori_img",{ scale: 1.3, x:'0', duration: 0},0.1)
 	// .to(".main_hori_img",{scale: 1.15, x:'-50%', duration: 0.5},0.3) 
-	// .to(".main_hori_img",{scale: 1,x:'-100%',  duration: 1})
-	// .to(".crafting_wrap",{x:'-100%'},"sameTime");
+	.to(".main_hori_img",{scale: 1,x:'-100%',  duration: 1}, 0)
+	.to(".crafting_wrap",{x:'-100%'},0);
+	   
+	}
 
+ 
+
+ 
+
+	// Home Banner Animation End by Mit
 
 
 	// Home page Manufacturer text Animation Start by Mit
@@ -713,17 +723,30 @@ jQuery(document).ready(function(){
 		//   });
 
 		if(jQuery('.broser_box').length > 1){
-			// let get_window_height = jQuery(window).height();
-			// // console.log(get_window_height);
-			// var projectoffset = jQuery('.broser_box:first-child .broser_dtl').offset().top + get_window_height;
+			let get_window_height = jQuery(window).height();
+			// console.log(get_window_height);
+			var projectoffset = jQuery('.broser_box:first-child .broser_dtl').offset().top + get_window_height;
+			var projectoffsetBottom = jQuery('.broser_box:last-child .broser_dtl').offset().top;
 			// var getofftop = jQuery('.broser_box:first-child .broser_dtl').offset().top;
-			// locoscrolls.on( "scroll", function() {
-			// 	// 	console.log(project1);
-			// 	// 	if (locoscrolls >= project1) {
-			// 		// 		jQuery(".broser_dtl").addClass("project1");
-			// 		// 	}
+			jQuery(window).on( "scroll", function() {
+					// console.log(getofftop);
+					// console.log();
+					console.log(jQuery(window).scrollTop() >= projectoffset);
+					if (jQuery(window).scrollTop() >= projectoffset) {
+						
+						jQuery(".broser_wrap").addClass("project1");
+					}else {
+						jQuery(".broser_wrap").removeClass("project1");
+					}
+					if ((jQuery(window).scrollTop() - jQuery('.broser_box:last-child .broser_dtl').outerHeight()) >= projectoffsetBottom) {
+						
+						jQuery(".broser_wrap").addClass("project2");
+					}else {
+						jQuery(".broser_wrap").removeClass("project2");
+					}
+
 					
-			// 	});
+				});
 				
 			// 	locoscrolls.on('scroll', (instance) => {
 			// 		// Get the current scroll position
@@ -752,12 +775,12 @@ jQuery(document).ready(function(){
 		
 
 		// Accordian script start by mit
-		jQuery('#faq_main').on('shown.bs.collapse', function () {
-			locoscrolls.update()
-		});
-		jQuery('#faq_main').on('hidden.bs.collapse', function () {
-			locoscrolls.update()
-		});
+		// jQuery('#faq_main').on('shown.bs.collapse', function () {
+		// 	locoscrolls.update()
+		// });
+		// jQuery('#faq_main').on('hidden.bs.collapse', function () {
+		// 	locoscrolls.update()
+		// });
 		// Accordian script End by mit
 
 		// Galley script Start by mit
