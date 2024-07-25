@@ -921,6 +921,14 @@ flex-grow: 0; -ms-flex-negative: 0; flex-shrink: 0; -ms-flex-preferred-size: aut
 .journy_wrap .journy_sec .journy_heading {padding-bottom: 64px;}
 .journy_wrap .journy_sec .journy_heading h2 {font-size: var(--fz164); text-transform: uppercase; font-family: 'Gilroy-ExtraBold';}
 .journy_wrap .journy_sec .journy_heading h2 span {font-size: var(--fz96); display: block;}
+.journy_scroll {display: flex; gap: 64px; width: 100%;}
+.journy_scroll .journy_grp {width: 800px; min-width: 800px; transform: translateX(100%);}
+.journy_scroll .journy_grp .journy_img {width: 100%;}
+.journy_scroll .journy_grp .journy_img img {width: 100%;}
+.journy_scroll_pin {display: -ms-flexbox; display: flex; align-items: center; height: 100vh;}
+.journy_dtl {padding-top: 111px; text-align: center;}
+.journy_dtl h6 {font-size: 24px; color: #000000; font-family: 'Montserrat-Bold'; padding-bottom: 24px; }
+.journy_dtl p {font-size: 20px; color: #000000; font-family: 'Montserrat-Regular'; line-height:1.6;}
 
 /* section 3 css about page hardik */
 /* ===================================================================== */
@@ -930,16 +938,25 @@ flex-grow: 0; -ms-flex-negative: 0; flex-shrink: 0; -ms-flex-preferred-size: aut
 .how_do_wrap .how_do .how_heading {padding-bottom: 96px;}
 .how_do_wrap .how_do .how_heading h2 {font-size: var(--fz164); text-transform: uppercase; font-family: 'Gilroy-ExtraBold'; line-height: 1;}
 .how_do_wrap .how_do .how_heading span {display: block; font-size: 150px; font-family: 'Hurricane-Regular'; text-align: center; line-height: 0.5;}
-.how_do_img { width: 100%;}
-.how_do_img .how_scroll {position: relative;}
+.how_do_img { width: 100%; position: relative; background-color: blueviolet; overflow: hidden;}
+#scroll_2, #scroll_3, #scroll_4, #scroll_5 { transform: translateY(100%); position: absolute; top: 0; }
+/* .how_do_img .how_scroll {position: relative;} */
 .how_do_img .how_scroll .floor_img {position: relative;}
-.how_do_img .how_scroll .floor_img::after{position: absolute; content: ''; left: 0; bottom: 0;background: linear-gradient(to right,  rgba(0,0,0,0.70) 0%,rgba(0,0,0,0) 100%); width: 100%; height: 1070px;}
+
+.how_do_img .how_scroll .floor_img::after{position: absolute; content: ''; left: 0; bottom: 0;background: linear-gradient(to right,  rgba(0,0,0,0.70) 0%,rgba(0,0,0,0) 100%); width: 100%; height: 100%;}
 .how_do_img .how_scroll .floor_img img {width: 100%;}
 .floor_content {position: absolute; left: 30%; top: 50%; transform: translate(-50%, -50%); max-width: 900px;}
 .floor_content i {display: inline-flex; padding-bottom: 24px;}
 .floor_content i img {display: flex;}
 .floor_content h2 {font-size: var(--fz96); color: var(--whitetxt);font-family: 'Gilroy-ExtraBold'; text-transform: uppercase; padding-bottom: 24px;}
 .floor_content p {font-family: 'Montserrat-Medium'; color: var(--whitetxt);}
+.round_dots {position: fixed; right: 60px; bottom: 50%; transform: translate(-50% 50%);}
+.round_dots ul {display: block; position: relative; margin: 0; padding: 0;}
+.round_dots ul li:not(:last-child) {padding-bottom: 24px;}
+.round_dots ul li span {position: relative; width: 6px; height: 6px; background-color: #FFF; border-radius: 50%; display: flex; justify-content: center; align-items: center; top: 0; right: 0; transition: all ease-in-out 0.3s;}
+.round_dots ul li span::after{position: absolute; content: ''; width: 0; height: 0; border-radius: 50%; border: 1px solid #FFF; transition: all ease-in-out 0.3s;}
+.round_dots ul li span:hover::after{width: 24px; height: 24px;}
+
 /* section 4 css about page hardik */
 /* ===================================================================== */
 /* section 5 css about page hardik */

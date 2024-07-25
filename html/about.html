@@ -13,8 +13,6 @@
 		<link href="fonts/fonts.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 		<link href="css/responsive.css" rel="stylesheet">
-		<link href="css/splitting.css" rel="stylesheet">
-		<link href="css/splitting-cells.css" rel="stylesheet">
 		<!--Stylesheet-->
 	</head>
 	<body>
@@ -30,10 +28,10 @@
 					<div class="about_section">
 						<div class="section_content">
 							<div class="section_head">
-								<h1><span data-splitting>WHO WE ARE</span></h1>
+								<h1><span class="split_word">WHO WE ARE</span></h1>
 							</div>
 							<div class="sec_dtl">
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+								<p class="split_word">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 							</div>
 						</div>
 						<div class="who_img">
@@ -66,10 +64,34 @@
 							<div class="journy_heading">
 								<h2><span>Our</span>Journey</h2>
 							</div>
-							<div class="journy_scroll">
-								<div class="journy_grp">
-									<div class="journy_img">
-										<img src="images/journy_1.webp" alt="">
+							<div class="journy_scroll_pin">
+								<div class="journy_scroll">
+									<div class="journy_grp">
+										<div class="journy_img">
+											<img src="images/journy_1.webp" alt="">
+										</div>
+										<div class="journy_dtl">
+											<h6>Early Days (2000-2005)</h6>
+											<p>In our early days, we operated out of a modest workshop, focusing on perfecting our craft and building a reputation for excellence. Through dedication and hard work, we steadily grew, gaining the trust of homeowners, designers, and builders alike.</p>
+										</div>
+									</div>
+									<div class="journy_grp">
+										<div class="journy_img">
+											<img src="images/journy_1.webp" alt="">
+										</div>
+										<div class="journy_dtl">
+											<h6>Early Days (2000-2005)</h6>
+											<p>In our early days, we operated out of a modest workshop, focusing on perfecting our craft and building a reputation for excellence. Through dedication and hard work, we steadily grew, gaining the trust of homeowners, designers, and builders alike.</p>
+										</div>
+									</div>
+									<div class="journy_grp">
+										<div class="journy_img">
+											<img src="images/journy_1.webp" alt="">
+										</div>
+										<div class="journy_dtl">
+											<h6>Early Days (2000-2005)</h6>
+											<p>In our early days, we operated out of a modest workshop, focusing on perfecting our craft and building a reputation for excellence. Through dedication and hard work, we steadily grew, gaining the trust of homeowners, designers, and builders alike.</p>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -86,7 +108,7 @@
 							</div>
 						</div>
 						<div class="how_do_img">
-							<div class="how_scroll">
+							<div class="how_scroll" id="scroll_1">
 								<div class="floor_img">
 									<img src="images/wooden_1.webp" alt="">
 								</div>
@@ -96,7 +118,7 @@
 									<p>Our design team draws inspiration from the latest trends to create laminates that are both stylish and practical. We blend creativity with functionality to meet the diverse needs of our customers.</p>
 								</div>
 							</div>
-							<div class="how_scroll">
+							<div class="how_scroll" id="scroll_2">
 								<div class="floor_img">
 									<img src="images/wooden_2.webp" alt="">
 								</div>
@@ -106,7 +128,7 @@
 									<p>Utilizing state-of-the-art technology, our manufacturing process guarantees precision and consistency. We laminate layers with perfect adhesion to produce durable, high-quality products.</p>
 								</div>
 							</div>
-							<div class="how_scroll">
+							<div class="how_scroll" id="scroll_3">
 								<div class="floor_img">
 									<img src="images/wooden_3.webp" alt="">
 								</div>
@@ -116,7 +138,7 @@
 									<p>We offer a variety of customization options to meet your specific needs. Whether it’s color, texture, or size, we provide tailor-made solutions that fit your vision.</p>
 								</div>
 							</div>
-							<div class="how_scroll">
+							<div class="how_scroll" id="scroll_4">
 								<div class="floor_img">
 									<img src="images/wooden_4.webp" alt="">
 								</div>
@@ -125,6 +147,19 @@
 									<h2>Continuous Improvement</h2>
 									<p>We continuously seek feedback to refine our products and processes, ensuring we remain leaders in the laminate industry.</p>
 								</div>
+							</div>
+							<div class="how_scroll" id="scroll_5">
+								<div class="floor_img">
+									<img src="images/wooden_4.webp" alt="">
+								</div>
+								<div class="floor_content">
+									<i><img src="images/icon_4.svg" alt=""></i>
+									<h2>Continuous Improvement</h2>
+									<p>We continuously seek feedback to refine our products and processes, ensuring we remain leaders in the laminate industry.</p>
+								</div>
+							</div>
+							<div class="round_dots">
+								<ul></ul>
 							</div>
 						</div>
 					</div>
@@ -267,9 +302,7 @@
 	<script src="js/gsap.min.js"></script>
 	<script src="js/ScrollTrigger.min.js"></script>
 	<script src="js/SplitText.min.js"></script>
-	<script src="js/splitting.min.js"></script>
 	<script src="js/script.js"></script>
 	<!--JavaScript-->
-	<script>Splitting(); </script>
 	</body>
 </html>

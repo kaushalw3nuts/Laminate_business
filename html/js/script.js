@@ -686,16 +686,63 @@ jQuery(document).ready(function(){
 			
 		// Selected Section mouse hover Effect End by Mit
 
-		// split word js hdj
-		
-		// let t1 = gsap.timeline({defaults: {ease: "SlowMo.easeOut"}});
-		// t1.to("#splitWord", {opacity:1, duration:0.7, stagger:0.2});
-		// t1.to('#splitWord', {y:'100%', duration:1.5, delay:0.5});
-		
-		
+		// about page animation js by hdj
 
+		let t2 = gsap.timeline({scrollTrigger:{
+			trigger:".journy_scroll_pin",
+			// markers:true,
+			start:"top left",
+			end:"40% left",
+			scrub: 0.5,
+			pin:true
+		}});
 
+		t2
+		.to(".journy_scroll",{
+			x:'-100%'
+		});
+		
+		var t1 = gsap.timeline({scrollTrigger:{
+			trigger:".how_do_img",
+			// markers:true,
+			start:"top top",
+			end:"5000px top",
+			scrub: 0.5,
+			pin:true,
+			// toggleClass: {targets: ".how_scroll", className: "active"}
+		}});
+		t1
+		.to("#scroll_2",{
+			y:'0',
+		})
+		.to("#scroll_3",{
+			y:'0'
+		})
+		.to("#scroll_4",{
+			y:'0'
+		})
+		.to("#scroll_5",{
+			y:'0'
+		});
+
+		// let t2 = gsap.timeline({scrollTrigger:{
+		// 	trigger:".contain_wapper .journy_sec",
+		// 	// markers:true,
+		// 	start:"22% left",
+		// 	end:"40% left",
+		// 	scrub: 0.5,
+		// 	pin:true
+		// }});
+		
+		
+	// about page animation js by hdj
 	
+	let whoWeAreBoxLenght = jQuery(".how_do_img .how_scroll").length;
+	if(whoWeAreBoxLenght){
+		for (let index = 0; index < whoWeAreBoxLenght; index++) {
+			jQuery(".how_do_img .round_dots ul").append("<li><span></span></li>");
+		}
+	}
 });
 
 
