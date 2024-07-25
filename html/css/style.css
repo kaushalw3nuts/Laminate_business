@@ -603,8 +603,9 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 
 /* ========== Trial popup style: Start (By Kaushal) ========== */
 
-.trialpop_one { border: none; width: 1400px; padding: 64px; }
+.trialpop_one { border: none; width: 1400px; padding: 64px; transition: transform 1200ms ease-in-out; }
 .offcanvas-backdrop.show { opacity: 1; }
+.offcanvas-backdrop { background: #12121285; backdrop-filter: blur(5px) saturate(0); }
 .trialpop_one .offcanvas-header { padding: 0; }
 .trialpop_one .offcanvas-header h5 { font-family: 'Gilroy-Light'; font-size: 84px; line-height: 1.16; color: var(--blacktxt); text-transform: uppercase; }
 .trialpop_one .offcanvas-header h5 span { display: flex; font-family: 'Gilroy-ExtraBold'; }
@@ -627,6 +628,8 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 .trialpop_one .offcanvas-body .sub_img_box .img_box { width: 100%; display: flex; position: relative; }
 .trialpop_one .offcanvas-body .sub_img_box .img_box img { position: absolute; left: 0; top: 0; height: 100%; width: 100%; object-fit: cover; }
 .trialpop_one .offcanvas-body .sub_img_box .img_box::after { content: ''; display: block; padding: 34.202% 50%; }
+.fade { transition-duration: 0.5s; }
+.offcanvas-backdrop.fade { opacity: unset; }
 
 @media (min-width: 1921px) {
 
