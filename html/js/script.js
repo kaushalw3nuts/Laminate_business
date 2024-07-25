@@ -819,15 +819,6 @@ jQuery(document).ready(function(){
 			y:'0'
 		});
 
-		// let t2 = gsap.timeline({scrollTrigger:{
-		// 	trigger:".contain_wapper .journy_sec",
-		// 	// markers:true,
-		// 	start:"22% left",
-		// 	end:"40% left",
-		// 	scrub: 0.5,
-		// 	pin:true
-		// }});
-		
 		
 	// about page animation js by hdj
 	
@@ -837,6 +828,10 @@ jQuery(document).ready(function(){
 			jQuery(".how_do_img .round_dots ul").append("<li><span></span></li>");
 		}
 	}
+
+	jarallax(document.querySelectorAll('.jarallax'), {
+		speed: 2,
+	  });
 });
 
 

@@ -10,6 +10,7 @@
 		<link href="css/swiper-bundle.min.css" rel="stylesheet">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/nice-select.css" rel="stylesheet">
+		<link href="css/jarallax.css" rel="stylesheet">
 		<link href="fonts/fonts.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 		<link href="css/responsive.css" rel="stylesheet">
@@ -26,17 +27,17 @@
 			<div id="scroll-container2">
 				<section class="contain_wapper about_page">
 					<div class="about_section">
-						<div class="section_content">
-							<div class="section_head">
+						<div class="section_content" data-jarallax data-speed="1">
+							<div class="section_head jarallax">
 								<h1><span class="split_word">WHO WE ARE</span></h1>
 							</div>
-							<div class="sec_dtl">
+							<div class="sec_dtl jarallax">
 								<p class="split_word">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 							</div>
 						</div>
 						<div class="who_img">
-							<div class="img_sec">
-								<img src="images/section_1_img.webp" alt="">
+							<div class="img_sec jarallax" data-jarallax data-speed="0.5">
+								<img src="images/section_1_img.webp" alt="" class="jarallax-img">
 							</div>
 						</div>
 					</div>
@@ -94,6 +95,11 @@
 										</div>
 									</div>
 								</div>
+								<div class="page_scroll">
+									<div class="page_dot">
+										<span></span>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -103,7 +109,7 @@
 					<div class="how_do_wrap howtrigger">
 						<div class="how_do">
 							<div class="how_heading">
-								<h2>HOW DO</h2>
+								<h2 >HOW DO</h2>
 								<span>We do it?</span>
 							</div>
 						</div>
@@ -169,7 +175,7 @@
 					<div class="trusted_wrap">
 						<div class="trusted_grp">
 							<div class="trust_head">
-								<h4>WE'VE BEEN TRUSTED BY</h4>
+								<h4 class="split_word">WE'VE BEEN TRUSTED BY</h4>
 							</div>
 							<div class="trust_logo">
 								<ul>
@@ -191,7 +197,7 @@
 					<div class="team_wrap">
 						<div class="section_content">
 							<div class="section_head">
-								<h1>Meet our team</h1>
+								<h1 class="split_word">Meet our team</h1>
 							</div>
 							<div class="sec_dtl">
 								<p>Our team is always growing and evolving, bringing in the best people to support you globally.</p>
@@ -302,6 +308,8 @@
 	<script src="js/gsap.min.js"></script>
 	<script src="js/ScrollTrigger.min.js"></script>
 	<script src="js/SplitText.min.js"></script>
+	<script src="js/jarallax.js"></script>
+	<script src="js/jarallax-element.js"></script>
 	<script src="js/script.js"></script>
 	<!--JavaScript-->
 	</body>
