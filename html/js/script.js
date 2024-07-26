@@ -77,6 +77,7 @@ jQuery(window).on('load' ,function() {
 });
 jQuery(window).resize(function() {
 	bluesticky();
+	getRotedImage();
 });
 
 
@@ -613,7 +614,10 @@ jQuery(document).ready(function(){
 					end: () => `+=${$(".black_white_text_separate_pin").height()}`,
 				}
 			})
-			.fromTo(".black_bgover",{ width: '0vw',ease: "none"}, {width: '100vw',ease: "none" })
+			.fromTo(".black_white_text_separate .black_bgover",{ width: '0vw',ease: "none"}, {width: '100vw',ease: "none" })
+			.fromTo(".black_white_text_separate .center_text_img ",{ margin: '0',ease: "none"}, {margin: '0 0 0 -2%',ease: "none" }, 0)
+			// .fromTo(".black_white_text_separate .text_heading h2",{ margin: '0',ease: "none"}, {margin: '0 0 0 -50px',ease: "none" }, 0)
+			getRotedImage();
 		}
 
 		// Section Text color change Horizontal Animation End by Mit
@@ -954,3 +958,15 @@ jQuery(document).ready(function(){
 
 
 
+function getRotedImage() {
+	jQuery('.center_text_img[data-inner-image]').each(function(){
+		// var p = jQuery(this);
+		// var position = p.position();
+		jQuery(this).removeClass('active');
+		// jQuery(".center_text_img[data-outer-image]").removeClass('active')
+		console.log(jQuery(this).offset().left - jQuery(this).parents('.black_white_text').offset().left);
+		jQuery( ".center_text_img[data-outer-image="+jQuery(this).attr('data-inner-image')+"]" ).css({ left: + jQuery(this).offset().left - jQuery(this).parents('.black_white_text').offset().left , 'top': + jQuery(this).offset().top - jQuery(this).parents('.black_white_text').offset().top }).addClass('active');
+		jQuery(this).addClass('active')
+		// console.log();
+	});
+}
