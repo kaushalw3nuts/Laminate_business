@@ -1142,7 +1142,7 @@ flex-grow: 0; -ms-flex-negative: 0; flex-shrink: 0; -ms-flex-preferred-size: aut
 .about_page {position: relative;}
 .about_page .about_section {padding: 224px 0 60px; max-width: 1800px; margin: 0 auto;}
 .section_content {display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; padding-bottom: 32px;}
-.section_content .section_head {width: 50%; max-width: 691px;}
+.section_content .section_head {width: 50%; max-width: 695px;}
 .section_content .section_head h1 {font-size: var(--fz164); color: var(--blacktxt); line-height: auto; font-family: 'Gilroy-ExtraBold'; text-transform: uppercase; }
 .section_content .section_head h1 span{display: inline-block; }
 .section_content .section_head h1 span.words {overflow: hidden; transform: translateY(0) rotate(0.001deg);}
@@ -1218,8 +1218,8 @@ flex-grow: 0; -ms-flex-negative: 0; flex-shrink: 0; -ms-flex-preferred-size: aut
 .journy_wrap .journy_sec .journy_heading {padding-bottom: 64px;}
 .journy_wrap .journy_sec .journy_heading h2 {font-size: var(--fz164); text-transform: uppercase; font-family: 'Gilroy-ExtraBold';}
 .journy_wrap .journy_sec .journy_heading h2 span {font-size: var(--fz96); display: block;}
-.journy_scroll {display: flex; gap: 64px; width: 100%;}
-.journy_scroll .journy_grp {width: 800px; min-width: 800px; transform: translateX(100%);}
+.journy_scroll {display: flex; gap: 64px; width: 100%; position: relative;}
+.journy_scroll .journy_grp {width: 800px; min-width: 800px; transform: translateX(100%); position: relative;}
 .journy_scroll .journy_grp .journy_img {width: 100%;}
 .journy_scroll .journy_grp .journy_img img {width: 100%;}
 .journy_scroll_pin {display: -ms-flexbox; display: flex; align-items: center; height: 100vh;}
@@ -1227,6 +1227,16 @@ flex-grow: 0; -ms-flex-negative: 0; flex-shrink: 0; -ms-flex-preferred-size: aut
 .journy_dtl h6 {font-size: 24px; color: #000000; font-family: 'Montserrat-Bold'; padding-bottom: 24px; }
 .journy_dtl p {font-size: 20px; color: #000000; font-family: 'Montserrat-Regular'; line-height:1.6;}
 
+svg {
+    position: fixed;
+    bottom: 12em;
+    left: 36vw;
+    width: 100vw;
+
+    .mask {
+        width: 0;
+    }
+}
 /* section 3 css about page hardik */
 /* ===================================================================== */
 /* section 4 css about page hardik */
@@ -1248,11 +1258,12 @@ flex-grow: 0; -ms-flex-negative: 0; flex-shrink: 0; -ms-flex-preferred-size: aut
 .floor_content h2 {font-size: var(--fz96); color: var(--whitetxt);font-family: 'Gilroy-ExtraBold'; text-transform: uppercase; padding-bottom: 24px;}
 .floor_content p {font-family: 'Montserrat-Medium'; color: var(--whitetxt);}
 .round_dots {position: fixed; right: 60px; bottom: 50%; transform: translate(-50% 50%);}
-.round_dots ul {display: block; position: relative; margin: 0; padding: 0;}
+.round_dots ul {display: flex; position: relative; margin: 0; padding: 0; flex-direction: column; align-items: center;}
 .round_dots ul li:not(:last-child) {padding-bottom: 24px;}
 .round_dots ul li span {position: relative; width: 6px; height: 6px; background-color: #FFF; border-radius: 50%; display: flex; justify-content: center; align-items: center; top: 0; right: 0; transition: all ease-in-out 0.3s;}
 .round_dots ul li span::after{position: absolute; content: ''; width: 0; height: 0; border-radius: 50%; border: 1px solid #FFF; transition: all ease-in-out 0.3s;}
-.round_dots ul li span:hover::after{width: 24px; height: 24px;}
+.round_dots ul li.active span{width: 10px; height: 10px;}
+.round_dots ul li.active span::after{width: 24px; height: 24px;}
 
 /* section 4 css about page hardik */
 /* ===================================================================== */

@@ -809,19 +809,73 @@ jQuery(document).ready(function(){
 		// Galley script End by mit
 		
 
-		let t2 = gsap.timeline({scrollTrigger:{
-			trigger:".journy_scroll_pin",
-			// markers:true,
-			start:"top left",
-			end:"40% left",
-			scrub: 0.5,
-			pin:true
-		}});
+		// let t2 = gsap.timeline({scrollTrigger:{
+		// 	trigger:".journy_scroll_pin",
+		// 	// markers:true,
+		// 	start:"top left",
+		// 	end:"30% left",
+		// 	scrub: 5,
+		// 	pin:true
+		// }});
 
-		t2
-		.to(".journy_scroll",{
-			x:'-100%'
-		});
+		// t2
+		// .to(".journy_scroll",{
+		// 	x:'-100%'
+		// });
+
+		const journyScrollin = document.querySelector(".journy_scroll_pin");
+		const journyScroll = gsap.utils.toArray(".journy_scroll .journy_grp");
+		const mask = document.querySelector(".mask");
+
+		let scrollTween = gsap.to(journyScroll, {
+			xPercent: -100 * (journyScroll.length - 1),
+			ease: "none",
+			scrollTrigger: {
+				trigger: ".journy_scroll_pin",
+				pin: true,
+				scrub: 1,
+				end: "+=3000",
+				//snap: 1 / (sections.length - 1),
+				// markers: true,
+			}
+			});
+			console.log(1 / (journyScroll.length - 1))
+
+			//Progress bar animation
+
+			gsap.to(mask, {
+			width: "100%",
+			scrollTrigger: {
+				trigger: ".journy_sec",
+				start: "top left",
+				scrub: 1
+			}
+			});
+
+			journyScroll.forEach((journy_scroll) => {
+				// grab the scoped text
+				let journy_grp = journy_scroll.querySelectorAll(".journy_grp");
+				
+				// bump out if there's no items to animate
+				if(journy_grp.length === 0)  return 
+				
+				// do a little stagger
+				gsap.from(journy_grp, {
+				  y: -130,
+				  opacity: 0,
+				  duration: 2,
+				  ease: "elastic",
+				  stagger: 0.1,
+				  scrollTrigger: {
+					trigger: section,
+					containerAnimation: scrollTween,
+					start: "left center",
+					markers: true
+				  }
+				});
+			  });
+
+
 		
 		var t1 = gsap.timeline({scrollTrigger:{
 			trigger:".how_do_img",
@@ -830,14 +884,16 @@ jQuery(document).ready(function(){
 			end:"5000px top",
 			scrub: 0.5,
 			pin:true,
-			// toggleClass: {targets: ".how_scroll", className: "active"}
+			
 		}});
 		t1
 		.to("#scroll_2",{
 			y:'0',
+			toggleClass: {targets: ".how_scroll", className: "active"}
 		})
 		.to("#scroll_3",{
-			y:'0'
+			y:'0',
+			toggleClass: {targets: ".how_scroll", className: "active"}
 		})
 		.to("#scroll_4",{
 			y:'0'
@@ -856,9 +912,48 @@ jQuery(document).ready(function(){
 		}
 	}
 
-	jarallax(document.querySelectorAll('.jarallax'), {
-		speed: 2,
-	  });
+	if(jQuery('.about_section').length > 1){
+		jarallax(document.querySelectorAll('.jarallax'), {
+			speed: 2,
+		});
+	}
+
+	// Select all child elements and separate divs
+	const childElements = document.querySelectorAll('.how_do_img .how_scroll');
+	const separateDivs = document.querySelectorAll('.round_dots ul li');
+
+	// Create a new Intersection Observer
+		const observer = new IntersectionObserver(entries => {
+			entries.forEach(entry => {
+				// Find the index of the intersecting child element
+				const index = Array.from(childElements).indexOf(entry.target);
+				console.log(`Child ${index + 1} is intersecting: ${entry.isIntersecting}`);
+
+				if (entry.isIntersecting) {
+					// Add 'active' class to corresponding separate div if it's intersecting
+					separateDivs[index].classList.add('active');
+
+					// Remove 'active' class from all other separate divs
+					separateDivs.forEach((div, idx) => {
+						if (idx !== index) {
+							div.classList.remove('active');
+						}
+					});
+				} else {
+					// Remove 'active' class from corresponding separate div if it's not intersecting
+					separateDivs[index].classList.remove('active');
+				}
+			});
+		}, { threshold: 0.5 }); // Adjust threshold as needed
+
+			// Observe each child element
+			childElements.forEach(child => {
+				observer.observe(child);
+			});
+
+
+					
+
 });
 
 
