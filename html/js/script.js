@@ -318,6 +318,12 @@ jQuery(document).ready(function(){
 
 	// product_detail_page section 4 Slider: End (By Kaushal)
 
+	// Footer animation: Start (By Kaushal)
+
+	$("footer").wrapAll($("<div class='gsap-wrapper'><div class='gsap-content'></div></div>"));
+
+	// Footer animation: End (By Kaushal)
+
 	/*Mobile Menu Start  by Mit*/
 	jQuery(".hamburger_btn").click(function() {
 		'use strict';
