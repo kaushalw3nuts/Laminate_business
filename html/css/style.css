@@ -1254,7 +1254,7 @@ flex-grow: 0; -ms-flex-negative: 0; flex-shrink: 0; -ms-flex-preferred-size: aut
 .journy_dtl h6 {font-size: 24px; color: #000000; font-family: 'Montserrat-Bold'; padding-bottom: 24px; }
 .journy_dtl p {font-size: 20px; color: #000000; font-family: 'Montserrat-Regular'; line-height:1.6;}
 
-svg {
+/* svg {
     position: fixed;
     bottom: 12em;
     left: 36vw;
@@ -1263,7 +1263,7 @@ svg {
     .mask {
         width: 0;
     }
-}
+} */
 /* section 3 css about page hardik */
 /* ===================================================================== */
 /* section 4 css about page hardik */
