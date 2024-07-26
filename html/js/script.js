@@ -320,7 +320,38 @@ jQuery(document).ready(function(){
 
 	// Footer animation: Start (By Kaushal)
 
-	$("footer").wrapAll($("<div class='gsap-wrapper'><div class='gsap-content'></div></div>"));
+	gsap.timeline({
+		scrollTrigger: {
+			trigger: "footer",
+			start: "top center-=200",
+			end: "+=2000",
+			scrub: 2,
+			invalidateOnRefresh: true,
+			onLeave: () => {
+				gsap.to(".footer-top-grid .footer-top-grid-text", { opacity: 1, duration: 1 });
+			},
+			onEnterBack: () => {
+				gsap.to(".footer-top-grid .footer-top-grid-text", { opacity: 0, duration: 1 });
+			},
+		}
+	})
+	.fromTo(".footer-top-grid .footer-top-grid-title svg", {
+		scale: 100,
+	}, {
+		scale: 1,
+	});
+
+	gsap.to("footer", {
+		ease: "none",
+		scrollTrigger: {
+			trigger: "footer",
+			start: "top top",
+			end: "+=2000",
+			scrub: 2,
+			pin: true,
+			invalidateOnRefresh: true,
+		}
+	});
 
 	// Footer animation: End (By Kaushal)
 
