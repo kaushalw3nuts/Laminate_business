@@ -854,7 +854,26 @@ footer .footer-bottom-grid { max-width: 1672px; margin: 0 auto; }
 
 @media (min-width: 1921px) {
 
-
+	footer .footer-top-grid .footer-top-grid-content { padding: 4.997vw 0 3.123vw 0; }
+	.footer-top-grid .footer-top-grid-content .footer-top-grid-title { font-size: 7.288vw; }
+	.footer-top-grid .footer-top-grid-content .footer-top-grid-title svg { width: 87.038vw; height: 23.738vw; }
+	footer .footer-bottom-grid { max-width: 87.038vw; }
+	.footer-bottom-grid .ftr_detail { margin-bottom: 4.997vw; }
+	.footer-bottom-grid .ftr_detail .news_letter { max-width: 32.9vw; }
+	.footer-bottom-grid .ftr_detail .news_letter span { margin-bottom: 0.312vw; }
+	.footer-bottom-grid .ftr_detail .news_letter p { margin-bottom: 1.249vw; }
+	.footer-bottom-grid .ftr_detail .news_letter .news_form .news_mail { min-width: 26.028vw; border-radius: 3.123vw; border: 0.052vw solid var(--whitebg); height: 2.915vw; padding: 0 1.249vw; }
+	.footer-bottom-grid .ftr_detail .news_letter .news_form .sub_button { height: 2.915vw; padding: 0 1.249vw; border: 0.052vw solid var(--whitebg); border-radius: 3.123vw; margin-left: 1.249vw; }
+	.footer-bottom-grid .ftr_detail .contact_detail { max-width: 19.053vw; }
+	.footer-bottom-grid .ftr_detail .contact_detail span { margin-bottom: 1.249vw; }
+	.footer-bottom-grid .ftr_detail .contact_detail .addresh { margin-bottom: 0.833vw; }
+	.footer-bottom-grid .ftr_detail .contact_detail .link a::after { border-bottom: 0.052vw solid var(--whitebg); bottom: 0.208vw; }
+	.footer-bottom-grid .ftr_detail .contact_detail .link + .link { margin-top: 0.833vw; }
+	.footer-bottom-grid .ftr_description { border-bottom: 0.052vw solid var(--black22); padding-bottom: 3.54vw; }
+	.footer-bottom-grid .ftr_description p { max-width: 57.262vw; }
+	.footer-bottom-grid .copy_social { max-width: 52.056vw; padding: 1.249vw 0; }
+	.footer-bottom-grid .copy_social .media_wrap li + li { margin-left: 0.833vw; }
+	.footer-bottom-grid .copy_social .media_wrap li a { width: 1.666vw; }
 }
 
 /* ========== footer style: End (By Kaushal) ========== */
