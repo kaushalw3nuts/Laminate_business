@@ -475,48 +475,76 @@ jQuery(document).ready(function(){
 	gsap.registerPlugin(ScrollTrigger);
 	if(jQuery('.home_hori_track').length > 0){
 		
-	const sections = gsap.utils.toArray(".scroll_ani_img");
-	let maxWidth = 0;
-	console.log();
+	// const sections = gsap.utils.toArray(".scroll_ani_img");
+	// let maxWidth = 0;
+	// console.log();
 
-	const getMaxWidth = () => {
-	maxWidth = 0;
-	sections.forEach((section) => {
-		maxWidth += section.offsetWidth;
-	});
-	};
-	getMaxWidth();
-	ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
+	// const getMaxWidth = () => {
+	// maxWidth = 0;
+	// sections.forEach((section) => {
+	// 	maxWidth += section.offsetWidth;
+	// });
+	// };
+	// getMaxWidth();
+	// ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
 
 
-	ScrollTrigger.defaults({
-	// Defaults are used by all ScrollTriggers
-	toggleActions: "restart pause resume pause", // Scoll effect Forward, Leave, Back, Back Leave
-	// markers: true // Easaly remove markers for production 
-	});
+	// ScrollTrigger.defaults({
+	// // Defaults are used by all ScrollTriggers
+	// toggleActions: "restart pause resume pause", // Scoll effect Forward, Leave, Back, Back Leave
+	// // markers: true // Easaly remove markers for production 
+	// });
 
 	
 
-	const timelineHeader = gsap.timeline({
-		x:() => `-${maxWidth - window.innerWidth}`,
-		scrollTrigger: {
-			id: "ZOOM", // Custom label to the marker
-			trigger: ".home_hori_track", // What element triggers the scroll
-			scrub: 0.5, // Add a small delay of scrolling and animation. `true` is direct
-			// start: "top top", // Start at top of Trigger and at the top of the viewport
-			end: `+=${maxWidth}`, // The element is 500px hight and end 50px from the top of the viewport
-			pin: true, // Pin the element true or false
-			invalidateOnRefresh: true,
-		}
-	});
-	gsap.set(".main_hori_img", { scale: 1.3 });
+	// const timelineHeader = gsap.timeline({
+	// 	x:() => `-${maxWidth - window.innerWidth}`,
+	// 	scrollTrigger: {
+	// 		id: "ZOOM", // Custom label to the marker
+	// 		trigger: ".home_hori_track", // What element triggers the scroll
+	// 		scrub: 0.5, // Add a small delay of scrolling and animation. `true` is direct
+	// 		// start: "top top", // Start at top of Trigger and at the top of the viewport
+	// 		end: `+=${maxWidth}`, // The element is 500px hight and end 50px from the top of the viewport
+	// 		pin: true, // Pin the element true or false
+	// 		invalidateOnRefresh: true,
+	// 	}
+	// });
+	// gsap.set(".main_hori_img", { scale: 1.3 });
 
-		timelineHeader
-	// .to(".main_hori_img",{ scale: 1.3, x:'0', duration: 0},0.1)
-	// .to(".main_hori_img",{scale: 1.15, x:'-50%', duration: 0.5},0.3) 
-	.to(".main_hori_img",{scale: 1,x:'-100%',  duration: 1}, 0)
-	.to(".crafting_wrap",{x:'-100%'},0);
-	   
+	// 	timelineHeader
+	// // .to(".main_hori_img",{ scale: 1.3, x:'0', duration: 0},0.1)
+	// // .to(".main_hori_img",{scale: 1.15, x:'-50%', duration: 0.5},0.3) 
+	// .to(".main_hori_img",{scale: 1,x:'-100%',  duration: 1}, 0)
+	// .to(".crafting_wrap",{x:'-100%'},0);
+
+	let sectionsPan = gsap.utils.toArray(".scroll_ani_img");
+	let scrollTweenSection = gsap.to(sectionsPan, {
+		xPercent: -100 * (sectionsPan.length - 1),
+		ease: "none", // <-- IMPORTANT!
+		scrollTrigger: {
+		  trigger: ".home_hori_track",
+		  pin: true,
+		  scrub: 1,
+		  //snap: directionalSnap(1 / (sections.length - 1)),
+		//   end: "bottom bottom"
+		end: "+=3000"
+		}
+	  });
+	  gsap.set(".main_hori_img img", {scale:1.3});
+	  gsap.to(".main_hori_img img", {
+		scale: 1,
+		// backgroundColor: "#1e90ff",
+		ease: "none",
+		scrollTrigger: {
+		  trigger: ".main_hori_img img",
+		  containerAnimation: scrollTweenSection,
+		  start: "top top",
+		  end: "left bottom",
+		  scrub: true,
+		  id: "2",
+		  markers:true
+		}
+	  });
 	}
 
  
@@ -789,11 +817,14 @@ jQuery(document).ready(function(){
 		// 	slidesPerView: "auto",
 		//   });
 		var swiper_main = new Swiper(".gallery_thumb", {
-			loop: true,
+			slidesPerView: 3,
 			spaceBetween: 30,
-			slidesPerView: "auto",
-			freeMode: true,
-			watchSlidesProgress: true,
+			loop: true,
+			navigation: {
+				nextEl: ".right_arrow_gallery_slider a",
+				prevEl: ".left_arrow_gallery_slider a",
+			  },
+			  allowTouchMove: false,
 		});
 		var swiper2 = new Swiper(".gallery_slider_main", {
 			loop: true,
@@ -802,9 +833,9 @@ jQuery(document).ready(function(){
 			  nextEl: ".right_arrow_gallery_slider a",
 			  prevEl: ".left_arrow_gallery_slider a",
 			},
-			thumbs: {
-			  swiper: swiper_main,
-			},
+			// thumbs: {
+			//   swiper: swiper_main,
+			// },
 		  });
 		// Galley script End by mit
 		
