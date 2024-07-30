@@ -852,7 +852,8 @@ jQuery(document).ready(function(){
 		// 	start:"top left",
 		// 	end:"30% left",
 		// 	scrub: 5,
-		// 	pin:true
+		// 	pin:true,
+			
 		// }});
 
 		// t2
@@ -860,57 +861,48 @@ jQuery(document).ready(function(){
 		// 	x:'-100%'
 		// });
 
-		const journyScrollin = document.querySelector(".journy_scroll_pin");
-		const journyScroll = gsap.utils.toArray(".journy_scroll .journy_grp");
-		const mask = document.querySelector(".mask");
+		// Select the container and the sections
+			const journyScrollin = document.querySelector(".journy_scroll_pin");
+			const journyScroll = gsap.utils.toArray(".journy_scroll .journy_grp");
 
-		let scrollTween = gsap.to(journyScroll, {
+			// Create a horizontal scroll animation
+			let scrollTween = gsap.to(journyScroll, {
 			xPercent: -100 * (journyScroll.length - 1),
 			ease: "none",
 			scrollTrigger: {
 				trigger: ".journy_scroll_pin",
 				pin: true,
 				scrub: 1,
-				end: "+=3000",
-				//snap: 1 / (sections.length - 1),
-				// markers: true,
-			}
-			});
-			console.log(1 / (journyScroll.length - 1))
-
-			//Progress bar animation
-
-			gsap.to(mask, {
-			width: "100%",
-			scrollTrigger: {
-				trigger: ".journy_sec",
-				start: "top left",
-				scrub: 1
+				end: "+=5000",
+				// markers: true, // Uncomment for debugging
 			}
 			});
 
+			// Loop through each journey group and create stagger animations
 			journyScroll.forEach((journy_scroll) => {
-				// grab the scoped text
-				let journy_grp = journy_scroll.querySelectorAll(".journy_grp");
-				
-				// bump out if there's no items to animate
-				if(journy_grp.length === 0)  return 
-				
-				// do a little stagger
-				gsap.from(journy_grp, {
-				  y: -130,
-				  opacity: 0,
-				  duration: 2,
-				  ease: "elastic",
-				  stagger: 0.1,
-				  scrollTrigger: {
-					trigger: section,
-					containerAnimation: scrollTween,
-					start: "left center",
-					markers: true
-				  }
-				});
-			  });
+			// Select the individual journey group elements
+			let journy_grp = journy_scroll.querySelectorAll(".journy_grp");
+			
+			// Skip if there are no items to animate
+			if (journy_grp.length === 0.01) return;
+			
+			// Create stagger animations for each journey group
+			gsap.from(journy_grp, {
+				y: -130,
+				opacity: 0,
+				duration: 2,
+				ease: "elastic",
+				stagger: 0.1,
+				scrollTrigger: {
+				trigger: journy_scroll, // Corrected to use journy_scroll
+				containerAnimation: scrollTween,
+				start: "left 60%",
+				toggleClass: 'active', // Toggle the 'active' class
+				// markers: true, // Uncomment for debugging
+				}
+			});
+			});
+
 
 
 		
@@ -989,9 +981,34 @@ jQuery(document).ready(function(){
 			});
 
 
-					
+			// document.addEventListener('DOMContentLoaded', function () {
+			// 	const journeyGroups = document.querySelectorAll('.journy_grp');
+			
+			// 	const options = {
+			// 		root: null, // Use the viewport as the container
+			// 		rootMargin: '0px',
+			// 		threshold: 0.5 // Trigger when 50% of the element is visible
+			// 	};
+			
+			// 	const observer = new IntersectionObserver((entries, observer) => {
+			// 		entries.forEach(entry => {
+			// 			if (entry.isIntersecting) {
+			// 				entry.target.classList.add('active');
+			// 			} else {
+			// 				entry.target.classList.remove('active');
+			// 			}
+			// 		});
+			// 	}, options);
+			
+			// 	journeyGroups.forEach(group => {
+			// 		observer.observe(group);
+			// 	});
+			// });
+			
 
 });
+
+
 
 
 
