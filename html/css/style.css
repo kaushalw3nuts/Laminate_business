@@ -814,9 +814,10 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 
 /* ========== footer style: Start (By Kaushal) ========== */
 
-footer { padding: 0; background: var(--blackbg); }
+footer { padding: 0; background: var(--blackbg); position: relative; }
+/* .pin-spacer-Footer { background-color: #000; } */
 footer .footer-top-grid { text-align: center; width: 100%; overflow: hidden; }
-footer .footer-top-grid .footer-top-grid-content { overflow: hidden; position: relative; color: var(--whitetxt); padding: 96px 0 60px 0; display: flex; height: 100vh; }
+footer .footer-top-grid .footer-top-grid-content { overflow: hidden; position: relative; color: var(--whitetxt); padding: 96px 0 60px 0; display: flex; }
 .footer-top-grid .footer-top-grid-content .footer-top-grid-title { font-family: 'Gilroy-ExtraBold'; font-size: 140px; line-height: 1.22; text-transform: uppercase; position: relative; }
 .footer-top-grid .footer-top-grid-content .footer-top-grid-title span { opacity: 0; display: block; }
 .footer-top-grid .footer-top-grid-content .footer-top-grid-title svg { width: 1672px; height: 456px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); transform-origin: 47% 22%; }
@@ -962,6 +963,10 @@ body.open_menu .bg_menu_shap { -webkit-transform: scale(75) translate3d(1%, 1%, 
 .home_hori_pin .main_hori_img { width: 100vw; min-width: 100vw; height: 100vh; overflow: hidden; }
 .home_hori_pin .main_hori_img > img { width: 100%; height: 100%; object-fit: cover; }
 
+.blackbgwrap {  width: 200vw; height: 100vh; 
+	/* background-color: #000; */
+	background: linear-gradient(to right,  rgba(255,255,255,1) 50%,rgba(255,255,255,1) 50%,rgba(0,0,0,1) 50%);
+	position: absolute; top: 0; left: 0; }
 .crafting_wrap { width: 1091px; min-width: 1091px; }
 .crafting_wrap .crafting_blk { width: 100%; position: relative; }
 .crafting_blk .crafting_img_wrap { width: 500px; }
@@ -973,6 +978,7 @@ body.open_menu .bg_menu_shap { -webkit-transform: scale(75) translate3d(1%, 1%, 
 .crafting_blk .crafting_img_dtl .sub_title_crafting:after { content: ''; position: absolute; left: 0; top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); width: 23px; height: 1px; background-color: var(--blackbg); margin-bottom: 24px; }
 .crafting_img_dtl h4 { font-family: 'Gilroy-ExtraBold'; font-size: 54px; line-height: normal; color: var(--blacktxt); }
 
+.black_white_text_pin { min-height: 100vh; }
 .black_white_text { width: 100vw; min-width: 100vw;   align-self: center; position: relative; background-color: var(--whitebg); }
 .center_text { max-width: 1750px; margin: 0 auto; position: relative; z-index: 3; mix-blend-mode: exclusion !important; }
 .center_text h2 { font-family: 'Gilroy-ExtraBold'; text-align: center; font-size: 140px; line-height: normal; text-transform: uppercase; color: var(--whitetxt); position: relative; z-index: 2; }

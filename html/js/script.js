@@ -2,42 +2,6 @@
 // Lenis Start (By Mit) 
 // // Scroll Animation Start
 gsap.config({ nullTargetWarn: false });
-// const locoscrolls = new LocomotiveScroll({
-// 	el: document.querySelector('[data-scroll-container]'),
-// 	smooth: true,
-// 	scrollFromAnywhere: false,
-// 	multiplier: 1,
-// 	getDirection: true,
-// 	reloadOnContextChange: true,
-// 	touchMultiplier: 3,
-// 	smoothMobile: 0,
-// 	smartphone: {
-// 	  smooth: !0,
-// 	  breakpoint: 766
-// 	},
-// 	tablet: {
-// 	  smooth: !0,
-// 	  breakpoint: 1010
-// 	},
-//   });
-
-//   locoscrolls.on("scroll", ScrollTrigger.update);
-
-// // --------------------------------------------------------------------------
-// ScrollTrigger.scrollerProxy("[data-scroll-container]", {
-//   scrollTop(value) {
-// 	return arguments.length ? locoscrolls.scrollTo(value, {duration: 0, disableLerp: true}) : locoscrolls.scroll.instance.scroll.y;
-//   }, 
-//   getBoundingClientRect() {
-// 	return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-//   },
-//   pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
-// });
-
-// ScrollTrigger.addEventListener("refresh", () => locoscrolls.update());
-// ScrollTrigger.defaults({ scroller: "[data-scroll-container]" });
-// // --- SETUP END ---
-// // --------------------------------------------------------------------------
 
 const locoscrolls = new Lenis({
     duration: 1.2,
@@ -55,9 +19,9 @@ gsap.ticker.add((time) => {
 });
 
 
-// Lenis End (By Mit)
-
 gsap.registerPlugin(ScrollTrigger, SplitText);
+
+// Lenis End (By Mit)
 
 // View port Height Generate Start
 
@@ -78,6 +42,7 @@ jQuery(window).on('load' ,function() {
 jQuery(window).resize(function() {
 	bluesticky();
 	getRotedImage();
+	getSimpleImage();
 });
 
 
@@ -554,9 +519,23 @@ jQuery(document).ready(function(){
 	// .to(".main_hori_img",{scale: 1,x:'-100%',  duration: 1}, 0)
 	// .to(".crafting_wrap",{x:'-100%'},0);
 
-	let sectionsPan = gsap.utils.toArray(".scroll_ani_img");
+	
+	const sectionsPan = gsap.utils.toArray(".scroll_ani_img");
+	let maxWidth = 0;
+
+	const getMaxWidth = () => {
+	maxWidth = 0;
+	sectionsPan.forEach((section) => {
+		maxWidth += section.offsetWidth;
+	});
+	};
+	getMaxWidth();
+	ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
+
+
+	// let sectionsPan = gsap.utils.toArray(".scroll_ani_img");
 	let scrollTweenSection = gsap.to(sectionsPan, {
-		xPercent: -100 * (sectionsPan.length - 1),
+		x: () => `-${maxWidth - window.innerWidth}`,
 		ease: "none", // <-- IMPORTANT!
 		scrollTrigger: {
 		  trigger: ".home_hori_track",
@@ -564,24 +543,72 @@ jQuery(document).ready(function(){
 		  scrub: 1,
 		  //snap: directionalSnap(1 / (sections.length - 1)),
 		//   end: "bottom bottom"
-		end: "+=3000"
+		end: () => `+=${maxWidth}`,
+   		 invalidateOnRefresh: true
 		}
 	  });
 	  gsap.set(".main_hori_img img", {scale:1.3});
+	  gsap.set(".crafting_blk", {xPercent:0});
 	  gsap.to(".main_hori_img img", {
 		scale: 1,
 		// backgroundColor: "#1e90ff",
 		ease: "none",
 		scrollTrigger: {
-		  trigger: ".main_hori_img img",
-		  containerAnimation: scrollTweenSection,
-		  start: "top top",
-		  end: "left bottom",
-		  scrub: true,
-		  id: "2",
-		  markers:true
+			trigger: ".main_hori_img img",
+			containerAnimation: scrollTweenSection,
+			//   start: "top top",
+			//   end: "left bottom",
+			start: "left center",
+			end: "right left",
+			scrub: true,
 		}
 	  });
+	gsap.to(".crafting_blk", {
+		xPercent: -15,
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".crafting_blk",
+			containerAnimation: scrollTweenSection,
+			start: "left right",
+			end: "right center",
+			scrub: true,
+		}
+	}, "<");
+
+	gsap.to(".blackbgwrap", {
+		xPercent:-50,
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".black_white_text_pin",
+			containerAnimation: scrollTweenSection,
+			start: "left left",
+			end: "right center",
+			// pin: ".black_white_text_pin",
+			scrub: true,
+			// pinType: "transform",
+			// id: "BG-BLACK",
+			// markers:true
+		}
+	}, "<");
+	gsap.to(".pintxt", {
+		xPercent:100,
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".black_white_text_pin",
+			containerAnimation: scrollTweenSection,
+			start: "left left",
+			end: "right left",
+			// end:  () => `-=${jQuery('.blackbgwrap').offsetWidth}`,
+			pin: ".black_white_text_pin",
+			scrub: true,
+			pinType: "transform",
+			id: "TXT",
+			markers:true
+		}
+	}, "<");
+	
+	// getSimpleImage();
+	
 	}
 
  
@@ -794,7 +821,7 @@ jQuery(document).ready(function(){
 			jQuery(window).on( "scroll", function() {
 					// console.log(getofftop);
 					// console.log();
-					console.log(jQuery(window).scrollTop() >= projectoffset);
+					// console.log(jQuery(window).scrollTop() >= projectoffset);
 					if (jQuery(window).scrollTop() >= projectoffset) {
 						
 						jQuery(".broser_wrap").addClass("project1");
@@ -907,7 +934,7 @@ jQuery(document).ready(function(){
 				// markers: true,
 			}
 			});
-			console.log(1 / (journyScroll.length - 1))
+			// console.log(1 / (journyScroll.length - 1))
 
 			//Progress bar animation
 
@@ -995,7 +1022,7 @@ jQuery(document).ready(function(){
 			entries.forEach(entry => {
 				// Find the index of the intersecting child element
 				const index = Array.from(childElements).indexOf(entry.target);
-				console.log(`Child ${index + 1} is intersecting: ${entry.isIntersecting}`);
+				// console.log(`Child ${index + 1} is intersecting: ${entry.isIntersecting}`);
 
 				if (entry.isIntersecting) {
 					// Add 'active' class to corresponding separate div if it's intersecting
@@ -1032,7 +1059,19 @@ function getRotedImage() {
 		// var position = p.position();
 		jQuery(this).removeClass('active');
 		// jQuery(".center_text_img[data-outer-image]").removeClass('active')
-		console.log(jQuery(this).offset().left - jQuery(this).parents('.black_white_text').offset().left);
+		// console.log(jQuery(this).offset().left - jQuery(this).parents('.black_white_text').offset().left);
+		jQuery( ".center_text_img[data-outer-image="+jQuery(this).attr('data-inner-image')+"]" ).css({ left: + jQuery(this).offset().left - jQuery(this).parents('.black_white_text').offset().left , 'top': + jQuery(this).offset().top - jQuery(this).parents('.black_white_text').offset().top }).addClass('active');
+		jQuery(this).addClass('active')
+		// console.log();
+	});
+}
+function getSimpleImage() {
+	jQuery('.center_text_img[data-inner-image]').each(function(){
+		// var p = jQuery(this);
+		// var position = p.position();
+		jQuery(this).removeClass('active');
+		// jQuery(".center_text_img[data-outer-image]").removeClass('active')
+		// console.log(jQuery(this).offset().left - jQuery(this).parents('.black_white_text').offset().left);
 		jQuery( ".center_text_img[data-outer-image="+jQuery(this).attr('data-inner-image')+"]" ).css({ left: + jQuery(this).offset().left - jQuery(this).parents('.black_white_text').offset().left , 'top': + jQuery(this).offset().top - jQuery(this).parents('.black_white_text').offset().top }).addClass('active');
 		jQuery(this).addClass('active')
 		// console.log();
