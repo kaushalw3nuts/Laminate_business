@@ -320,38 +320,26 @@ jQuery(document).ready(function(){
 
 	// Footer animation: Start (By Kaushal)
 
-	gsap.timeline({
-		scrollTrigger: {
-			trigger: "footer",
-			start: "top center-=200",
-			end: "+=2000",
-			scrub: 2,
-			invalidateOnRefresh: true,
-			onLeave: () => {
-				gsap.to(".footer-top-grid .footer-top-grid-text", { opacity: 1, duration: 1 });
-			},
-			onEnterBack: () => {
-				gsap.to(".footer-top-grid .footer-top-grid-text", { opacity: 0, duration: 1 });
-			},
+	const footerSvgHandler = () => {
+		gsap.fromTo('.footer-top-grid .footer-top-grid-title svg', {
+			scale: 80,
+		},
+		{
+			scale: 1, 
+			scrollTrigger: {
+				trigger: "footer",
+				start: "top top",
+				end: "+=1000",
+				scrub: 2,
+				pin: true,
+				invalidateOnRefresh: true,
+			}
 		}
-	})
-	.fromTo(".footer-top-grid .footer-top-grid-title svg", {
-		scale: 100,
-	}, {
-		scale: 1,
-	});
-
-	gsap.to("footer", {
-		ease: "none",
-		scrollTrigger: {
-			trigger: "footer",
-			start: "top top",
-			end: "+=2000",
-			scrub: 2,
-			pin: true,
-			invalidateOnRefresh: true,
-		}
-	});
+		)
+	}
+	setTimeout(() => {
+		footerSvgHandler()
+	},2000)
 
 	// Footer animation: End (By Kaushal)
 
