@@ -876,22 +876,6 @@ jQuery(document).ready(function(){
 		  });
 		// Galley script End by mit
 		
-
-		// let t2 = gsap.timeline({scrollTrigger:{
-		// 	trigger:".journy_scroll_pin",
-		// 	// markers:true,
-		// 	start:"top left",
-		// 	end:"30% left",
-		// 	scrub: 5,
-		// 	pin:true,
-			
-		// }});
-
-		// t2
-		// .to(".journy_scroll",{
-		// 	x:'-100%'
-		// });
-
 		// Select the container and the sections
 			const journyScrollin = document.querySelector(".journy_scroll_pin");
 			const journyScroll = gsap.utils.toArray(".journy_scroll .journy_grp");
@@ -929,7 +913,6 @@ jQuery(document).ready(function(){
 				containerAnimation: scrollTween,
 				start: "left 60%",
 				toggleClass: 'active', // Toggle the 'active' class
-				// markers: true, // Uncomment for debugging
 				}
 			});
 			});
@@ -983,59 +966,33 @@ jQuery(document).ready(function(){
 	const separateDivs = document.querySelectorAll('.round_dots ul li');
 
 	// Create a new Intersection Observer
-		const observer = new IntersectionObserver(entries => {
-			entries.forEach(entry => {
-				// Find the index of the intersecting child element
-				const index = Array.from(childElements).indexOf(entry.target);
-				console.log(`Child ${index + 1} is intersecting: ${entry.isIntersecting}`);
+	const observer = new IntersectionObserver(entries => {
+		entries.forEach(entry => {
+			// Find the index of the intersecting child element
+			const index = Array.from(childElements).indexOf(entry.target);
+			console.log(`Child ${index + 1} is intersecting: ${entry.isIntersecting}`);
 
-				if (entry.isIntersecting) {
-					// Add 'active' class to corresponding separate div if it's intersecting
-					separateDivs[index].classList.add('active');
+			if (entry.isIntersecting) {
+				// Add 'active' class to corresponding separate div if it's intersecting
+				separateDivs[index].classList.add('active');
 
-					// Remove 'active' class from all other separate divs
-					separateDivs.forEach((div, idx) => {
-						if (idx !== index) {
-							div.classList.remove('active');
-						}
-					});
-				} else {
-					// Remove 'active' class from corresponding separate div if it's not intersecting
-					separateDivs[index].classList.remove('active');
-				}
-			});
-		}, { threshold: 0.5 }); // Adjust threshold as needed
+				// Remove 'active' class from all other separate divs
+				separateDivs.forEach((div, idx) => {
+					if (idx !== index) {
+						div.classList.remove('active');
+					}
+				});
+			} else {
+				// Remove 'active' class from corresponding separate div if it's not intersecting
+				separateDivs[index].classList.remove('active');
+			}
+		});
+	}, { threshold: 0.5 }); // Adjust threshold as needed
 
-			// Observe each child element
-			childElements.forEach(child => {
-				observer.observe(child);
-			});
-
-
-			// document.addEventListener('DOMContentLoaded', function () {
-			// 	const journeyGroups = document.querySelectorAll('.journy_grp');
-			
-			// 	const options = {
-			// 		root: null, // Use the viewport as the container
-			// 		rootMargin: '0px',
-			// 		threshold: 0.5 // Trigger when 50% of the element is visible
-			// 	};
-			
-			// 	const observer = new IntersectionObserver((entries, observer) => {
-			// 		entries.forEach(entry => {
-			// 			if (entry.isIntersecting) {
-			// 				entry.target.classList.add('active');
-			// 			} else {
-			// 				entry.target.classList.remove('active');
-			// 			}
-			// 		});
-			// 	}, options);
-			
-			// 	journeyGroups.forEach(group => {
-			// 		observer.observe(group);
-			// 	});
-			// });
-			
+	// Observe each child element
+	childElements.forEach(child => {
+		observer.observe(child);
+	});
 
 });
 
@@ -1055,3 +1012,199 @@ function getRotedImage() {
 		// console.log();
 	});
 }
+
+
+let objAct = {
+	'product_gallery': {
+		'start': 'top 0%',
+		'item': [{
+			'class': 'item0',
+			'duration': '0.5',
+			'yPercent': '-16'
+		}, {
+			'class': 'item1',
+			'duration': '0.8',
+			'yPercent': '-40'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-30'
+		}, {
+			'class': 'inn-desc',
+			'duration': '0.5',
+			'yPercent': '-60'
+		}]
+	},
+	'acrylic_products': {
+		'start': 'top 60%',
+		'item': [{
+			'class': 'item0',
+			'duration': '1',
+			'yPercent': '-30'
+		}, {
+			'class': 'item1',
+			'duration': '1.2',
+			'yPercent': '-20'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-20'
+		}, {
+			'class': 'inn-desc',
+			'duration': '1',
+			'yPercent': '-20'
+		}]
+	},
+	'asa_products': {
+		'start': 'top 60%',
+		'item': [{
+			'class': 'item0',
+			'duration': '1',
+			'yPercent': '-40'
+		}, {
+			'class': 'item1',
+			'duration': '1.2',
+			'yPercent': '-30'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-40'
+		}, {
+			'class': 'inn-desc',
+			'duration': '1',
+			'yPercent': '-20'
+		}]
+	},
+	'plywood_products': {
+		'start': 'top 60%',
+		'item': [{
+			'class': 'item0',
+			'duration': '1',
+			'yPercent': '-30'
+		}, {
+			'class': 'item1',
+			'duration': '1.2',
+			'yPercent': '-20'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-20'
+		}, {
+			'class': 'inn-desc',
+			'duration': '1',
+			'yPercent': '-20'
+		}]
+	},
+	'veneer_products': {
+		'start': 'top 60%',
+		'item': [{
+			'class': 'item0',
+			'duration': '1',
+			'yPercent': '-40'
+		}, {
+			'class': 'item1',
+			'duration': '1.2',
+			'yPercent': '-30'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-40'
+		}, {
+			'class': 'inn-desc',
+			'duration': '1',
+			'yPercent': '-20'
+		}]
+	},
+	'corian_products': {
+		'start': 'top 60%',
+		'item': [{
+			'class': 'item0',
+			'duration': '1',
+			'yPercent': '-30'
+		}, {
+			'class': 'item1',
+			'duration': '1.2',
+			'yPercent': '-20'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-20'
+		}, {
+			'class': 'inn-desc',
+			'duration': '1',
+			'yPercent': '-20'
+		}]
+	},
+	'louvers_products': {
+		'start': 'top 60%',
+		'item': [{
+			'class': 'item0',
+			'duration': '1',
+			'yPercent': '-40'
+		}, {
+			'class': 'item1',
+			'duration': '1.2',
+			'yPercent': '-30'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-40'
+		}, {
+			'class': 'inn-desc',
+			'duration': '1',
+			'yPercent': '-20'
+		}]
+	},
+	'laminate_sheet_products': {
+		'start': 'top 60%',
+		'item': [{
+			'class': 'item0',
+			'duration': '1',
+			'yPercent': '-30'
+		}, {
+			'class': 'item1',
+			'duration': '1.2',
+			'yPercent': '-20'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-20'
+		}, {
+			'class': 'inn-desc',
+			'duration': '1',
+			'yPercent': '-20'
+		}]
+	}
+};
+
+$(document).ready(function() {
+	$('.inn-page').addClass('loaded');
+
+	setTimeout(()=>{
+		$('.inn-page').removeClass('loaded')
+	}, 3000);
+	actionBlock();
+});
+
+function actionBlock() {
+	var e = {};
+	$.each(objAct, function(t, n) {
+		e[t] = [];
+		$.each(n['item'], function(c, s) {
+			e[t][c] = gsap.timeline({
+				scrollTrigger: {
+					trigger: '.' + t,
+					start: n['start'],
+					end: '+=1000',
+					scrub: 1,
+					pin: !1,
+					markers: !1,
+				}
+			});
+			e[t][c].to('.' + t + ' .' + s['class'], {
+				yPercent: s['yPercent'],
+				duration: s['duration']
+			})
+		})
+	})
+};
