@@ -285,38 +285,26 @@ jQuery(document).ready(function(){
 
 	// Footer animation: Start (By Kaushal)
 
-	gsap.timeline({
-		scrollTrigger: {
-			trigger: "footer",
-			start: "top center-=200",
-			end: "+=2000",
-			scrub: 2,
-			invalidateOnRefresh: true,
-			onLeave: () => {
-				gsap.to(".footer-top-grid .footer-top-grid-text", { opacity: 1, duration: 1 });
-			},
-			onEnterBack: () => {
-				gsap.to(".footer-top-grid .footer-top-grid-text", { opacity: 0, duration: 1 });
-			},
+	const footerSvgHandler = () => {
+		gsap.fromTo('.footer-top-grid .footer-top-grid-title svg', {
+			scale: 80,
+		},
+		{
+			scale: 1, 
+			scrollTrigger: {
+				trigger: "footer",
+				start: "top top",
+				end: "+=1000",
+				scrub: 2,
+				pin: true,
+				invalidateOnRefresh: true,
+			}
 		}
-	})
-	.fromTo(".footer-top-grid .footer-top-grid-title svg", {
-		scale: 100,
-	}, {
-		scale: 1,
-	});
-
-	gsap.to("footer", {
-		ease: "none",
-		scrollTrigger: {
-			trigger: "footer",
-			start: "top top",
-			end: "+=2000",
-			scrub: 2,
-			pin: true,
-			invalidateOnRefresh: true,
-		}
-	});
+		)
+	}
+	setTimeout(() => {
+		footerSvgHandler()
+	},2000)
 
 	// Footer animation: End (By Kaushal)
 
@@ -903,72 +891,47 @@ jQuery(document).ready(function(){
 		  });
 		// Galley script End by mit
 		
+		// Select the container and the sections
+			const journyScrollin = document.querySelector(".journy_scroll_pin");
+			const journyScroll = gsap.utils.toArray(".journy_scroll .journy_grp");
 
-		// let t2 = gsap.timeline({scrollTrigger:{
-		// 	trigger:".journy_scroll_pin",
-		// 	// markers:true,
-		// 	start:"top left",
-		// 	end:"30% left",
-		// 	scrub: 5,
-		// 	pin:true
-		// }});
-
-		// t2
-		// .to(".journy_scroll",{
-		// 	x:'-100%'
-		// });
-
-		const journyScrollin = document.querySelector(".journy_scroll_pin");
-		const journyScroll = gsap.utils.toArray(".journy_scroll .journy_grp");
-		const mask = document.querySelector(".mask");
-
-		let scrollTween = gsap.to(journyScroll, {
+			// Create a horizontal scroll animation
+			let scrollTween = gsap.to(journyScroll, {
 			xPercent: -100 * (journyScroll.length - 1),
 			ease: "none",
 			scrollTrigger: {
 				trigger: ".journy_scroll_pin",
 				pin: true,
 				scrub: 1,
-				end: "+=3000",
-				//snap: 1 / (sections.length - 1),
-				// markers: true,
-			}
-			});
-			// console.log(1 / (journyScroll.length - 1))
-
-			//Progress bar animation
-
-			gsap.to(mask, {
-			width: "100%",
-			scrollTrigger: {
-				trigger: ".journy_sec",
-				start: "top left",
-				scrub: 1
+				end: "+=5000",
+				// markers: true, // Uncomment for debugging
 			}
 			});
 
+			// Loop through each journey group and create stagger animations
 			journyScroll.forEach((journy_scroll) => {
-				// grab the scoped text
-				let journy_grp = journy_scroll.querySelectorAll(".journy_grp");
-				
-				// bump out if there's no items to animate
-				if(journy_grp.length === 0)  return 
-				
-				// do a little stagger
-				gsap.from(journy_grp, {
-				  y: -130,
-				  opacity: 0,
-				  duration: 2,
-				  ease: "elastic",
-				  stagger: 0.1,
-				  scrollTrigger: {
-					trigger: section,
-					containerAnimation: scrollTween,
-					start: "left center",
-					markers: true
-				  }
-				});
-			  });
+			// Select the individual journey group elements
+			let journy_grp = journy_scroll.querySelectorAll(".journy_grp");
+			
+			// Skip if there are no items to animate
+			if (journy_grp.length === 0.01) return;
+			
+			// Create stagger animations for each journey group
+			gsap.from(journy_grp, {
+				y: -130,
+				opacity: 0,
+				duration: 2,
+				ease: "elastic",
+				stagger: 0.1,
+				scrollTrigger: {
+				trigger: journy_scroll, // Corrected to use journy_scroll
+				containerAnimation: scrollTween,
+				start: "left 60%",
+				toggleClass: 'active', // Toggle the 'active' class
+				}
+			});
+			});
+
 
 
 		
@@ -1018,38 +981,37 @@ jQuery(document).ready(function(){
 	const separateDivs = document.querySelectorAll('.round_dots ul li');
 
 	// Create a new Intersection Observer
-		const observer = new IntersectionObserver(entries => {
-			entries.forEach(entry => {
-				// Find the index of the intersecting child element
-				const index = Array.from(childElements).indexOf(entry.target);
-				// console.log(`Child ${index + 1} is intersecting: ${entry.isIntersecting}`);
+	const observer = new IntersectionObserver(entries => {
+		entries.forEach(entry => {
+			// Find the index of the intersecting child element
+			const index = Array.from(childElements).indexOf(entry.target);
+			console.log(`Child ${index + 1} is intersecting: ${entry.isIntersecting}`);
 
-				if (entry.isIntersecting) {
-					// Add 'active' class to corresponding separate div if it's intersecting
-					separateDivs[index].classList.add('active');
+			if (entry.isIntersecting) {
+				// Add 'active' class to corresponding separate div if it's intersecting
+				separateDivs[index].classList.add('active');
 
-					// Remove 'active' class from all other separate divs
-					separateDivs.forEach((div, idx) => {
-						if (idx !== index) {
-							div.classList.remove('active');
-						}
-					});
-				} else {
-					// Remove 'active' class from corresponding separate div if it's not intersecting
-					separateDivs[index].classList.remove('active');
-				}
-			});
-		}, { threshold: 0.5 }); // Adjust threshold as needed
+				// Remove 'active' class from all other separate divs
+				separateDivs.forEach((div, idx) => {
+					if (idx !== index) {
+						div.classList.remove('active');
+					}
+				});
+			} else {
+				// Remove 'active' class from corresponding separate div if it's not intersecting
+				separateDivs[index].classList.remove('active');
+			}
+		});
+	}, { threshold: 0.5 }); // Adjust threshold as needed
 
-			// Observe each child element
-			childElements.forEach(child => {
-				observer.observe(child);
-			});
-
-
-					
+	// Observe each child element
+	childElements.forEach(child => {
+		observer.observe(child);
+	});
 
 });
+
+
 
 
 
@@ -1077,3 +1039,199 @@ function getSimpleImage() {
 		// console.log();
 	});
 }
+
+
+let objAct = {
+	'product_gallery': {
+		'start': 'top 0%',
+		'item': [{
+			'class': 'item0',
+			'duration': '0.5',
+			'yPercent': '-16'
+		}, {
+			'class': 'item1',
+			'duration': '0.8',
+			'yPercent': '-40'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-30'
+		}, {
+			'class': 'inn-desc',
+			'duration': '0.5',
+			'yPercent': '-60'
+		}]
+	},
+	'acrylic_products': {
+		'start': 'top 60%',
+		'item': [{
+			'class': 'item0',
+			'duration': '1',
+			'yPercent': '-30'
+		}, {
+			'class': 'item1',
+			'duration': '1.2',
+			'yPercent': '-20'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-20'
+		}, {
+			'class': 'inn-desc',
+			'duration': '1',
+			'yPercent': '-20'
+		}]
+	},
+	'asa_products': {
+		'start': 'top 60%',
+		'item': [{
+			'class': 'item0',
+			'duration': '1',
+			'yPercent': '-40'
+		}, {
+			'class': 'item1',
+			'duration': '1.2',
+			'yPercent': '-30'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-40'
+		}, {
+			'class': 'inn-desc',
+			'duration': '1',
+			'yPercent': '-20'
+		}]
+	},
+	'plywood_products': {
+		'start': 'top 60%',
+		'item': [{
+			'class': 'item0',
+			'duration': '1',
+			'yPercent': '-30'
+		}, {
+			'class': 'item1',
+			'duration': '1.2',
+			'yPercent': '-20'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-20'
+		}, {
+			'class': 'inn-desc',
+			'duration': '1',
+			'yPercent': '-20'
+		}]
+	},
+	'veneer_products': {
+		'start': 'top 60%',
+		'item': [{
+			'class': 'item0',
+			'duration': '1',
+			'yPercent': '-40'
+		}, {
+			'class': 'item1',
+			'duration': '1.2',
+			'yPercent': '-30'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-40'
+		}, {
+			'class': 'inn-desc',
+			'duration': '1',
+			'yPercent': '-20'
+		}]
+	},
+	'corian_products': {
+		'start': 'top 60%',
+		'item': [{
+			'class': 'item0',
+			'duration': '1',
+			'yPercent': '-30'
+		}, {
+			'class': 'item1',
+			'duration': '1.2',
+			'yPercent': '-20'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-20'
+		}, {
+			'class': 'inn-desc',
+			'duration': '1',
+			'yPercent': '-20'
+		}]
+	},
+	'louvers_products': {
+		'start': 'top 60%',
+		'item': [{
+			'class': 'item0',
+			'duration': '1',
+			'yPercent': '-40'
+		}, {
+			'class': 'item1',
+			'duration': '1.2',
+			'yPercent': '-30'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-40'
+		}, {
+			'class': 'inn-desc',
+			'duration': '1',
+			'yPercent': '-20'
+		}]
+	},
+	'laminate_sheet_products': {
+		'start': 'top 60%',
+		'item': [{
+			'class': 'item0',
+			'duration': '1',
+			'yPercent': '-30'
+		}, {
+			'class': 'item1',
+			'duration': '1.2',
+			'yPercent': '-20'
+		}, {
+			'class': 'item2',
+			'duration': '1',
+			'yPercent': '-20'
+		}, {
+			'class': 'inn-desc',
+			'duration': '1',
+			'yPercent': '-20'
+		}]
+	}
+};
+
+$(document).ready(function() {
+	$('.inn-page').addClass('loaded');
+
+	setTimeout(()=>{
+		$('.inn-page').removeClass('loaded')
+	}, 3000);
+	actionBlock();
+});
+
+function actionBlock() {
+	var e = {};
+	$.each(objAct, function(t, n) {
+		e[t] = [];
+		$.each(n['item'], function(c, s) {
+			e[t][c] = gsap.timeline({
+				scrollTrigger: {
+					trigger: '.' + t,
+					start: n['start'],
+					end: '+=1000',
+					scrub: 1,
+					pin: !1,
+					markers: !1,
+				}
+			});
+			e[t][c].to('.' + t + ' .' + s['class'], {
+				yPercent: s['yPercent'],
+				duration: s['duration']
+			})
+		})
+	})
+};
