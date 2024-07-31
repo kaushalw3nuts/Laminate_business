@@ -575,23 +575,23 @@ jQuery(document).ready(function(){
 		}
 	}, "<");
 
-	gsap.to(".blackbgwrap", {
-		xPercent:-50,
-		ease: "none",
-		scrollTrigger: {
-			trigger: ".black_white_text_pin",
-			containerAnimation: scrollTweenSection,
-			start: "left left",
-			end: "right center",
-			// pin: ".black_white_text_pin",
-			scrub: true,
-			// pinType: "transform",
-			// id: "BG-BLACK",
-			// markers:true
-		}
-	}, "<");
+	// gsap.to(".blackbgwrap", {
+	// 	xPercent:-50,
+	// 	ease: "none",
+	// 	scrollTrigger: {
+	// 		trigger: ".black_white_text_pin",
+	// 		containerAnimation: scrollTweenSection,
+	// 		start: "left center",
+	// 		end: "right center",
+	// 		// pin: ".black_white_text_pin",
+	// 		scrub: true,
+	// 		// pinType: "transform",
+	// 		// id: "BG-BLACK",
+	// 		// markers:true
+	// 	}
+	// }, "<");
 	gsap.to(".pintxt", {
-		xPercent:100,
+		xPercent:110,
 		ease: "none",
 		scrollTrigger: {
 			trigger: ".black_white_text_pin",
