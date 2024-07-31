@@ -815,7 +815,6 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 /* ========== footer style: Start (By Kaushal) ========== */
 
 footer { padding: 0; background: var(--blackbg); position: relative; }
-/* .pin-spacer-Footer { background-color: #000; } */
 footer .footer-top-grid { text-align: center; width: 100%; overflow: hidden; }
 footer .footer-top-grid .footer-top-grid-content { overflow: hidden; position: relative; color: var(--whitetxt); padding: 96px 0 60px 0; display: flex; }
 .footer-top-grid .footer-top-grid-content .footer-top-grid-title { font-family: 'Gilroy-ExtraBold'; font-size: 140px; line-height: 1.22; text-transform: uppercase; position: relative; }
