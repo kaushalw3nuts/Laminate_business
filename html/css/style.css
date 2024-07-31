@@ -967,20 +967,20 @@ body.open_menu .bg_menu_shap { -webkit-transform: scale(75) translate3d(1%, 1%, 
 	/* background-color: #000; */
 	background: linear-gradient(to right,  rgba(255,255,255,1) 50%,rgba(255,255,255,1) 50%,rgba(0,0,0,1) 50%);
 	position: absolute; top: 0; left: 0; }
-.crafting_wrap { width: 1091px; min-width: 1091px; }
+.crafting_wrap { width: 1091px; min-width: 1091px; align-self: flex-end; }
 .crafting_wrap .crafting_blk { width: 100%; position: relative; }
 .crafting_blk .crafting_img_wrap { width: 500px; }
 .crafting_blk .crafting_img_wrap .img_box_crafting { width: 100%; position: relative; overflow: hidden; }
 .crafting_blk .crafting_img_wrap .img_box_crafting::after { content: ''; display: block; padding: 40% 50%; }
 .crafting_blk .crafting_img_wrap .img_box_crafting img { position: absolute; top: 0; left: 0; width: 120%; height: 120%; object-fit: cover; }
-.crafting_blk .crafting_img_dtl { width: 100%; position: relative; padding: 44px 0 0 294px; }
+.crafting_blk .crafting_img_dtl { width: 100%; position: relative; padding: 44px 0 116px 294px; }
 .crafting_blk .crafting_img_dtl .sub_title_crafting { position: relative; padding: 0 0 0 32px; font-family: 'Montserrat-SemiBold'; font-size: 16px; line-height: 1.5; color: var(--blacktxt); }
 .crafting_blk .crafting_img_dtl .sub_title_crafting:after { content: ''; position: absolute; left: 0; top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); width: 23px; height: 1px; background-color: var(--blackbg); margin-bottom: 24px; }
 .crafting_img_dtl h4 { font-family: 'Gilroy-ExtraBold'; font-size: 54px; line-height: normal; color: var(--blacktxt); }
 
-.black_white_text_pin { min-height: 100vh; }
+.black_white_text_pin { min-height: 100vh; display: -ms-flexbox; display: flex; }
 .black_white_text { width: 100vw; min-width: 100vw;   align-self: center; position: relative; background-color: var(--whitebg); }
-.center_text { max-width: 1750px; margin: 0 auto; position: relative; z-index: 3; mix-blend-mode: exclusion !important; }
+.center_text { max-width: 1750px; margin: 0 auto; position: relative; z-index: 3; mix-blend-mode: exclusion !important; align-self: center; }
 .blank_div { width: 100vw; min-width: 100vw; }
 .center_text h2 { font-family: 'Gilroy-ExtraBold'; text-align: center; font-size: 140px; line-height: normal; text-transform: uppercase; color: var(--whitetxt); position: relative; z-index: 2; }
 
