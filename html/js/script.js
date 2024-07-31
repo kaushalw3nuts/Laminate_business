@@ -45,6 +45,11 @@ jQuery(window).resize(function() {
 	getSimpleImage();
 });
 
+// wow js (By Kaushal)
+
+new WOW().init();
+
+// wow js (By Kaushal)
 
 jQuery(document).ready(function(){
 	
