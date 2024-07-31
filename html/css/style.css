@@ -978,18 +978,24 @@ body.open_menu .bg_menu_shap { -webkit-transform: scale(75) translate3d(1%, 1%, 
 .crafting_img_dtl h4 { font-family: 'Gilroy-ExtraBold'; font-size: 54px; line-height: normal; color: var(--blacktxt); }
 
 .black_white_text_pin { min-height: 100vh; display: -ms-flexbox; display: flex; }
+.black_white_text_pin .center_text_img[data-outer-image] { position: absolute; }
 .black_white_text { width: 100vw; min-width: 100vw;   align-self: center; position: relative; background-color: var(--whitebg); }
 .center_text { max-width: 1750px; margin: 0 auto; position: relative; z-index: 3; mix-blend-mode: exclusion !important; align-self: center; }
 .blank_div { width: 100vw; min-width: 100vw; }
 .center_text h2 { font-family: 'Gilroy-ExtraBold'; text-align: center; font-size: 140px; line-height: normal; text-transform: uppercase; color: var(--whitetxt); position: relative; z-index: 2; }
-
-.center_text .center_text_img  { position: absolute; width: 300px; overflow: hidden; border-radius: 50%; }
+.black_white_text_pin .center_text_img[data-outer-image] ,
+.center_text .center_text_img  { position: absolute; width: 300px; overflow: hidden; border-radius: 50%; z-index: 4; }
 .center_text .center_text_img.center_text_img_1 { top: -208px; left: 15px; }
 .center_text .center_text_img.center_text_img_2 { top: -198px; right: 16px; }
 .center_text .center_text_img.center_text_img_3 { bottom: -208px; left: 275px; }
+.black_white_text_pin .center_text_img[data-outer-image]::after,
 .center_text .center_text_img:after { content: ''; display: block; padding: 50% 50%; }
+.black_white_text_pin .center_text_img[data-outer-image] img,
 .center_text .center_text_img img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
 .black_bgover { position: absolute; top: 0; right: 0; background-color: var(--blackbg); bottom: 0; width: 0; }
+.black_white_text_pin .center_text_img[data-inner-image] { opacity: 0; visibility: hidden; }
+
+.about_dtl_wrp.scroll_ani_img { position: relative; }
 
 .about_dtl_wrp { min-width: 100vw; width: 100vw; }
 .about_dtl_block { display: -ms-flexbox; display: flex; width: 100%; }

@@ -331,26 +331,20 @@ jQuery(document).ready(function(){
 		let menuItem = document.querySelectorAll(".dtl_list_txt");
 			let menuImageBox = document.querySelectorAll(".img_on_hover");
 		
-			// adding eventListeners to all the menuItems.
 			for (let i = 0; i < jQuery('.dtl_list_txt').length; i++) {
-			//   image reveal animation
 			const animation = gsap.to(menuImageBox[i], {
 				opacity: 1,
 				visibility:'visible',
 				duration: 0.2,
 				scale: 1,
 				ease: "ease-in-out",
-				// left: 0,
 			});
 		
 			menuItem[i].addEventListener("mouseenter", () => animation.play());
 			menuItem[i].addEventListener("mouseleave", () => animation.reverse());
-		
-			//   initialization
 			animation.reverse();
 			}
 			let menuItemx = document.querySelectorAll(".dtl_list_txt").clientHeight;
-			//   to move image along with cursor
 			function moveText(e) {
 			gsap.to(document.querySelectorAll(".img_on_hover"), {
 				css: {
@@ -410,104 +404,8 @@ jQuery(document).ready(function(){
 
 	// Home Banner Animation Start by Mit
 
-	/*
-	gsap.registerPlugin(ScrollTrigger);
-
-	const sections = gsap.utils.toArray(".scroll_ani_img");
-	let maxWidth = 0;
-	
-	const getMaxWidth = () => {
-	  maxWidth = 0;
-	  sections.forEach((section) => {
-		maxWidth += section.offsetWidth;
-	  });
-	};
-	getMaxWidth();
-	ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
-	
-	let scrollTween = gsap.to(sections, {
-	  x: () => `-${maxWidth - window.innerWidth}`,
-	  ease: "none",
-	  scrollTrigger: {
-		trigger: ".home_hori_pin",
-		pin: true,
-		scrub: 1,
-		end: () => `+=${maxWidth}`,
-		invalidateOnRefresh: true
-	  }
-	});
-
-	let allImgs = document.querySelectorAll(".img_mian_hori");
-	allImgs.forEach((img, i) => {
-		// the intended parallax animation
-		gsap.fromTo(img, {
-		  scale: 1.5
-		}, {
-			scale: 1,
-		  scrollTrigger: {
-			trigger: img.parentNode, //.panel-wide
-			containerAnimation: scrollTween,
-			start: "left right",
-			end: "right left",
-			scrub: true,
-			invalidateOnRefresh: true,
-			onRefresh: self => {
-			  if (self.start < 0) {
-				self.animation.progress(gsap.utils.mapRange(self.start, self.end, 0, 1, 0));
-			  }
-			},
-			id: "id-two"
-		  },
-		});
-	  });
-	*/
-
 	gsap.registerPlugin(ScrollTrigger);
 	if(jQuery('.home_hori_track').length > 0){
-		
-	// const sections = gsap.utils.toArray(".scroll_ani_img");
-	// let maxWidth = 0;
-	// console.log();
-
-	// const getMaxWidth = () => {
-	// maxWidth = 0;
-	// sections.forEach((section) => {
-	// 	maxWidth += section.offsetWidth;
-	// });
-	// };
-	// getMaxWidth();
-	// ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
-
-
-	// ScrollTrigger.defaults({
-	// // Defaults are used by all ScrollTriggers
-	// toggleActions: "restart pause resume pause", // Scoll effect Forward, Leave, Back, Back Leave
-	// // markers: true // Easaly remove markers for production 
-	// });
-
-	
-
-	// const timelineHeader = gsap.timeline({
-	// 	x:() => `-${maxWidth - window.innerWidth}`,
-	// 	scrollTrigger: {
-	// 		id: "ZOOM", // Custom label to the marker
-	// 		trigger: ".home_hori_track", // What element triggers the scroll
-	// 		scrub: 0.5, // Add a small delay of scrolling and animation. `true` is direct
-	// 		// start: "top top", // Start at top of Trigger and at the top of the viewport
-	// 		end: `+=${maxWidth}`, // The element is 500px hight and end 50px from the top of the viewport
-	// 		pin: true, // Pin the element true or false
-	// 		invalidateOnRefresh: true,
-	// 	}
-	// });
-	// gsap.set(".main_hori_img", { scale: 1.3 });
-
-	// 	timelineHeader
-	// // .to(".main_hori_img",{ scale: 1.3, x:'0', duration: 0},0.1)
-	// // .to(".main_hori_img",{scale: 1.15, x:'-50%', duration: 0.5},0.3) 
-	// .to(".main_hori_img",{scale: 1,x:'-100%',  duration: 1}, 0)
-	// .to(".crafting_wrap",{x:'-100%'},0);
-
-	
 	const sectionsPan = gsap.utils.toArray(".scroll_ani_img");
 	let maxWidth = 0;
 
@@ -526,26 +424,21 @@ jQuery(document).ready(function(){
 		x: () => `-${maxWidth - window.innerWidth}`,
 		ease: "none", // <-- IMPORTANT!
 		scrollTrigger: {
-		  trigger: ".home_hori_track",
-		  pin: true,
-		  scrub: 1,
-		  //snap: directionalSnap(1 / (sections.length - 1)),
-		//   end: "bottom bottom"
-		end: () => `+=${maxWidth}`,
-   		 invalidateOnRefresh: true
+			trigger: ".home_hori_track",
+			pin: true,
+			scrub: 1,
+			end: () => `+=${maxWidth}`,
+			invalidateOnRefresh: true
 		}
-	  });
+	});
 	  gsap.set(".main_hori_img img", {scale:1.3});
 	  gsap.set(".crafting_blk", {xPercent:0});
 	  gsap.to(".main_hori_img img", {
 		scale: 1,
-		// backgroundColor: "#1e90ff",
 		ease: "none",
 		scrollTrigger: {
 			trigger: ".main_hori_img img",
 			containerAnimation: scrollTweenSection,
-			//   start: "top top",
-			//   end: "left bottom",
 			start: "left center",
 			end: "right left",
 			scrub: true,
@@ -563,30 +456,43 @@ jQuery(document).ready(function(){
 		}
 	}, "<");
 
-	// gsap.to(".blackbgwrap", {
-	// 	xPercent:-50,
-	// 	ease: "none",
-	// 	scrollTrigger: {
-	// 		trigger: ".black_white_text_pin",
-	// 		containerAnimation: scrollTweenSection,
-	// 		start: "left center",
-	// 		end: "right center",
-	// 		// pin: ".black_white_text_pin",
-	// 		scrub: true,
-	// 		// pinType: "transform",
-	// 		// id: "BG-BLACK",
-	// 		// markers:true
-	// 	}
-	// }, "<");
+
 	gsap.to(".pintxt", {
-		xPercent:110,
+		x:document.querySelector('.black_white_text.scroll_ani_img').offsetWidth,
 		ease: "none",
 		scrollTrigger: {
 			trigger: ".black_white_text_pin",
 			containerAnimation: scrollTweenSection,
 			start: "left left",
 			end: "right left",
-			// end:  () => `-=${jQuery('.blackbgwrap').offsetWidth}`,
+			pin: ".black_white_text_pin",
+			scrub: true,
+			pinType: "transform",
+		}
+	}, "<");
+	gsap.to(".black_white_text_pin .center_text_img[data-outer-image]", {
+		x:document.querySelector('.black_white_text.scroll_ani_img').offsetWidth - 50,
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".black_white_text_pin",
+			containerAnimation: scrollTweenSection,
+			start: "left left",
+			end: "right left",
+			pin: ".black_white_text_pin",
+			scrub: true,
+			pinType: "transform",
+			id: "TXT",
+			markers:true
+		}
+	}, "<");
+	gsap.to(".about_dtl_block", {
+		x: 100,
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".black_white_text_pin",
+			containerAnimation: scrollTweenSection,
+			start: "left left",
+			end: "right left",
 			pin: ".black_white_text_pin",
 			scrub: true,
 			pinType: "transform",
@@ -595,16 +501,10 @@ jQuery(document).ready(function(){
 		}
 	}, "<");
 	
-	// getSimpleImage();
 	
 	}
 
- 
-
- 
-
 	// Home Banner Animation End by Mit
-
 
 	// Home page Manufacturer text Animation Start by Mit
 
@@ -634,7 +534,6 @@ jQuery(document).ready(function(){
 		ease: "none",
 		autoAlpha: 1,
 		scrollTrigger: {
-			// markers:true,
 			trigger: '.manufacturer_sec',
 			scrub: 1,
 			start: "top center",
@@ -687,16 +586,13 @@ jQuery(document).ready(function(){
 			const tl = gsap.timeline({
 				scrollTrigger: {
 					trigger: ".black_white_text_separate_pin",
-					// start: "top center",
 					scrub: true,
-					// pin: ".purple",
 					pin: true,
 					end: () => `+=${$(".black_white_text_separate_pin").height()}`,
 				}
 			})
 			.fromTo(".black_white_text_separate .black_bgover",{ width: '0vw',ease: "none"}, {width: '100vw',ease: "none" })
 			.fromTo(".black_white_text_separate .center_text_img ",{ margin: '0',ease: "none"}, {margin: '0 0 0 -2%',ease: "none" }, 0)
-			// .fromTo(".black_white_text_separate .text_heading h2",{ margin: '0',ease: "none"}, {margin: '0 0 0 -50px',ease: "none" }, 0)
 			getRotedImage();
 		}
 
@@ -734,24 +630,6 @@ jQuery(document).ready(function(){
 				});	
 				
 				locoscrolls.on('scroll', (instance) => {
-					// Get the current scroll position
-				// 	let scrollTop = instance.scroll.y;
-					
-				// 	// Example element to add/remove class
-				// 	let element = jQuery('.broser_box:first-child');
-				// 	// jQuery('.broser_box').css('--offtop', scrollTop)
-		  
-				// // Add or remove class based on scroll position
-				// if (scrollTop > projectoffset) {
-				// 	console.log('scroll Top' +scrollTop);
-				// 	console.log('Get offset Top' +getofftop);
-				// 	let onscroll = scrollTop - getofftop - get_window_height
-				// 	console.log('Total Scroll'+ onscroll);
-				//   element.addClass('actived');
-				//   element.find(' .broser_dtl').css('transform', 'translateY('+onscroll+'px)');
-				// } else {
-				//   element.removeClass('actived');
-				// }
 				$('.side_scroll_img_pin .side_scroll_img_box').on('mouseover', function(event) {				
 					jQuery('.mouse_hover .image_data_hover img').attr('src',jQuery(this).attr('data-img-hover'))
 					
@@ -774,42 +652,13 @@ jQuery(document).ready(function(){
 			
 		// Selected Section mouse hover Effect End by Mit
 
-		// Borser Section Start
+		// Borser Section Start By Mit
 		
-		// gsap.set(".broser_dtl", {
-		// 	zIndex: (i) => document.querySelectorAll('.broser_dtl').length - i,
-		// 	clipPath: function () {
-		// 	  return "inset(0px 0px 0px 0px)";
-		// 	}
-		//   });
-		
-		//   const animation = gsap.to(".broser_dtl:not(:last-child)", {
-		// 	clipPath: function () {
-		// 	  return "inset(0px 0px 100% 0px)";
-		// 	},
-		// 	stagger: 0.5,
-		// 	ease: "none"
-		//   });
-		
-		//   ScrollTrigger.create({
-		// 	trigger: ".broser_wrap	",
-		// 	start: "top top",
-		// 	end: "bottom bottom",
-		// 	// markers: true,
-		// 	animation: animation,
-		// 	scrub: true
-		//   });
-
 		if(jQuery('.broser_box').length > 1){
 			let get_window_height = jQuery(window).height();
-			// console.log(get_window_height);
 			var projectoffset = jQuery('.broser_box:first-child .broser_dtl').offset().top + get_window_height;
 			var projectoffsetBottom = jQuery('.broser_box:last-child .broser_dtl').offset().top;
-			// var getofftop = jQuery('.broser_box:first-child .broser_dtl').offset().top;
 			jQuery(window).on( "scroll", function() {
-					// console.log(getofftop);
-					// console.log();
-					// console.log(jQuery(window).scrollTop() >= projectoffset);
 					if (jQuery(window).scrollTop() >= projectoffset) {
 						
 						jQuery(".broser_wrap").addClass("project1");
@@ -825,49 +674,13 @@ jQuery(document).ready(function(){
 
 					
 				});
-				
-			// 	locoscrolls.on('scroll', (instance) => {
-			// 		// Get the current scroll position
-			// 		let scrollTop = instance.scroll.y;
-					
-			// 		// Example element to add/remove class
-			// 		let element = jQuery('.broser_box:first-child');
-			// 		// jQuery('.broser_box').css('--offtop', scrollTop)
-		  
-			// 	// Add or remove class based on scroll position
-			// 	if (scrollTop > projectoffset) {
-			// 		console.log('scroll Top' +scrollTop);
-			// 		console.log('Get offset Top' +getofftop);
-			// 		let onscroll = scrollTop - getofftop - get_window_height
-			// 		console.log('Total Scroll'+ onscroll);
-			// 	  element.addClass('actived');
-			// 	  element.find(' .broser_dtl').css('transform', 'translateY('+onscroll+'px)');
-			// 	} else {
-			// 	  element.removeClass('actived');
-			// 	}
-			// });
 		}
 
 
-		// Borser Section End
+		// Borser Section End By Mit
 		
 
-		// Accordian script start by mit
-		// jQuery('#faq_main').on('shown.bs.collapse', function () {
-		// 	locoscrolls.update()
-		// });
-		// jQuery('#faq_main').on('hidden.bs.collapse', function () {
-		// 	locoscrolls.update()
-		// });
-		// Accordian script End by mit
-
 		// Galley script Start by mit
-		// var swiper = new Swiper(".gallery_thumb", {
-		// 	loop: true,
-		// 	spaceBetween: 30,
-		// 	// slidesPerView: 4,
-		// 	slidesPerView: "auto",
-		//   });
 		var swiper_main = new Swiper(".gallery_thumb", {
 			slidesPerView: 3,
 			spaceBetween: 30,
@@ -885,9 +698,6 @@ jQuery(document).ready(function(){
 			  nextEl: ".right_arrow_gallery_slider a",
 			  prevEl: ".left_arrow_gallery_slider a",
 			},
-			// thumbs: {
-			//   swiper: swiper_main,
-			// },
 		  });
 		// Galley script End by mit
 		
@@ -1017,26 +827,16 @@ jQuery(document).ready(function(){
 
 function getRotedImage() {
 	jQuery('.center_text_img[data-inner-image]').each(function(){
-		// var p = jQuery(this);
-		// var position = p.position();
 		jQuery(this).removeClass('active');
-		// jQuery(".center_text_img[data-outer-image]").removeClass('active')
-		// console.log(jQuery(this).offset().left - jQuery(this).parents('.black_white_text').offset().left);
 		jQuery( ".center_text_img[data-outer-image="+jQuery(this).attr('data-inner-image')+"]" ).css({ left: + jQuery(this).offset().left - jQuery(this).parents('.black_white_text').offset().left , 'top': + jQuery(this).offset().top - jQuery(this).parents('.black_white_text').offset().top }).addClass('active');
 		jQuery(this).addClass('active')
-		// console.log();
 	});
 }
 function getSimpleImage() {
 	jQuery('.center_text_img[data-inner-image]').each(function(){
-		// var p = jQuery(this);
-		// var position = p.position();
 		jQuery(this).removeClass('active');
-		// jQuery(".center_text_img[data-outer-image]").removeClass('active')
-		// console.log(jQuery(this).offset().left - jQuery(this).parents('.black_white_text').offset().left);
 		jQuery( ".center_text_img[data-outer-image="+jQuery(this).attr('data-inner-image')+"]" ).css({ left: + jQuery(this).offset().left - jQuery(this).parents('.black_white_text').offset().left , 'top': + jQuery(this).offset().top - jQuery(this).parents('.black_white_text').offset().top }).addClass('active');
 		jQuery(this).addClass('active')
-		// console.log();
 	});
 }
 
