@@ -904,7 +904,7 @@ footer .footer-bottom-grid { max-width: 1672px; margin: 0 auto; }
 .head_wrap .navigation_bar .left_part ul li a:hover span { height: 32px; width: 32px; margin-right: 24px; }
 .head_wrap .navigation_bar .left_part ul li.active a span { height: 32px; width: 32px; margin-right: 24px; }
 .head_wrap .navigation_bar .right_part { width: 60%; height: 100%; overflow-y: auto; }
-.about_hover_section { margin: 266px 0 0 102px; }
+.about_hover_section { margin: 266px 0 0 102px; display: none; }
 .about_hover_section .top_wrapper { max-width: 660px; align-items: flex-end; }
 .about_hover_section .box_wrap { display: flex; position: relative; }
 .about_hover_section .box_wrap + .box_wrap { margin-top: 24px; }
@@ -915,6 +915,22 @@ footer .footer-bottom-grid { max-width: 1672px; margin: 0 auto; }
 .about_hover_section .bottom_wrapper { max-width: 510px; margin-left: auto; }
 .about_hover_section .bottom_wrapper .text_wrap { text-align: end; }
 .about_hover_section .bottom_wrapper .img_wrap { margin-right: -86px; }
+.product_hover_section { margin: 60px 0 0 60px; display: none; }
+.product_hover_section .row { margin: 0 -22px; row-gap: 44px; }
+.product_hover_section .row>* { padding: 0 22px; }
+.product_hover_section .pro_hover_box { display: flex; width: 100%; flex-direction: column; }
+.product_hover_section .pro_hover_box .img_wrap { display: flex; width: 100%; }
+.product_hover_section .pro_hover_box .img_wrap img { width: 100%; height: auto; }
+.product_hover_section .pro_hover_box .text { margin-top: 24px; font-family: 'Gilroy-ExtraBold'; font-size: var(--fz32); line-height: 1.22; color: var(--whitetxt); text-transform: uppercase; }
+.catalogues_hover_section { margin: 86px 0 0 60px; }
+.catalogues_hover_section .catalogues_box { display: flex; align-items: center; max-width: 912px; }
+.catalogues_hover_section .catalogues_box + .catalogues_box { margin-top: 64px; }
+.catalogues_hover_section .cata_flexrev { flex-direction: row-reverse; }
+.catalogues_hover_section .catalogues_box .content { font-family: 'Gilroy-ExtraBold'; font-size: var(--fz96); line-height: 1.22; color: var(--whitetxt); text-transform: uppercase; z-index: 1; }
+.catalogues_hover_section .cata_flexrev .content { text-align: end; }
+.catalogues_hover_section .catalogues_box .images_box { display: flex; width: 350px; height: 350px; border-radius: 50%; overflow: hidden; margin: 0 0 0 -30px; }
+.catalogues_hover_section .cata_flexrev .images_box { margin: 0 -140px 0 0; }
+.catalogues_hover_section .catalogues_box .images_box img { width: 100%; height: auto; max-width: 100%; max-height: 100%; object-fit: cover; }
 
 /* ========== header style: End (By Kaushal) ========== */
 
