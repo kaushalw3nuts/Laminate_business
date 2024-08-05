@@ -486,8 +486,6 @@ jQuery(document).ready(function(){
 			pin: ".black_white_text_pin",
 			scrub: true,
 			pinType: "transform",
-			id: "TXT",
-			markers:true
 		}
 	}, "<");
 	gsap.to(".about_dtl_block", {
@@ -501,8 +499,6 @@ jQuery(document).ready(function(){
 			pin: ".black_white_text_pin",
 			scrub: true,
 			pinType: "transform",
-			id: "TXT",
-			markers:true
 		}
 	}, "<");
 	
