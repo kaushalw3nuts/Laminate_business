@@ -889,7 +889,6 @@ footer .footer-bottom-grid { max-width: 1672px; margin: 0 auto; }
 .navi_wrap { position: fixed; left: 0; top: 144px; width: 100%; height: calc(100vh - 144px); transition: all 0.6s ease-in-out; opacity: 0; visibility: hidden; }
 .open_menu .navi_wrap { opacity: 1; visibility: visible; }
 .bg_menu_shap { z-index: -1 !important; }
-.menubar { z-index: unset !important; } /* kadhi nahajo */
 .head_wrap .navigation_bar { display: flex; align-items: center; height: 100%; border-top: 1px solid var(--black22); padding: 0 60px 0 60px; }
 .head_wrap .navigation_bar .left_part { width: 40%; border-right: 1px solid var(--black22); height: 100%; display: flex; flex-direction: column; justify-content: center; }
 .head_wrap .navigation_bar .left_part ul { padding: 0 64px; }
@@ -940,7 +939,7 @@ header { width: 100%; position: fixed; left: 0; top: 0; width: 100%; padding: 44
 .header_inner { width: 100%; position: relative; display: -ms-flexbox; display: flex; align-items: center; align-content: center; justify-content: space-between; }
 .logo a img { width: 140px; height: auto; }
 
-.menubar { position: relative; z-index: 999; }
+.menubar { position: relative; z-index: unset; }
 
 .menubar .hamburger_btn { position: relative; align-items: center; align-content: center; background: none !important; border: none !important; outline: none !important; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; box-shadow: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; border-radius: 0; padding: 0; margin: 0; text-align: left; }
 .hamburger_btn .hamburger_icon { display: -ms-flexbox; display: flex; align-items: center; justify-content: center; align-content: center; height: 56px; width: 56px; border: solid 1px #E2E2E2; border-radius: 50%; margin-right: 16px; }
