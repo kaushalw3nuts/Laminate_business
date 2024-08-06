@@ -299,8 +299,8 @@ jQuery(document).ready(function(){
 			scrollTrigger: {
 				trigger: "footer",
 				start: "top top",
-				end: "+=1000",
-				scrub: 2,
+				end: `+=${$('#footer').outerHeight() * 2}`,
+				scrub: 0.01,
 				pin: true,
 				invalidateOnRefresh: true,
 			}

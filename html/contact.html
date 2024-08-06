@@ -21,16 +21,122 @@
 	<body>
 		<div class="main-wapper">
 			<!--Header : start-->
-			<header id="header">
-				
+			<header id="header" class="head_wrap head_wrap_v2">
+				<div class="header_inner">
+                    <div class="logo flxrow">
+                        <a href="index.html" class="flxrow">
+                            <img src="images/logo.svg" alt="" class="black-logo">
+                            <img src="images/logo-white.svg" alt="" class="white-logo">
+                        </a>
+                    </div>
+                    <div class="menubar flxrow">
+                        <button class="hamburger_btn flxrow">
+                            <div class="hamburger_icon flxrow">
+                                <span class="navbar_toggler_icon"></span>
+                            </div>
+                            <div class="nav_text">
+                                <div class="nav_text_before">MENU</div>
+                                <div class="nav_text_after">CLOSE</div>
+                            </div>
+                       </button>
+                    </div>
+                    <span class="bg_menu_shap"></span>
+                    <nav class="navi_wrap">
+                        <div class="navigation_bar">
+                            <div class="left_part">
+                                <ul>
+                                    <li><a href="#"><span><img src="images/mega-menu-arrow.svg" alt=""></span>Home</a></li>
+                                    <li class="active" data-menu-list="about_menu"><a href="#"><span><img src="images/mega-menu-arrow.svg" alt=""></span>About us</a></li>
+                                    <li data-menu-list="product_menu"><a href="#"><span><img src="images/mega-menu-arrow.svg" alt=""></span>Products</a></li>
+                                    <li data-menu-list="catalogues_menu"><a href="#"><span><img src="images/mega-menu-arrow.svg" alt=""></span>e-Catalogues</a></li>
+                                    <li><a href="#"><span><img src="images/mega-menu-arrow.svg" alt=""></span>Contact us</a></li>
+                                </ul>
+                            </div>
+                            <div class="right_part">
+                                <div class="data_hover_menu about_hover_section" data-menu-block="about_menu">
+                                    <a href="#" class="top_wrapper box_wrap text_with_img_ani">
+                                        <div class="text_wrap text_mouse_ani">Meet our <br> Team</div>
+                                        <div class="img_wrap img_mouse_ani"><img src="images/mega-menu-img01.webp" alt=""></div>
+                                    </a>
+                                    <a href="#" class="bottom_wrapper box_wrap text_with_img_ani">
+                                        <div class="img_wrap img_mouse_ani"><img src="images/mega-menu-img02.webp" alt=""></div>
+                                        <div class="text_wrap text_mouse_ani">Our <br> Story</div>
+                                    </a>
+                                </div>
+                                <div class="data_hover_menu product_hover_section" data-menu-block="product_menu">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <a href="#" class="pro_hover_box">
+                                                <div class="img_wrap">
+                                                    <img src="images/prohover-img01.webp" alt="">
+                                                </div>
+                                                <div class="text">Acrylic</div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <a href="#" class="pro_hover_box">
+                                                <div class="img_wrap">
+                                                    <img src="images/prohover-img02.webp" alt="">
+                                                </div>
+                                                <div class="text">ASA</div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <a href="#" class="pro_hover_box">
+                                                <div class="img_wrap">
+                                                    <img src="images/prohover-img03.webp" alt="">
+                                                </div>
+                                                <div class="text">Plywood</div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <a href="#" class="pro_hover_box">
+                                                <div class="img_wrap">
+                                                    <img src="images/prohover-img04.webp" alt="">
+                                                </div>
+                                                <div class="text">Veneer</div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <a href="#" class="pro_hover_box">
+                                                <div class="img_wrap">
+                                                    <img src="images/prohover-img01.webp" alt="">
+                                                </div>
+                                                <div class="text">Acrylic</div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <a href="#" class="pro_hover_box">
+                                                <div class="img_wrap">
+                                                    <img src="images/prohover-img02.webp" alt="">
+                                                </div>
+                                                <div class="text">ASA</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="data_hover_menu catalogues_hover_section" data-menu-block="catalogues_menu">
+                                    <a href="#" class="catalogues_box text_with_img_ani">
+                                        <div class="content text_mouse_ani">HARMONY <br> OF TEXTURES</div>
+                                        <div class="images_box img_mouse_ani"><img src="images/catalogueshover-img01.webp" alt=""></div>
+                                    </a>
+                                    <a href="#" class="catalogues_box cata_flexrev text_with_img_ani">
+                                        <div class="content text_mouse_ani">COLORFUL <br> COMBINATIONS</div>
+                                        <div class="images_box img_mouse_ani"><img src="images/catalogueshover-img02.webp" alt=""></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
 			</header>
 			<!--Header : End-->
 
 			<div id="viewport" data-scroll-container>
 				<div id="scroll-container2">
 					<section class="contain_wapper contact_page">
-						<div class="since_journey_section wow fadeInUp" data-wow-duration="1s">
-							<div class="inner_since_journey">
+						<div class="since_journey_section">
+							<div class="inner_since_journey wow fadeInUp" data-wow-duration="1s">
 								<div class="since_title">
 									<h1>SINCE 1974 A JOURNEY OF EXCELLENCE IN laminate business</h1>
 								</div>
@@ -53,7 +159,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="since_logo">
+							<div class="since_logo wow fadeInUp" data-wow-duration="1s">
 								<img src="images/contact_since_logo.webp" alt="">
 							</div>
 						</div>
@@ -281,6 +387,7 @@
 		<script src="js/gsap.min.js"></script>
 		<script src="js/ScrollTrigger.min.js"></script>
 		<script src="js/SplitText.min.js"></script>
+		<script src="js/TweenMax.min.js"></script>
 		<script src="js/wow.min.js"></script>
 		<script src="js/script.js"></script>
 		<!--JavaScript-->
