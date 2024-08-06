@@ -488,52 +488,19 @@ jQuery(document).ready(function(){
 			pinType: "transform",
 		}
 	}, "<");
-	// gsap.to(".about_dtl_left", {
-	// 	y:document.querySelector('.about_dtl_right').offsetHeight - 50,
-	// 	ease: "none",
-	// 	scrollTrigger: {
-	// 		trigger: ".about_dtl_block",
-	// 		containerAnimation: scrollTweenSection,
-	// 		start: "left left",
-	// 		end: `${document.querySelector('.about_dtl_right').offsetHeight - 50}`,
-	// 		pin: true,
-	// 		markers: true,
-	// 		scrub: true,
-	// 	}
-	// }, "<");
-
-	// gsap.to(".about_dtl_wrp", {
-	// 	// y: 1800,
-	// 	ease: "none",
-	// 	scrollTrigger: {
-	// 		trigger: ".about_dtl_wrp",
-	// 		containerAnimation: scrollTweenSection,
-	// 		start: "left left",
-	// 		// end: `left ${document.querySelector('.about_dtl_right').offsetHeight - document.querySelector('.about_dtl_left').offsetHeight }`,
-	// 		end: `right right`,
-	// 		pin: true,
-	// 		scrub: true,
-	// 		// markers: true,
-	// 		y: 0,
-	// 	}
-	// }, "<");
-	// console.log('triggler',document.querySelector('.about_dtl_right').offsetHeight - document.querySelector('.about_dtl_left').offsetHeight );
-	// console.log('about_dtl_block',document.querySelector('.about_dtl_block').offsetHeight )
-
-
 	gsap.to(".about_dtl_block", {
-		y : document.querySelector('.about_dtl_right').offsetHeight - document.querySelector('.about_dtl_left').offsetHeight,
+		x: 100,
 		ease: "none",
 		scrollTrigger: {
-			trigger: ".about_dtl_block",
+			trigger: ".black_white_text_pin",
 			containerAnimation: scrollTweenSection,
 			start: "left left",
-			end: "1500 bottom",
-			// pinSpacing: false,
-			// pinSpacer: false,
-			markers: true,
-			pin: '.about_dtl_block',
+			end: "right left",
+			pin: ".black_white_text_pin",
 			scrub: true,
+			pinType: "transform",
+			id: "TXT",
+			markers:true
 		}
 	}, "<");
 	}
