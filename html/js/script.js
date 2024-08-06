@@ -317,16 +317,52 @@ jQuery(document).ready(function(){
 	jQuery(".hamburger_btn").click(function() {
 		'use strict';
 		jQuery(this).toggleClass('active');
-		jQuery('.navigation_main').toggleClass('show');
-		jQuery('body').toggleClass('open_menu');
-		if(jQuery('body').hasClass('open_menu')){
-            locoscrolls.stop();
-        }
-        else{
-            locoscrolls.start();
-
-        }
+		
+		if (jQuery('body').hasClass('open_menu')) {
+			// First remove 'loaded_wrap', then 'open_menu'
+			jQuery('body').removeClass('loaded_wrap');
+			// jQuery('.navigation_main').removeClass('show');
+			locoscrolls.start();
+			setTimeout(() => {
+				jQuery('body').removeClass('open_menu');
+			}, 500);
+		} else {
+			// First add 'open_menu', then 'loaded_wrap'
+			jQuery('body').addClass('open_menu');
+			// jQuery('.navigation_main').addClass('show');
+			locoscrolls.stop();
+			setTimeout(() => {
+				jQuery('body').addClass('loaded_wrap');
+			}, 500);
+		}
 	});
+
+	jQuery('.navigation_bar .left_part ul li[data-menu-list] a').on('mouseenter', function() {
+		jQuery(this).addClass("highlight");
+		if(jQuery(this).parents('li[data-menu-list]')) {
+			jQuery('.data_hover_menu').hide()
+			jQuery('.data_hover_menu[data-menu-block='+jQuery(this).parent().attr('data-menu-list')+']').show();
+		}
+	});
+
+	jQuery(".text_with_img_ani").each(function() {
+		let $boxWrap = jQuery(this);
+		$boxWrap.mousemove(function(e) {
+			// parallaxIt(e, $boxWrap.find(".text_mouse_ani"), -30);
+			parallaxIt(e, $boxWrap.find(".img_mouse_ani"), -50);
+		});
+	});
+	
+	function parallaxIt(e, target, movement) {
+		let $this = jQuery(target).parent();
+		let relX = e.pageX - $this.offset().left;
+		let relY = e.pageY - $this.offset().top;
+	
+		TweenMax.to(target, 1, {
+			x: (relX - $this.width() / 2) / $this.width() * movement,
+			y: (relY - $this.height() / 2) / $this.height() * movement
+		});
+	}
 	/*Mobile Menu End  by Mit*/
 
 	/*Mouse with Image Start by Mit*/
@@ -436,6 +472,8 @@ jQuery(document).ready(function(){
 			invalidateOnRefresh: true
 		}
 	});
+	  gsap.set(".about_dtl_list_block", {y: (jQuery('.about_dtl_list_block').outerHeight() - jQuery('.about_dtl_list_block').css('padding-top').replace('px', '') - jQuery('.about_dtl_list_block').css('padding-bottom').replace('px', '') - jQuery('.about_dtl_title').outerHeight())});
+	
 	  gsap.set(".main_hori_img img", {scale:1.3});
 	  gsap.set(".crafting_blk", {xPercent:0});
 	  gsap.to(".main_hori_img img", {
@@ -489,18 +527,65 @@ jQuery(document).ready(function(){
 		}
 	}, "<");
 	gsap.to(".about_dtl_block", {
-		x: 100,
+		x: document.querySelector('.about_dtl_wrp_blank.scroll_ani_img').offsetWidth,
 		ease: "none",
 		scrollTrigger: {
-			trigger: ".black_white_text_pin",
+			trigger: ".about_dtl_block_pin",
 			containerAnimation: scrollTweenSection,
 			start: "left left",
 			end: "right left",
-			pin: ".black_white_text_pin",
+			pin: ".about_dtl_block_pin",
 			scrub: true,
 			pinType: "transform",
+			// markers:true,
 		}
 	}, "<");
+	// console.log(document.documentElement.clientHeight,);
+	
+	gsap.to(".about_dtl_right", {
+		y: -(document.querySelector('.about_dtl_right').offsetHeight - document.documentElement.clientHeight),
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".about_dtl_block_pin",
+			containerAnimation: scrollTweenSection,
+			start: "left left",
+			end: "right left",
+			pin: ".about_dtl_block_pin",
+			scrub: true,
+			pinType: "transform",
+			// markers:true,
+		}
+	}, "<");
+
+	gsap.to(".about_dtl_list_block", {
+		y: 0,
+		ease: "none",
+		scrollTrigger: {
+			trigger: ".about_dtl_block_pin",
+			containerAnimation: scrollTweenSection,
+			start: "left left",
+			end: "right left",
+			pin: ".about_dtl_block_pin",
+			scrub: true,
+			pinType: "transform",
+			// markers:true,
+		}
+	}, "<");
+	// gsap.to(".about_dtl_right", {
+	// 	y: -(document.querySelector('.about_dtl_right').offsetHeight - document.documentElement.clientHeight),
+	// 	ease: "none",
+	// 	scrollTrigger: {
+	// 		trigger: ".about_dtl_block_pin",
+	// 		containerAnimation: scrollTweenSection,
+	// 		start: "left left",
+	// 		end: "right left",
+	// 		pin: ".about_dtl_block_pin",
+	// 		scrub: true,
+	// 		pinType: "transform",
+	// 		// markers:true,
+	// 	}
+	// }, "<");
+	
 	
 	
 	}
@@ -536,7 +621,7 @@ jQuery(document).ready(function(){
 		autoAlpha: 1,
 		scrollTrigger: {
 			trigger: '.manufacturer_sec',
-			scrub: 1,
+			scrub: true,
 			start: "top center",
 			end: "80% center"
 		}
@@ -557,7 +642,7 @@ jQuery(document).ready(function(){
 				scrollTrigger: {
 					trigger: ".side_scroll_img_pin",
 					pin: true,
-					scrub: 1,
+					scrub: true,
 					end: () => "+=" + (track.scrollWidth - window.innerWidth)
 				}
 			});
