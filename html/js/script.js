@@ -589,7 +589,7 @@ jQuery(document).ready(function(){
 	
 	
 	}
-
+	
 	// Home Banner Animation End by Mit
 
 	// Home page Manufacturer text Animation Start by Mit
