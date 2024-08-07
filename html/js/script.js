@@ -38,6 +38,9 @@ function bluesticky()
 jQuery(window).on('load' ,function() {
 	bluesticky();
 	jQuery('body').addClass('load-content');
+	setTimeout(() => {
+		jQuery('body').addClass('load-content-delay');
+	}, 500);
 });
 jQuery(window).resize(function() {
 	bluesticky();
@@ -335,15 +338,25 @@ jQuery(document).ready(function(){
 				jQuery('body').addClass('loaded_wrap');
 			}, 500);
 		}
+		locoscrolls.scrollTo('body', { offset: 0 })
 	});
+	const innerMenu = document.querySelector('.navi_wrap')
+		innerMenu.style.overflowY = 'auto'
+		innerMenu.addEventListener('mouseenter', () => {
+			locoscrolls.stop()
+		  })
+		  
+		  innerMenu.addEventListener('mouseleave', () => {
+			locoscrolls.start()
+		  })
 
-	jQuery('.navigation_bar .left_part ul li[data-menu-list] a').on('mouseenter', function() {
-		jQuery(this).addClass("highlight");
-		if(jQuery(this).parents('li[data-menu-list]')) {
-			jQuery('.data_hover_menu').hide()
-			jQuery('.data_hover_menu[data-menu-block='+jQuery(this).parent().attr('data-menu-list')+']').show();
-		}
-	});
+		jQuery('.navigation_bar .left_part ul li[data-menu-list] a').on('mouseenter', function() {
+			jQuery(this).addClass("highlight");
+			if(jQuery(this).parents('li[data-menu-list]')) {
+				jQuery('.data_hover_menu').hide();
+				jQuery('.data_hover_menu[data-menu-block='+jQuery(this).parent().attr('data-menu-list')+']').fadeIn(600);
+			}
+		});
 
 	jQuery(".text_with_img_ani").each(function() {
 		let $boxWrap = jQuery(this);
@@ -363,6 +376,7 @@ jQuery(document).ready(function(){
 			y: (relY - $this.height() / 2) / $this.height() * movement
 		});
 	}
+	
 	/*Mobile Menu End  by Mit*/
 
 	/*Mouse with Image Start by Mit*/
@@ -472,15 +486,15 @@ jQuery(document).ready(function(){
 			invalidateOnRefresh: true
 		}
 	});
-	  gsap.set(".about_dtl_list_block", {y: (jQuery('.about_dtl_list_block').outerHeight() - jQuery('.about_dtl_list_block').css('padding-top').replace('px', '') - jQuery('.about_dtl_list_block').css('padding-bottom').replace('px', '') - jQuery('.about_dtl_title').outerHeight())});
+	  gsap.set(".about_dtl_list_block", {y: (jQuery('.about_dtl_list_block').outerHeight() - jQuery('.about_dtl_list_block').css('padding-top').replace('px', '') - (jQuery('.about_dtl_list_block').css('padding-bottom').replace('px', '') / 2) - jQuery('.about_dtl_title').outerHeight())});
 	
-	  gsap.set(".main_hori_img img", {scale:1.3});
+	  gsap.set(".main_hori_img .img_mian_hori", {scale:1.3});
 	  gsap.set(".crafting_blk", {xPercent:0});
-	  gsap.to(".main_hori_img img", {
+	  gsap.to(".main_hori_img .img_mian_hori", {
 		scale: 1,
 		ease: "none",
 		scrollTrigger: {
-			trigger: ".main_hori_img img",
+			trigger: ".main_hori_img .img_mian_hori",
 			containerAnimation: scrollTweenSection,
 			start: "left center",
 			end: "right left",
@@ -542,13 +556,14 @@ jQuery(document).ready(function(){
 	}, "<");
 	// console.log(document.documentElement.clientHeight,);
 	
-	gsap.to(".about_dtl_right", {
+	let about_dtl_right = gsap.to(".about_dtl_right", {
 		y: -(document.querySelector('.about_dtl_right').offsetHeight - document.documentElement.clientHeight),
 		ease: "none",
 		scrollTrigger: {
 			trigger: ".about_dtl_block_pin",
 			containerAnimation: scrollTweenSection,
 			start: "left left",
+			// start: "40% left",
 			end: "right left",
 			pin: ".about_dtl_block_pin",
 			scrub: true,
@@ -563,7 +578,8 @@ jQuery(document).ready(function(){
 		scrollTrigger: {
 			trigger: ".about_dtl_block_pin",
 			containerAnimation: scrollTweenSection,
-			start: "left left",
+			// start: "left left",
+			start: "40% left",
 			end: "right left",
 			pin: ".about_dtl_block_pin",
 			scrub: true,
@@ -571,6 +587,79 @@ jQuery(document).ready(function(){
 			// markers:true,
 		}
 	}, "<");
+	let objActImg = {
+		'about_dtl_right': {
+			'start': '40% left',
+			'end': 'right left',
+			'item': [{
+				'class': 'dtl_list_img1',
+				'duration': '0.5',
+				'yPercentFrom': '0',
+				'yPercent': '-16'
+			}, {
+				'class': 'dtl_list_img3',
+				'duration': '1',
+				'yPercentFrom': '10',
+				'yPercent': '-30'
+			}, {
+				'class': 'dtl_list_img4',
+				'duration': '0.5',
+				'yPercentFrom': '10',
+				'yPercent': '-60'
+			}, {
+				'class': 'dtl_list_img5',
+				'duration': '0.5',
+				'yPercentFrom': '0',
+				'yPercent': '-60'
+			}, {
+				'class': 'dtl_list_img6',
+				'duration': '0.5',
+				'yPercentFrom': '0',
+				'yPercent': '-100'
+			}, {
+				'class': 'dtl_list_img7',
+				'duration': '0.5',
+				'yPercentFrom': '10',
+				'yPercent': '-60'
+			}, {
+				'class': 'dtl_list_img8',
+				'duration': '0.5',
+				'yPercentFrom': '10',
+				'yPercent': '-60'
+			}]
+		}
+	};
+	actionBlockImg();
+	function actionBlockImg() {
+		var e = {};
+		$.each(objActImg, function(t, n) {
+			
+			e[t] = [];
+			$.each(n['item'], function(c, s) {
+				
+				e[t][c] = gsap.timeline({
+					scrollTrigger: {
+						// trigger: '.' + t,
+						trigger: ".about_dtl_block_pin",
+						start: n['start'],
+						end: n['end'],
+						scrub: 1,
+						pin: !1,
+						markers: !1,
+						containerAnimation: scrollTweenSection,
+						// markers:true,
+					}
+				});
+				e[t][c].from('.' + t + ' .' + s['class'], {
+					yPercent: s['yPercentFrom'],
+					// duration: s['duration']
+				}).to('.' + t + ' .' + s['class'], {
+					yPercent: s['yPercent'],
+					duration: s['duration']
+				})
+			})
+		})
+	};
 	// gsap.to(".about_dtl_right", {
 	// 	y: -(document.querySelector('.about_dtl_right').offsetHeight - document.documentElement.clientHeight),
 	// 	ease: "none",
@@ -715,15 +804,15 @@ jQuery(document).ready(function(){
 					$('.mouse_hover').removeClass('hover_img');
 				});	
 				
-				locoscrolls.on('scroll', (instance) => {
-				$('.side_scroll_img_pin .side_scroll_img_box').on('mouseover', function(event) {				
-					jQuery('.mouse_hover .image_data_hover img').attr('src',jQuery(this).attr('data-img-hover'))
-					
-				});				
-				$('.side_scroll_img_pin .side_scroll_img_box').on('mouseout', function(event) {			
-					$('.mouse_hover').removeClass('hover_img');
-				});	
-			});
+				// locoscrolls.on('scroll', (instance) => {
+				// 	$('.side_scroll_img_pin .side_scroll_img_box').on('mouseover', function(event) {				
+				// 		jQuery('.mouse_hover .image_data_hover img').attr('src',jQuery(this).attr('data-img-hover'))
+						
+				// 	});				
+				// 	$('.side_scroll_img_pin .side_scroll_img_box').on('mouseout', function(event) {			
+				// 		$('.mouse_hover').removeClass('hover_img');
+				// 	});	
+				// });
 
 				$('.side_scroll_img_pin .side_scroll_img_box').on('mouseover', function(event) {				
 					jQuery('.mouse_hover .image_data_hover img').attr('src',jQuery(this).attr('data-img-hover'))
@@ -798,8 +887,8 @@ jQuery(document).ready(function(){
 			scrollTrigger: {
 				trigger: ".journy_scroll_pin",
 				pin: true,
-				scrub: 1,
-				end: "+=5000",
+				scrub: true,
+				end: "+=2000",
 				// markers: true, // Uncomment for debugging
 			}
 			});
@@ -881,21 +970,39 @@ jQuery(document).ready(function(){
 		entries.forEach(entry => {
 			// Find the index of the intersecting child element
 			const index = Array.from(childElements).indexOf(entry.target);
-			console.log(`Child ${index + 1} is intersecting: ${entry.isIntersecting}`);
+			// console.log(`Child ${index + 1} is intersecting: ${entry.isIntersecting}`);
 
 			if (entry.isIntersecting) {
 				// Add 'active' class to corresponding separate div if it's intersecting
 				separateDivs[index].classList.add('active');
-
+				
 				// Remove 'active' class from all other separate divs
 				separateDivs.forEach((div, idx) => {
 					if (idx !== index) {
 						div.classList.remove('active');
 					}
 				});
-			} else {
+			}
+			else if(!entry.isIntersecting){
+				if(jQuery('body').hasClass('load-content')){
+					
+					separateDivs[index-1].classList.add('active');
+					
+					separateDivs.forEach((div, idx) => {
+						if (idx !== index-1) {
+							div.classList.remove('active');
+						}
+					});
+					
+				}
+				
+				// console.log('reverce'+index);
+			}
+			 else {
 				// Remove 'active' class from corresponding separate div if it's not intersecting
 				separateDivs[index].classList.remove('active');
+				// console.log(index);
+				
 			}
 		});
 	}, { threshold: 0.5 }); // Adjust threshold as needed
