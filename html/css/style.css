@@ -520,7 +520,7 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 .product-peculiarities__list .product-peculiarities__item.tns-item.slideIn { animation-name: slideIn; z-index: 1; }
 .product-peculiarities__list .product-peculiarities__item.tns-item.slideOut { animation-name: slideOut; }
 .product-peculiarities__item.tns-item.tns-normal { left: 0; }
-@keyframes slideIn {
+/* @keyframes slideIn {
 	0% {
 	  	opacity: 1;
 	}
@@ -538,14 +538,14 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 	100% {
 	  	opacity: 1;
 	}
-}
+} */
 .product-peculiarities__item .product-peculiarities-thumbs { display: flex; }
 .product-peculiarities-thumbs .product-peculiarities-thumbs__image { position: relative; flex: 0 0 600px; margin-right: 44px; background: #E2E2E2; }
 .product-peculiarities-thumbs .product-peculiarities-thumbs__image::before { content: ""; display: block; padding-top: 100%; }
 .product-peculiarities__item.tns-item .product-peculiarities-thumbs__image { overflow: hidden; -webkit-transform: translateZ(0); transform: translateZ(0); }
 .product-peculiarities__item.tns-item.slideOut .product-peculiarities-thumbs__image { overflow: hidden; -webkit-transform: translateZ(0); transform: translateZ(0); }
 .product-peculiarities__item.tns-item.slideOut .product-peculiarities-thumbs__image picture { -webkit-transform: translateX(20px); transform: translateX(20px); opacity: 0; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; }
-.product-peculiarities__item.tns-item.slideIn .product-peculiarities-thumbs__image { overflow: hidden; }
+.product-peculiarities__item.tns-item.slideIn .product-peculiarities-thumbs__image { overflow: hidden; -webkit-transform: translateZ(0); transform: translateZ(0); }
 .product-peculiarities-thumbs__image picture { position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
 .product-peculiarities__item.tns-item .product-peculiarities-thumbs__image picture { transform: translateX(100%);  }
 .product-peculiarities__item.tns-item.slideIn .product-peculiarities-thumbs__image picture { -webkit-transform: translateX(0); transform: translateX(0); -webkit-transition: -webkit-transform 0.8s ease; transition: -webkit-transform 0.8s ease; transition: transform 0.8s ease; transition: transform 0.8s ease, -webkit-transform 0.8s ease; }
