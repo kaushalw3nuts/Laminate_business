@@ -21,6 +21,13 @@ gsap.ticker.add((time) => {
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
+function onRaf(time) {
+	locoscrolls.raf(time);
+	requestAnimationFrame(onRaf);
+}
+
+requestAnimationFrame(onRaf);
+
 // Lenis End (By Mit)
 
 // View port Height Generate Start
@@ -65,11 +72,11 @@ jQuery(window).on('load' ,function() {
 				trigger: triggerElementText,
 				start: "top 85%",
 				end: "bottom top",
-				toggleActions: "restart none none none",
-				markers:true,
+				toggleActions: "play none none none",
+				// markers:true,
 			}
 		});
-		console.log(jQuery(targetElementText).length);
+		// console.log(jQuery(targetElementText).length);
 		
 		tltext.from(targetElementText, {
 			duration: 0.6,
@@ -383,18 +390,8 @@ jQuery(document).ready(function(){
 				jQuery('body').addClass('loaded_wrap');
 			}, 500);
 		}
-		locoscrolls.scrollTo('body', { offset: 0 })
 	});
-	const innerMenu = document.querySelector('.navi_wrap')
-		innerMenu.style.overflowY = 'auto'
-		innerMenu.addEventListener('mouseenter', () => {
-			locoscrolls.stop()
-		  })
-		  
-		  innerMenu.addEventListener('mouseleave', () => {
-			locoscrolls.start()
-		  })
-
+		
 		jQuery('.navigation_bar .left_part ul li[data-menu-list] a').on('mouseenter', function() {
 			jQuery(this).addClass("highlight");
 			if(jQuery(this).parents('li[data-menu-list]')) {
@@ -895,6 +892,10 @@ jQuery(document).ready(function(){
 		var swiper_main = new Swiper(".gallery_thumb", {
 			slidesPerView: 3,
 			spaceBetween: 30,
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false
+			},
 			loop: true,
 			navigation: {
 				nextEl: ".right_arrow_gallery_slider a",
@@ -905,6 +906,10 @@ jQuery(document).ready(function(){
 		var swiper2 = new Swiper(".gallery_slider_main", {
 			loop: true,
 			spaceBetween: 0,
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false
+			},
 			navigation: {
 			  nextEl: ".right_arrow_gallery_slider a",
 			  prevEl: ".left_arrow_gallery_slider a",
@@ -1048,14 +1053,16 @@ jQuery(document).ready(function(){
 		observer.observe(child);
 	});
 
-
-	var myOffcanvas = document.getElementById('trialPopup_one')
-	myOffcanvas.addEventListener('show.bs.offcanvas', function () {
-		locoscrolls.stop()
-	})
-	myOffcanvas.addEventListener('hidden.bs.offcanvas', function () {
-		locoscrolls.start()
-	})
+	
+	if(jQuery('#trialPopup_one').length > 0){
+		var myOffcanvas = document.getElementById('trialPopup_one')
+		myOffcanvas.addEventListener('show.bs.offcanvas', function () {
+			locoscrolls.stop()
+		})
+		myOffcanvas.addEventListener('hidden.bs.offcanvas', function () {
+			locoscrolls.start()
+		})
+	}
 
 });
 
