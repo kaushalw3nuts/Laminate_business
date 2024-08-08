@@ -41,6 +41,51 @@ jQuery(window).on('load' ,function() {
 	setTimeout(() => {
 		jQuery('body').addClass('load-content-delay');
 	}, 500);
+	jQuery(".split_word").each(function (index) {
+		let myText = jQuery(this);
+		let mySplitText;
+		function createSplits() {
+			mySplitText = new SplitText(myText, {
+			type: "words , chars ",
+			wordsClass: "split-words",
+			charsClass: "chars-words"
+			});
+		}
+		createSplits();
+	});
+
+
+	jQuery(".split_word").each(function (index) {
+		let triggerElementText = jQuery(this);
+		let targetElementText = jQuery(this).find(".chars-words");
+
+
+		let tltext = gsap.timeline({
+			scrollTrigger: {
+				trigger: triggerElementText,
+				start: "top 85%",
+				end: "bottom top",
+				toggleActions: "restart none none none",
+				markers:true,
+			}
+		});
+		console.log(jQuery(targetElementText).length);
+		
+		tltext.from(targetElementText, {
+			duration: 0.6,
+			// duration: 1,
+			y: "100%",
+			opacity: 1,
+			ease: "power2.inOut",
+			stagger: {
+				// amount: 2,
+				amount: jQuery(targetElementText).length * 0.05714,
+				// amount: 2 / jQuery(targetElement).length,
+				// stagger: 0.08,
+				from: "0"
+			}
+		});
+	});
 });
 jQuery(window).resize(function() {
 	bluesticky();
@@ -417,44 +462,35 @@ jQuery(document).ready(function(){
 	/*Mouse with Image End by Mit*/
 
 	// SplitText Animation Start by Mit
-	jQuery(".split_word").each(function (index) {
-		let myText = jQuery(this);
-		let mySplitText;
-		function createSplits() {
-			mySplitText = new SplitText(myText, {
-			type: "words , chars ",
-			wordsClass: "split-words",
-			charsClass: "chars-words"
-			});
-		}
-		createSplits();
-    });
+	setTimeout(() => {
+		
+		
+	}, 800);
 
-
-    jQuery(".split_word").each(function (index) {
-        let triggerElement = jQuery(this);
-        let targetElement = jQuery(this).find(".chars-words");
-
-
-        let tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: triggerElement,
-                start: "top 85%",
-                end: "bottom top",
-                toggleActions: "restart none none none",
-            }
-        });
-        tl.from(targetElement, {
-            duration: 0.6,
-            y: "100%",
-            opacity: 1,
-            ease: "power2.inOut",
-            stagger: {
-                amount: 2,
-                from: "0"
-            }
-        });
-    });
+	// const childSplit = new SplitText(".split_word", {
+	// 	type: "words , chars",
+	// 	linesClass: "split-child",
+	// 	charsClass: "chars-words"
+	//   });
+	//   const parentSplit = new SplitText(".split_word", {
+	// 	// type: "words",
+	// 	linesClass: "split-parent"
+	//   });
+	  
+	//   gsap.from(childSplit.chars, {
+	// 	duration: 1,
+	// 	yPercent: 100,
+	// 	ease: "power4.inOut",
+	// 	stagger: 0.08,
+	// 	// repeat: -1,
+	// 	// yoyo:true,
+	// 	// repeatDeay:1,
+	// 	scrollTrigger: {
+	// 	//   trigger: '.text',
+	// 	  markers: true,
+	// 	  start: 'top center',
+	// 	}
+	//   });
 	// SplitText Animation End by Mit
 
 	// Home Banner Animation Start by Mit
@@ -589,17 +625,17 @@ jQuery(document).ready(function(){
 	}, "<");
 	let objActImg = {
 		'about_dtl_right': {
-			'start': '40% left',
+			'start': 'left left',
 			'end': 'right left',
 			'item': [{
 				'class': 'dtl_list_img1',
 				'duration': '0.5',
-				'yPercentFrom': '0',
+				'yPercentFrom': '10',
 				'yPercent': '-16'
 			}, {
 				'class': 'dtl_list_img3',
 				'duration': '1',
-				'yPercentFrom': '10',
+				'yPercentFrom': '20',
 				'yPercent': '-30'
 			}, {
 				'class': 'dtl_list_img4',
@@ -609,23 +645,23 @@ jQuery(document).ready(function(){
 			}, {
 				'class': 'dtl_list_img5',
 				'duration': '0.5',
-				'yPercentFrom': '0',
-				'yPercent': '-60'
+				'yPercentFrom': '20',
+				'yPercent': '-20'
 			}, {
 				'class': 'dtl_list_img6',
 				'duration': '0.5',
-				'yPercentFrom': '0',
-				'yPercent': '-100'
+				'yPercentFrom': '10',
+				'yPercent': '-80'
 			}, {
 				'class': 'dtl_list_img7',
 				'duration': '0.5',
-				'yPercentFrom': '10',
-				'yPercent': '-60'
+				'yPercentFrom': '80',
+				'yPercent': '-40'
 			}, {
 				'class': 'dtl_list_img8',
 				'duration': '0.5',
-				'yPercentFrom': '10',
-				'yPercent': '-60'
+				'yPercentFrom': '40',
+				'yPercent': '-20'
 			}]
 		}
 	};
@@ -645,7 +681,7 @@ jQuery(document).ready(function(){
 						end: n['end'],
 						scrub: 1,
 						pin: !1,
-						markers: !1,
+						// markers: !1,
 						containerAnimation: scrollTweenSection,
 						// markers:true,
 					}
@@ -655,7 +691,7 @@ jQuery(document).ready(function(){
 					// duration: s['duration']
 				}).to('.' + t + ' .' + s['class'], {
 					yPercent: s['yPercent'],
-					duration: s['duration']
+					// duration: s['duration']
 				})
 			})
 		})
@@ -1012,6 +1048,15 @@ jQuery(document).ready(function(){
 		observer.observe(child);
 	});
 
+
+	var myOffcanvas = document.getElementById('trialPopup_one')
+	myOffcanvas.addEventListener('show.bs.offcanvas', function () {
+		locoscrolls.stop()
+	})
+	myOffcanvas.addEventListener('hidden.bs.offcanvas', function () {
+		locoscrolls.start()
+	})
+
 });
 
 
@@ -1218,7 +1263,7 @@ function actionBlock() {
 					end: '+=1000',
 					scrub: 1,
 					pin: !1,
-					markers: !1,
+					// markers: !1,
 				}
 			});
 			e[t][c].to('.' + t + ' .' + s['class'], {

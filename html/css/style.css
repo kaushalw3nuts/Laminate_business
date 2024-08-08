@@ -621,7 +621,8 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 
 /* ========== Trial popup style: Start (By Kaushal) ========== */
 
-.trialpop_one { border: none; width: 1400px; padding: 64px; transition: transform 1200ms ease-in-out; }
+.trialpop_one { border: none; width: 1400px; padding: 64px; transition: transform 1200ms ease-in-out; height: 100%; overflow: hidden; }
+.offcanvas_inner {  overflow-y: auto; max-height: 100vh; }
 .offcanvas-backdrop.show { opacity: 1; transition-duration: 0.5s; }
 .offcanvas.trialpop_one.show { transition-delay: 0.8s; }
 
@@ -1010,6 +1011,8 @@ body.open_menu .bg_menu_shap { -webkit-transform: scale(75) translate3d(1%, 1%, 
 /* Header End */
 
 .split_word > div { overflow: hidden; vertical-align: top; }
+.split_word > strong > div { overflow: hidden; vertical-align: top; }
+.split_word > span > div { overflow: hidden; vertical-align: top; }
 
 /* Home Banner Start */
 .home_wrap { width: 100%; position: relative; padding-top: 196px; }
