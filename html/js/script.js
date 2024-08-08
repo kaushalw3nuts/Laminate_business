@@ -143,8 +143,8 @@ jQuery(document).ready(function(){
 	// product_detail_page section 4 Slider: Start (By Kaushal)
 
 	$(function() {
-		if ($(".product-peculiarities__list").length && window.matchMedia("(min-width:768px)").matches) {
-			let prPeculiaritiesItems = $(".product-peculiarities__list").html(),
+		if ($('.product-peculiarities__list').length && window.matchMedia('(min-width:768px)').matches) {
+			var prPeculiaritiesItems = $(".product-peculiarities__list").html(),
 				prPeculiaritiesItemsLength = $(".product-peculiarities__item").length,
 				prPeculiaritiesDopContaner = $('<div class="product-peculiarities__preview-list-wr"><div class="product-peculiarities__preview-list-box"><div class="product-peculiarities__preview-list"></div></div><div class="product-peculiarities__preview-list-box"><div class="product-peculiarities__preview-list2"></div></div></div>'),
 				sliderControls = $('<div class="product-peculiarities__slide-controls"><button class="product-peculiarities__slide-prev js-aware-btn"><i><svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.99885 1L1 6L5.99885 11M15 5.99986H1.13994" stroke="black" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></i></button><button class="product-peculiarities__slide-next js-aware-btn"><i><svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.0012 1L15 6L10.0012 11M1 5.99986H14.8601" stroke="black" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg></i></button></div>'),

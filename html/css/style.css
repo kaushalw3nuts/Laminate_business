@@ -543,7 +543,8 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 .product-peculiarities-thumbs .product-peculiarities-thumbs__image { position: relative; flex: 0 0 600px; margin-right: 44px; background: #E2E2E2; }
 .product-peculiarities-thumbs .product-peculiarities-thumbs__image::before { content: ""; display: block; padding-top: 100%; }
 .product-peculiarities__item.tns-item .product-peculiarities-thumbs__image { overflow: hidden; -webkit-transform: translateZ(0); transform: translateZ(0); }
-.product-peculiarities__item.tns-item.slideOut .product-peculiarities-thumbs__image { -webkit-transform: translateZ(0); transform: translateZ(0); }
+.product-peculiarities__item.tns-item.slideOut .product-peculiarities-thumbs__image { overflow: hidden; -webkit-transform: translateZ(0); transform: translateZ(0); }
+.product-peculiarities__item.tns-item.slideOut .product-peculiarities-thumbs__image picture { -webkit-transform: translateX(20px); transform: translateX(20px); opacity: 0; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; }
 .product-peculiarities__item.tns-item.slideIn .product-peculiarities-thumbs__image { overflow: hidden; }
 .product-peculiarities-thumbs__image picture { position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
 .product-peculiarities__item.tns-item .product-peculiarities-thumbs__image picture { transform: translateX(100%);  }
@@ -621,7 +622,7 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 
 /* ========== Trial popup style: Start (By Kaushal) ========== */
 
-.trialpop_one { border: none; width: 1400px; padding: 64px; transition: transform 1200ms ease-in-out; }
+.trialpop_one { border: none; width: 1400px; padding: 64px; transition: transform 1200ms ease-in-out; visibility: visible !important; }
 .offcanvas-backdrop.show { opacity: 1; transition-duration: 0.5s; }
 .offcanvas.trialpop_one.show { transition-delay: 0.8s; }
 
