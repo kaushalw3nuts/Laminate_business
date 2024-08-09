@@ -267,8 +267,8 @@ input::-webkit-inner-spin-button {
 .kv-sec .kv-inner .kv-ttlWrap .kv-ttl-line h1 { font-family: 'Gilroy-ExtraBold'; font-size: var(--fz164); line-height: 1.22; color: var(--whitetxt); text-transform: uppercase; }
 .kv-sec .kv-inner .kv-ttlWrap .kv-ttl-line p { margin-top: 32px; color: var(--whitetxt); }
 .kv-sec .kv-img { width: 100%; height: auto; display: flex; overflow: hidden; }
-.kv-sec .kv-img figure { width: 100%; position: relative; transform-origin: center; display: block; margin: 0; }
-.kv-sec .kv-img figure img { width: 100%; height: auto; transform: scale(1.4); transition: all 0.8s ease-in-out; }
+.kv-sec .kv-img figure { width: 100%; position: relative; transform-origin: center; display: block; margin: 0; height: 100vh; }
+.kv-sec .kv-img figure img { width: 100%; height: auto; transform: scale(1.4); transition: all 0.8s ease-in-out; object-fit: cover; }
 .load-content-delay .kv-sec .kv-img figure img { transform: scale(1); }
 
 @media (min-width: 1921px) {
