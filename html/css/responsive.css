@@ -14,7 +14,25 @@
  
 }
 @media (max-width: 767px) {
- 
+	
+	/* ========== header style: Start (By Kaushal) ========== */
+
+	.head_wrap { padding: 20px; }
+	.logo a img { width: 55px; }
+	.hamburger_btn .hamburger_icon { margin-right: 0; height: 32px; width: 32px; }
+	.navbar_toggler_icon { width: 12px; }
+	.navbar_toggler_icon::before { width: 12px; top: -5px; }
+	.navbar_toggler_icon::after { width: 12px; bottom: -5px; }
+	.nav_text { display: none; }
+	.bg_menu_shap { top: 20px; right: 20px; height: 32px; width: 32px; }
+	.navi_wrap { top: 72px; height: calc(100vh - 72px); }
+	.head_wrap .navigation_bar { padding: 0 20px 0 20px; }
+	.head_wrap .navigation_bar .left_part { width: 100%; border: none; }
+	.head_wrap .navigation_bar .left_part ul { padding: 0; }
+	.head_wrap .navigation_bar .left_part ul li { padding: 24px 0; }
+	.head_wrap .navigation_bar .right_part { display: none; }
+
+	/* ========== header style: End (By Kaushal) ========== */
 }
 
 
