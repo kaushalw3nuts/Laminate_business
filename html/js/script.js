@@ -1092,39 +1092,39 @@ let objAct = {
 		'item': [{
 			'class': 'item0',
 			'duration': '0.5',
-			'yPercent': '-20'
+			'yPercent': '-16'
 		}, {
 			'class': 'item1',
-			'duration': '0.3',
-			'yPercent': '-30'
+			'duration': '0.8',
+			'yPercent': '-40'
 		}, {
 			'class': 'item2',
 			'duration': '1',
-			'yPercent': '-20'
+			'yPercent': '-30'
 		}, {
 			'class': 'inn-desc',
 			'duration': '0.5',
-			'yPercent': '-90'
+			'yPercent': '-60'
 		}]
 	},
 	'acrylic_products': {
 		'start': 'top 60%',
 		'item': [{
 			'class': 'item0',
-			'duration': '1.2',
-			'yPercent': '-90'
+			'duration': '0.2',
+			'yPercent': '-30'
 		}, {
 			'class': 'item1',
-			'duration': '1',
-			'yPercent': '-57'
+			'duration': '1.2',
+			'yPercent': '-25'
 		}, {
 			'class': 'item2',
-			'duration': '0.2',
-			'yPercent': '-60'
+			'duration': '1',
+			'yPercent': '-30'
 		}, {
 			'class': 'inn-desc',
 			'duration': '1',
-			'yPercent': '-70'
+			'yPercent': '20'
 		}]
 	},
 	'asa_products': {
@@ -1132,11 +1132,11 @@ let objAct = {
 		'item': [{
 			'class': 'item0',
 			'duration': '1',
-			'yPercent': '-30'
+			'yPercent': '-40'
 		}, {
 			'class': 'item1',
 			'duration': '1.2',
-			'yPercent': '-20'
+			'yPercent': '-30'
 		}, {
 			'class': 'item2',
 			'duration': '1',
@@ -1144,7 +1144,7 @@ let objAct = {
 		}, {
 			'class': 'inn-desc',
 			'duration': '1',
-			'yPercent': '-30'
+			'yPercent': '12'
 		}]
 	},
 	'plywood_products': {
@@ -1152,19 +1152,19 @@ let objAct = {
 		'item': [{
 			'class': 'item0',
 			'duration': '1',
-			'yPercent': '-60'
+			'yPercent': '-30'
 		}, {
 			'class': 'item1',
-			'duration': '0.8',
-			'yPercent': '-35'
+			'duration': '1.2',
+			'yPercent': '-25'
 		}, {
 			'class': 'item2',
 			'duration': '1',
-			'yPercent': '-60'
+			'yPercent': '-30'
 		}, {
 			'class': 'inn-desc',
 			'duration': '1',
-			'yPercent': '-30'
+			'yPercent': '15'
 		}]
 	},
 	'veneer_products': {
@@ -1172,19 +1172,19 @@ let objAct = {
 		'item': [{
 			'class': 'item0',
 			'duration': '1',
-			'yPercent': '-140'
+			'yPercent': '-40'
 		}, {
 			'class': 'item1',
 			'duration': '1.2',
-			'yPercent': '-85'
+			'yPercent': '-30'
 		}, {
 			'class': 'item2',
 			'duration': '1',
-			'yPercent': '-90'
+			'yPercent': '-30'
 		}, {
 			'class': 'inn-desc',
 			'duration': '1',
-			'yPercent': '-120'
+			'yPercent': '15'
 		}]
 	},
 	'corian_products': {
@@ -1192,19 +1192,19 @@ let objAct = {
 		'item': [{
 			'class': 'item0',
 			'duration': '1',
-			'yPercent': '-160'
+			'yPercent': '-30'
 		}, {
 			'class': 'item1',
 			'duration': '1.2',
-			'yPercent': '-98'
+			'yPercent': '-25'
 		}, {
 			'class': 'item2',
 			'duration': '1',
-			'yPercent': '-100'
+			'yPercent': '-30'
 		}, {
 			'class': 'inn-desc',
 			'duration': '1',
-			'yPercent': '-120'
+			'yPercent': '15'
 		}]
 	},
 	'louvers_products': {
@@ -1212,19 +1212,19 @@ let objAct = {
 		'item': [{
 			'class': 'item0',
 			'duration': '1',
-			'yPercent': '-160'
+			'yPercent': '-40'
 		}, {
 			'class': 'item1',
 			'duration': '1.2',
-			'yPercent': '-97'
+			'yPercent': '-30'
 		}, {
 			'class': 'item2',
 			'duration': '1',
-			'yPercent': '-100'
+			'yPercent': '-30'
 		}, {
 			'class': 'inn-desc',
 			'duration': '1',
-			'yPercent': '-120'
+			'yPercent': '15'
 		}]
 	},
 	'laminate_sheet_products': {
@@ -1232,19 +1232,19 @@ let objAct = {
 		'item': [{
 			'class': 'item0',
 			'duration': '1',
-			'yPercent': '-160'
+			'yPercent': '-30'
 		}, {
 			'class': 'item1',
 			'duration': '1.2',
-			'yPercent': '-97'
+			'yPercent': '-25'
 		}, {
 			'class': 'item2',
 			'duration': '1',
-			'yPercent': '-100'
+			'yPercent': '-30'
 		}, {
 			'class': 'inn-desc',
 			'duration': '1',
-			'yPercent': '-120'
+			'yPercent': '5'
 		}]
 	}
 };
