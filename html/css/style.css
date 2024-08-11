@@ -633,6 +633,7 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 .product_listing_page .side_scroll_img_sec { background-color: var(--whitebg); }
 .product_listing_page .side_scroll_img_pin .side_scroll_img_box { padding: 0 60px 0; }
 .product_listing_page .side_scroll_img_box .main_img { bottom: 0; }
+.product_listing_page .similar_slider { display: none; }
 
 @media (min-width: 1921px) {
 

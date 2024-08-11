@@ -176,11 +176,23 @@ jQuery(document).ready(function(){
 	// product_detail_page section 3 Slider: End (By Kaushal)
 
 	let similarSlider = new Swiper(".similar_slider", {
-        slidesPerView: 5,
-        spaceBetween: 68,
 		navigation: {
 			nextEl: ".similar-button-next",
 			prevEl: ".similar-button-prev",
+		},
+		breakpoints: {
+			0: {
+			  slidesPerView: 2,
+			  spaceBetween: 15,
+			},
+			768: {
+			  slidesPerView: 3,
+			  spaceBetween: 40,
+			},
+			992: {
+			  slidesPerView: 5,
+			  spaceBetween: 50,
+			},
 		},
     });
 
@@ -362,9 +374,14 @@ jQuery(document).ready(function(){
 		}
 		)
 	}
-	setTimeout(() => {
-		footerSvgHandler()
-	},2000)
+
+	const isDesktopFtr = window.matchMedia("(min-width: 992px)").matches;
+
+	if (isDesktopFtr) {
+		setTimeout(() => {
+			footerSvgHandler()
+		},2000);
+	};
 
 	// Footer animation: End (By Kaushal)
 
