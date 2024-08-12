@@ -182,16 +182,20 @@ jQuery(document).ready(function(){
 		},
 		breakpoints: {
 			0: {
-			  slidesPerView: 2,
-			  spaceBetween: 15,
+			  	slidesPerView: 2,
+			  	spaceBetween: 15,
 			},
 			768: {
-			  slidesPerView: 3,
-			  spaceBetween: 40,
+			  	slidesPerView: 3,
+			  	spaceBetween: 25,
 			},
 			992: {
-			  slidesPerView: 5,
-			  spaceBetween: 50,
+			  	slidesPerView: 4,
+			  	spaceBetween: 30,
+			},
+			1231: {
+				slidesPerView: 5,
+				spaceBetween: 68,
 			},
 		},
     });
@@ -375,7 +379,7 @@ jQuery(document).ready(function(){
 		)
 	}
 
-	const isDesktopFtr = window.matchMedia("(min-width: 992px)").matches;
+	const isDesktopFtr = window.matchMedia("(min-width: 1230px)").matches;
 
 	if (isDesktopFtr) {
 		setTimeout(() => {
