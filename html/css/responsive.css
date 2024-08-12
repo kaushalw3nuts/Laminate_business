@@ -384,6 +384,24 @@
 
 	/* ========== footer style: End (By Kaushal) ========== */
 
+	/* ========== contact_page section 1 style: Start (By Kaushal) ========== */
+
+	.inner_since_journey { min-height: auto; padding: 130px 44px 64px 44px; }
+	.inner_since_journey .since_title { margin-bottom: 32px; }
+	.inner_since_journey .since_title h1 { font-size: 64px; }
+	.inner_since_journey .sub_inner_sec { max-width: 100%; flex-grow: unset; flex-shrink: unset; }
+	.inner_since_journey .sub_inner_sec .top_sub_inner { flex-direction: column; flex-grow: unset; flex-shrink: unset; }
+	.inner_since_journey .sub_inner_sec .contact_detail .left_part { width: 100%; font-size: 16px; margin-bottom: 32px; }
+	.inner_since_journey .sub_inner_sec .contact_detail .link { width: 100%; }
+	.inner_since_journey .sub_inner_sec .contact_detail .right_part { font-size: 16px; }
+	.inner_since_journey .sub_inner_sec .bottom_sub_inner { flex-direction: column; gap: 0; }
+	.inner_since_journey .sub_inner_sec .contact_detail .left_part br { display: none; }
+	.inner_since_journey .sub_inner_sec .contact_detail + .contact_detail { margin-top: 32px; }	
+	.inner_since_journey .sub_inner_sec .contact_detail .right_part::after { bottom: 5px; }
+	.since_journey_section .since_logo { position: relative; bottom: auto; right: -10px; max-width: 810px; padding: 0 0 64px 44px; margin-right: -42px; }
+
+	/* ========== contact_page section 1 style: End (By Kaushal) ========== */
+
 }
 @media (max-width: 767px) {
 	
@@ -485,6 +503,68 @@
 	.footer-bottom-grid .copy_social .media_wrap { margin-top: 12px; }
 
 	/* ========== footer style: End (By Kaushal) ========== */
+
+	/* ========== contact_page section 1 style: Start (By Kaushal) ========== */
+
+	.inner_since_journey { min-height: auto; padding: 96px 20px 44px 20px; }
+	.inner_since_journey .since_title { margin-bottom: 24px; }
+	.inner_since_journey .since_title h1 { font-size: var(--fz32); }
+	.inner_since_journey .sub_inner_sec { max-width: 100%; flex-grow: unset; flex-shrink: unset; }
+	.inner_since_journey .sub_inner_sec .top_sub_inner { flex-direction: column; flex-grow: unset; flex-shrink: unset; }
+	.inner_since_journey .sub_inner_sec .contact_detail .left_part { width: 100%; font-size: 12px; margin-bottom: 24px; }
+	.inner_since_journey .sub_inner_sec .contact_detail .link { width: 100%; }
+	.inner_since_journey .sub_inner_sec .contact_detail .right_part { font-size: 12px; }
+	.inner_since_journey .sub_inner_sec .contact_detail .right_part::after { bottom: 2px; }
+	.inner_since_journey .sub_inner_sec .bottom_sub_inner { flex-direction: column; gap: 0; }
+	.inner_since_journey .sub_inner_sec .contact_detail .left_part br { display: none; }
+	.inner_since_journey .sub_inner_sec .contact_detail + .contact_detail { margin-top: 24px; }	
+	.since_journey_section .since_logo { position: relative; bottom: auto; right: auto; max-width: 335px; padding: 20px 0; margin: 0 auto; }
+
+	/* ========== contact_page section 1 style: End (By Kaushal) ========== */
+
+	/* ========== contact_page section 2 style: Start (By Kaushal) ========== */
+
+	.reach_out_section { padding: 20px; }
+	.reach_out_section .text_content { max-width: 100%; margin-bottom: 24px; }
+	.reach_out_section .text_content span { font-size: 12px; }
+	.reach_out_section .text_content h2 { margin-top: 12px; font-size: 44px; }
+	.reach_out_section .text_content p { margin-top: 12px; flex-direction: column; }
+	.reach_out_section .text_content p a::after { display: none; }
+	.reach_out_section .contact_wrapper .row { row-gap: 12px; }
+	.reach_out_section .contact_wrapper .contact_inner_wrapper { border-radius: 10px; }
+	.reach_out_section .contact_wrapper .contact_inner_wrapper .img_wrap { width: 44px; height: 44px; }
+	.reach_out_section .contact_wrapper .contact_inner_wrapper span { margin-top: 12px; font-size: var(--fz14); }
+	.reach_out_section .contact_wrapper .contact_inner_wrapper p { font-size: var(--fz14); }
+	.reach_out_section .contact_wrapper .contact_inner_wrapper .link { margin-top: 12px; }
+	.reach_out_section .contact_wrapper .contact_inner_wrapper .link a { font-size: var(--fz14); }
+	.reach_out_section .contact_wrapper .contact_inner_wrapper .link a::after { bottom: 4px; }
+	.reach_out_section .contact_wrapper .contact_inner_wrapper i { margin-top: 12px; font-size: var(--fz14); }
+
+	/* ========== contact_page section 2 style: End (By Kaushal) ========== */
+
+	/* ========== contact_page section 3 style: Start (By Kaushal) ========== */
+
+	.assist_section { padding: 20px; }
+	.assist_inner_section { max-width: 100%; }
+	.assist_inner_section .title { margin-bottom: 24px; }
+	.assist_inner_section .title h2 { font-size: var(--fz32); }
+	.assist_inner_section .title p { margin-top: 12px; }
+	.assist_inner_section .form_wrap { max-width: 100%; }
+	.form_block { flex-direction: column; }
+	.form_block .input-row { width: 100%; }
+	.form_block .input-row + .input-row { margin: 16px 0 0 0; }
+	.form-control { height: 46px; padding: 0 0 12px 0; font-size: 12px; }
+	.error_msg { font-size: 12px; margin-top: 6px; }
+	.form_block + .form_block { margin-top: 16px; }
+	.textarea_wrap .address { height: 80px; }
+	.form_wrap .form_check { margin-top: 16px; }
+	.form-group label::before { height: 20px; width: 20px; }
+	.form-group input:checked + label::after { width: 14px; height: 14px; top: 3px; left: 3px; }
+	.form-group label { padding-left: 32px; font-size: 12px; display: inline; }
+	.form_wrap .btnlink { margin-top: 32px; }
+	.form_wrap .btnlink .sub_btn { height: 46px; font-size: 12px; }
+
+	/* ========== contact_page section 3 style: End (By Kaushal) ========== */
 }
 
 

@@ -739,7 +739,7 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 .reach_out_section .contact_wrapper { display: block; position: relative; }
 .reach_out_section .contact_wrapper .row { row-gap: 24px; margin: 0 -12px; }
 .reach_out_section .contact_wrapper .row>* { padding: 0 12px; }
-.reach_out_section .contact_wrapper .contact_inner_wrapper { display: block; position: relative; padding: 24px; background: var(--lightgraybg100); border-radius: 30px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+.reach_out_section .contact_wrapper .contact_inner_wrapper { position: relative; padding: 24px; background: var(--lightgraybg100); border-radius: 30px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
 .reach_out_section .contact_wrapper .contact_inner_wrapper .img_wrap { display: flex; justify-content: center; align-items: center; height: 54px; width: 54px; background: var(--blackbg); border-radius: 50%; }
 .reach_out_section .contact_wrapper .contact_inner_wrapper .img_wrap i { display: flex; font-size: 0; width: 20px; margin: 0; }
 .reach_out_section .contact_wrapper .contact_inner_wrapper .img_wrap i img { width: 100%; height: auto; }
