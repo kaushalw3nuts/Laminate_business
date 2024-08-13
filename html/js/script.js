@@ -344,15 +344,18 @@ jQuery(document).ready(function(){
 				}
 			});
 		} else if ($(".product-peculiarities__list").length && window.matchMedia("(max-width:767px)").matches) {
-			var swiper = new Swiper('.product-peculiarities__list', {
-				slidesPerView: 1,
+			$(".product-peculiarities__list").slick({
+				slidesToShow: 1,
+				dots: false,
+				swipe: true,
 				draggable: true,
-	 	        freeMode: true,
-				loop: true,
-				// navigation: {
-				// 	nextEl: '.swiper-button-next',
-				// 	prevEl: '.swiper-button-prev',
-				// },
+				arrows: true,
+				infinite: true,
+				slidesToScroll: 1,
+				autoplay: false,
+				autoplaySpeed: 2000,
+				prevArrow: $('.prev-arrow'),
+    			nextArrow: $('.next-arrow')
 			});
 		}
 	});
@@ -412,14 +415,25 @@ jQuery(document).ready(function(){
 			}, 500);
 		}
 	});
+
+	jQuery(".catalogues_box").click(function() {
+		jQuery(".hamburger_btn").removeClass('active');
+        if (jQuery('body').hasClass('open_menu')) {
+            jQuery('body').removeClass('loaded_wrap');
+            setTimeout(() => {
+                jQuery('body').removeClass('open_menu');
+            }, 500);
+        }
+		locoscrolls.start();
+    });
 		
-		jQuery('.navigation_bar .left_part ul li[data-menu-list] a').on('mouseenter', function() {
-			jQuery(this).addClass("highlight");
-			if(jQuery(this).parents('li[data-menu-list]')) {
-				jQuery('.data_hover_menu').hide();
-				jQuery('.data_hover_menu[data-menu-block='+jQuery(this).parent().attr('data-menu-list')+']').fadeIn(600);
-			}
-		});
+	jQuery('.navigation_bar .left_part ul li[data-menu-list] a').on('mouseenter', function() {
+		jQuery(this).addClass("highlight");
+		if(jQuery(this).parents('li[data-menu-list]')) {
+			jQuery('.data_hover_menu').hide();
+			jQuery('.data_hover_menu[data-menu-block='+jQuery(this).parent().attr('data-menu-list')+']').fadeIn(600);
+		}
+	});
 
 	jQuery(".text_with_img_ani").each(function() {
 		let $boxWrap = jQuery(this);
