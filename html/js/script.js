@@ -194,6 +194,10 @@ jQuery(document).ready(function(){
 			  	spaceBetween: 30,
 			},
 			1231: {
+				slidesPerView: 4,
+				spaceBetween: 42,
+			},
+			1600: {
 				slidesPerView: 5,
 				spaceBetween: 68,
 			},
