@@ -4,7 +4,7 @@
 
 	.logo a img { width: 130px; }
 	.hamburger_btn .hamburger_icon { margin-right: 12px; height: 48px; width: 48px; }
-	.navi_wrap { top: 136px; height: calc(100vh - 136px); }
+	.navi_wrap { top: 136px; height: calc(100vh - 136px); height: calc((var(--vh, 1vh) * 100 ) - 136px); }
 	.head_wrap .navigation_bar .left_part ul li.active a span, 
 	.head_wrap .navigation_bar .left_part ul li a:hover span { height: 28px; width: 28px; margin-right: 16px; }
 
@@ -111,7 +111,7 @@
 	.nav_text_before { height: 24px; }
 	.bg_menu_shap { top: 38px; right: 115px; height: 40px; width: 40px; }
 	body.open_menu .bg_menu_shap { -webkit-transform: scale(80) translate3d(1%, 1%, 0); -moz-transform: scale(80) translate3d(1%, 1%, 0); -ms-transform: scale(80) translate3d(1%, 1%, 0); transform: scale(80) translate3d(1%, 1%, 0); }
-	.navi_wrap { top: 116px; height: calc(100vh - 116px); }
+	.navi_wrap { top: 116px; height: calc(100vh - 116px); height: calc((var(--vh, 1vh) * 100 ) - 116px); }
 	.head_wrap .navigation_bar { padding: 0 44px; }
 	.head_wrap .navigation_bar .left_part ul { padding: 0 44px 0 20px; }
 	.head_wrap .navigation_bar .left_part ul li a { font-size: 36px; }
@@ -320,7 +320,7 @@
 	.nav_text_after, 
 	.nav_text_before { height: 22px; }
 	.bg_menu_shap { top: 32px; right: 105px; height: 32px; width: 32px; }
-	.navi_wrap { top: 96px; height: calc(100vh - 96px); }
+	.navi_wrap { top: 96px; height: calc(100vh - 96px); height: calc((var(--vh, 1vh) * 100 ) - 96px); }
 	.head_wrap .navigation_bar { padding: 0 44px; }
 	.head_wrap .navigation_bar .left_part { width: 50%; }
 	.head_wrap .navigation_bar .left_part ul { padding: 0 44px 0 0; }
@@ -576,7 +576,7 @@
 	.nav_text_after, 
 	.nav_text_before { height: 22px; }
 	.bg_menu_shap { top: 32px; right: 105px; height: 32px; width: 32px; }
-	.navi_wrap { top: 96px; height: calc(100vh - 96px); }
+	.navi_wrap { top: 96px; height: calc(100vh - 96px); height: calc((var(--vh, 1vh) * 100 ) - 96px); }
 	.head_wrap .navigation_bar { padding: 0 44px; }
 	.head_wrap .navigation_bar .left_part { width: 50%; }
 	.head_wrap .navigation_bar .left_part ul { padding: 0 44px 0 0; }
@@ -828,7 +828,7 @@
 	.navbar_toggler_icon::after { width: 12px; bottom: -5px; }
 	.nav_text { display: none; }
 	.bg_menu_shap { top: 20px; right: 20px; height: 32px; width: 32px; }
-	.navi_wrap { top: 72px; height: calc(100vh - 72px); }
+	.navi_wrap { top: 72px; height: calc(100vh - 72px); height: calc((var(--vh, 1vh) * 100 ) - 72px); }
 	.head_wrap .navigation_bar { padding: 0 20px 0 20px; }
 	.head_wrap .navigation_bar .left_part { width: 100%; border: none; }
 	.head_wrap .navigation_bar .left_part ul { padding: 0; }
