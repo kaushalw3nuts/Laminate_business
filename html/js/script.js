@@ -212,6 +212,12 @@ jQuery(document).ready(function(){
 	
 	// niceselect: End (By Kaushal)
 
+	// select2: Start (By Kaushal)
+
+	// $('.basic-multiple-dropdown').select2();
+	
+	// select2: End (By Kaushal)
+
 	// product_detail_page section 4 Slider: Start (By Kaushal)
 
 	$(function() {
