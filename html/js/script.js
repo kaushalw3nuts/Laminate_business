@@ -929,7 +929,7 @@ jQuery(document).ready(function(){
 				trigger: ".journy_scroll_pin",
 				pin: true,
 				scrub: true,
-				end: "+=2000",
+				end: `+=${$('.journy_scroll').outerWidth()}`,
 				// markers: true, // Uncomment for debugging
 			}
 			});
@@ -955,6 +955,7 @@ jQuery(document).ready(function(){
 				start: "left 60%",
 				toggleClass: 'active', // Toggle the 'active' class
 				}
+
 			});
 			});
 
@@ -1064,6 +1065,18 @@ jQuery(document).ready(function(){
 		})
 	}
 
+	let journeySlider = new Swiper(".journy_swipe", {
+        slidesPerView: 1,
+		// autoplay: {
+		// 	delay: 2500,
+		// 	disableOnInteraction: false,
+		// },
+		navigation: {
+			nextEl: ".journy-button-next",
+			prevEl: ".journy-button-prev",
+		},
+    });
+
 });
 
 
@@ -1092,7 +1105,7 @@ let objAct = {
 		'item': [{
 			'class': 'item0',
 			'duration': '0.5',
-			'yPercent': '-16'
+			'yPercent': '-60'
 		}, {
 			'class': 'item1',
 			'duration': '0.8',
@@ -1103,150 +1116,154 @@ let objAct = {
 			'yPercent': '-30'
 		}, {
 			'class': 'inn-desc',
-			'duration': '0.5',
-			'yPercent': '-60'
+			'duration': '1.2',
+			'yPercent': '-30'
 		}]
 	},
-	'acrylic_products': {
+	'product_section_one': {
 		'start': 'top 60%',
 		'item': [{
 			'class': 'item0',
 			'duration': '0.2',
-			'yPercent': '-30'
+			'yPercent': '-20',
+			'xPercent': '0'
 		}, {
 			'class': 'item1',
 			'duration': '1.2',
-			'yPercent': '-25'
+			'yPercent': '-20',
+			'xPercent': '0'
 		}, {
 			'class': 'item2',
 			'duration': '1',
-			'yPercent': '-30'
+			'yPercent': '-40',
+			'xPercent': '0'
 		}, {
 			'class': 'inn-desc',
 			'duration': '1',
-			'yPercent': '20'
+			'yPercent': '20',
+			'xPercent': '0'
 		}]
 	},
-	'asa_products': {
-		'start': 'top 60%',
-		'item': [{
-			'class': 'item0',
-			'duration': '1',
-			'yPercent': '-40'
-		}, {
-			'class': 'item1',
-			'duration': '1.2',
-			'yPercent': '-30'
-		}, {
-			'class': 'item2',
-			'duration': '1',
-			'yPercent': '-30'
-		}, {
-			'class': 'inn-desc',
-			'duration': '1',
-			'yPercent': '12'
-		}]
-	},
-	'plywood_products': {
-		'start': 'top 60%',
-		'item': [{
-			'class': 'item0',
-			'duration': '1',
-			'yPercent': '-30'
-		}, {
-			'class': 'item1',
-			'duration': '1.2',
-			'yPercent': '-25'
-		}, {
-			'class': 'item2',
-			'duration': '1',
-			'yPercent': '-30'
-		}, {
-			'class': 'inn-desc',
-			'duration': '1',
-			'yPercent': '15'
-		}]
-	},
-	'veneer_products': {
-		'start': 'top 60%',
-		'item': [{
-			'class': 'item0',
-			'duration': '1',
-			'yPercent': '-40'
-		}, {
-			'class': 'item1',
-			'duration': '1.2',
-			'yPercent': '-30'
-		}, {
-			'class': 'item2',
-			'duration': '1',
-			'yPercent': '-30'
-		}, {
-			'class': 'inn-desc',
-			'duration': '1',
-			'yPercent': '15'
-		}]
-	},
-	'corian_products': {
-		'start': 'top 60%',
-		'item': [{
-			'class': 'item0',
-			'duration': '1',
-			'yPercent': '-30'
-		}, {
-			'class': 'item1',
-			'duration': '1.2',
-			'yPercent': '-25'
-		}, {
-			'class': 'item2',
-			'duration': '1',
-			'yPercent': '-30'
-		}, {
-			'class': 'inn-desc',
-			'duration': '1',
-			'yPercent': '15'
-		}]
-	},
-	'louvers_products': {
-		'start': 'top 60%',
-		'item': [{
-			'class': 'item0',
-			'duration': '1',
-			'yPercent': '-40'
-		}, {
-			'class': 'item1',
-			'duration': '1.2',
-			'yPercent': '-30'
-		}, {
-			'class': 'item2',
-			'duration': '1',
-			'yPercent': '-30'
-		}, {
-			'class': 'inn-desc',
-			'duration': '1',
-			'yPercent': '15'
-		}]
-	},
-	'laminate_sheet_products': {
-		'start': 'top 60%',
-		'item': [{
-			'class': 'item0',
-			'duration': '1',
-			'yPercent': '-30'
-		}, {
-			'class': 'item1',
-			'duration': '1.2',
-			'yPercent': '-25'
-		}, {
-			'class': 'item2',
-			'duration': '1',
-			'yPercent': '-30'
-		}, {
-			'class': 'inn-desc',
-			'duration': '1',
-			'yPercent': '5'
-		}]
-	}
+	// 'product_section_one': {
+	// 	'start': 'top 60%',
+	// 	'item': [{
+	// 		'class': 'item0',
+	// 		'duration': '1',
+	// 		'yPercent': '-40'
+	// 	}, {
+	// 		'class': 'item1',
+	// 		'duration': '1.2',
+	// 		'yPercent': '-30'
+	// 	}, {
+	// 		'class': 'item2',
+	// 		'duration': '1',
+	// 		'yPercent': '-40'
+	// 	}, {
+	// 		'class': 'inn-desc',
+	// 		'duration': '1',
+	// 		'yPercent': '12'
+	// 	}]
+	// },
+	// 'product_section_one': {
+	// 	'start': 'top 60%',
+	// 	'item': [{
+	// 		'class': 'item0',
+	// 		'duration': '1',
+	// 		'yPercent': '-30'
+	// 	}, {
+	// 		'class': 'item1',
+	// 		'duration': '1.2',
+	// 		'yPercent': '-25'
+	// 	}, {
+	// 		'class': 'item2',
+	// 		'duration': '1',
+	// 		'yPercent': '-30'
+	// 	}, {
+	// 		'class': 'inn-desc',
+	// 		'duration': '1',
+	// 		'yPercent': '15'
+	// 	}]
+	// },
+	// 'product_section_one': {
+	// 	'start': 'top 60%',
+	// 	'item': [{
+	// 		'class': 'item0',
+	// 		'duration': '1',
+	// 		'yPercent': '-40'
+	// 	}, {
+	// 		'class': 'item1',
+	// 		'duration': '1.2',
+	// 		'yPercent': '-30'
+	// 	}, {
+	// 		'class': 'item2',
+	// 		'duration': '1',
+	// 		'yPercent': '-30'
+	// 	}, {
+	// 		'class': 'inn-desc',
+	// 		'duration': '1',
+	// 		'yPercent': '15'
+	// 	}]
+	// },
+	// 'product_section_one': {
+	// 	'start': 'top 60%',
+	// 	'item': [{
+	// 		'class': 'item0',
+	// 		'duration': '1',
+	// 		'yPercent': '-30'
+	// 	}, {
+	// 		'class': 'item1',
+	// 		'duration': '1.2',
+	// 		'yPercent': '-25'
+	// 	}, {
+	// 		'class': 'item2',
+	// 		'duration': '1',
+	// 		'yPercent': '-30'
+	// 	}, {
+	// 		'class': 'inn-desc',
+	// 		'duration': '1',
+	// 		'yPercent': '15'
+	// 	}]
+	// },
+	// 'product_section_one': {
+	// 	'start': 'top 60%',
+	// 	'item': [{
+	// 		'class': 'item0',
+	// 		'duration': '1',
+	// 		'yPercent': '-40'
+	// 	}, {
+	// 		'class': 'item1',
+	// 		'duration': '1.2',
+	// 		'yPercent': '-30'
+	// 	}, {
+	// 		'class': 'item2',
+	// 		'duration': '1',
+	// 		'yPercent': '-30'
+	// 	}, {
+	// 		'class': 'inn-desc',
+	// 		'duration': '1',
+	// 		'yPercent': '15'
+	// 	}]
+	// },
+	// 'product_section_one': {
+	// 	'start': 'top 60%',
+	// 	'item': [{
+	// 		'class': 'item0',
+	// 		'duration': '1',
+	// 		'yPercent': '-30'
+	// 	}, {
+	// 		'class': 'item1',
+	// 		'duration': '1.2',
+	// 		'yPercent': '-25'
+	// 	}, {
+	// 		'class': 'item2',
+	// 		'duration': '1',
+	// 		'yPercent': '-30'
+	// 	}, {
+	// 		'class': 'inn-desc',
+	// 		'duration': '1',
+	// 		'yPercent': '5'
+	// 	}]
+	// }
 };
 
 $(document).ready(function() {
@@ -1259,24 +1276,48 @@ $(document).ready(function() {
 });
 
 function actionBlock() {
-	var e = {};
-	$.each(objAct, function(t, n) {
-		e[t] = [];
-		$.each(n['item'], function(c, s) {
-			e[t][c] = gsap.timeline({
-				scrollTrigger: {
-					trigger: '.' + t,
-					start: n['start'],
-					end: '+=1000',
-					scrub: 1,
-					pin: !1,
-					// markers: !1,
-				}
+	$.each(objAct, function(section, data) {
+		$.each(data['item'], function(index, animationData) {
+			const elements = $('.' + section + ' .' + animationData['class']);
+			elements.each(function(i) {
+				gsap.timeline({
+					scrollTrigger: {
+						trigger: $(this),
+						start: data['start'],
+						end: '+=1000',
+						scrub: 1,
+						pin: false,
+						// markers: false,
+					}
+				}).to($(this), {
+					yPercent: animationData['yPercent'],
+					xPercent: animationData['xPercent'],
+					duration: animationData['duration']
+				});
 			});
-			e[t][c].to('.' + t + ' .' + s['class'], {
-				yPercent: s['yPercent'],
-				duration: s['duration']
-			})
-		})
-	})
-};
+		});
+	});
+}
+
+// function actionBlock() {
+// 	var e = {};
+// 	$.each(objAct, function(t, n) {
+// 		e[t] = [];
+// 		$.each(n['item'], function(c, s) {
+// 			e[t][c] = gsap.timeline({
+// 				scrollTrigger: {
+// 					trigger: '.' + t,
+// 					start: n['start'],
+// 					end: '+=1000',
+// 					scrub: 1,
+// 					pin: !1,
+// 					// markers: !1,
+// 				}
+// 			});
+// 			e[t][c].to('.' + t + ' .' + s['class'], {
+// 				yPercent: s['yPercent'],
+// 				duration: s['duration']
+// 			})
+// 		})
+// 	})
+// };

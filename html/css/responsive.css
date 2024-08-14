@@ -1,16 +1,203 @@
 @media (min-width: 1600px) and (max-width: 1740px) {
 	 
+	.product_banner .product_gallery {padding-left: 52px; padding-right: 52px;}
+	.product_section_one .product_grop {padding: 0 52px; column-gap: 30px;}
+	.product_section_one .product_grop .product_img_sec .product_one .small_img {width: 200px;}
+	.product_section_one .product_grop .product_img_sec .product_one .smallb_img {width: 250px;}
+	.product_section_one .product_grop .product_img_sec .product_two .big_img::after {padding: 100% 0 0 0;}
+	.product_section_one .product_grop .product_img_sec {gap: 30px;}
+	.product_section_one .product_grop .product_img_sec .product_two .big_img img {top: -20px;}
+
+	/* ========== about_page style: start (By hardik) ========== */
+	.section_content {padding: 0 44px 32px 44px;}
+	.story_wrap .story_content {padding: 0 44px;}
+	.journy_wrap .journy_sec {padding: 0 44px;}
+	.journy_scroll .journy_grp {width: 600px; min-width: 600px;}
+	.how_do_wrap .how_do {padding: 0 44px;}
+	.trust_logo ul {column-gap: 100px;}
+	.team_wrap .container {padding: 0 44px;}
+	/* ========== about_page style: start (By hardik) ========== */
 }
 
 @media (min-width: 1231px) and (max-width: 1599px) {
 	 
+	/* ========== Product_page style: start (By hardik) ========== */
+	.product_banner .product_gallery {padding-left: 52px; padding-right: 52px; padding-top: 200px;}
+	/* .product_gallery .box .item0 {bottom: 20%;} */
+	.product_gallery .box {height: 1000px;}
+	.product_section_one .product_grop {padding: 0 52px; column-gap: 30px;}
+	.product_section_one .product_grop .product_img_sec .product_one .small_img {width: 200px;}
+	.product_section_one .product_grop .product_img_sec .product_one .smallb_img {width: 250px;}
+	.product_section_one .product_grop .product_img_sec .product_two .big_img::after {padding: 100% 0 0 0;}
+	.product_section_one .product_grop .product_img_sec {gap: 30px;}
+	.product_gallery .box .item2 {top: 0;}
+	.product_section_one .product_grop .product_img_sec .product_two .big_img img {top: -20px;}
+	/* ========== Product_page style: end (By hardik) ========== */
+
+	/* ========== about_page style: start (By hardik) ========== */
+	.section_content {padding: 0 64px 32px 64px;}
+	.story_wrap {padding: 64px 0;}
+	.story_wrap .story_content {padding: 0 44px;}
+	.story_wrap .story_content .story_head span {font-size: 115px;}
+	.story_wrap .story_content .story_head {width: 40%;}
+	.story_img {width: 60%;}
+	.journy_wrap {padding: 64px 0;}
+	.journy_wrap .journy_sec .journy_heading {padding: 0 44px 64px 44px;}
+	.how_do_wrap {padding-top: 64px;}
+	.how_do_wrap .how_do {padding: 0 44px;}
+	.how_do_wrap .how_do .how_heading span {font-size: 115px;}
+	.how_do_wrap .how_do .how_heading {padding-bottom: 64px;}
+	.journy_scroll .journy_grp {width: 500px; min-width: 500px;}
+	.floor_content{left: 40%;}
+	.trusted_wrap {padding: 64px 0;}
+	.trusted_wrap .trusted_grp .trust_head {padding-bottom: 64px;}
+	.trust_logo ul {column-gap: 40px; row-gap: 40px;}
+	.trust_logo ul li {max-width: 250px;}
+	.team_wrap .our_team .team_dtl .team_content h6 {font-size: 24px;}
+	.team_wrap .container {padding: 0 44px;}
+	.team_wrap {padding: 64px 0;}
+	.trusted_wrap .trusted_grp {max-width: 1230px;}
+	/* ========== about_page style: end (By hardik) ========== */
 }
  
 @media (min-width: 992px) and (max-width: 1230px) {
+
+	/* ========== Product_page style: start (By hardik) ========== */
+	.product_section_one .product_grop {padding: 0 52px;}
+	.product_section_one .product_grop .product_img_sec .product_one .small_img {width: 150px;}
+	.product_section_one .product_grop .product_img_sec .product_one .smallb_img {width: 200px;}
+	.product_section_one .product_grop .product_img_sec .product_two .big_img::after {padding: 140% 0 0 0;}
+	.product_section_one .product_grop .product_img_sec .product_two .big_img img {height: 100%;}
+	.product_section_one .product_grop .product_img_sec {gap: 25px;}
+	.product_content p {font-size: 16px;}
+	.product_banner .product_gallery {padding: 170px 52px 30px;}
+	.product_gallery .box {height: 750px;}
+	.product_gallery .box .item1 {bottom: 100px;}
+	.product_gallery .box .item0 {bottom: 10%;}
+	.product_gallery .box .item2 {top: 0;}
+	.product_gallery .box .desc .inn-desc p {font-size: 16px;}
+	.product_section_one {padding-top: 120px;}
+	/* ========== Product_page style: end (By hardik) ========== */
+
+	/* ========== about_page style: start (By hardik) ========== */
+	.section_content {padding: 0 44px 32px 44px;}
+	.section_content .sec_dtl p {font-size: 18px;}
+	.story_wrap {padding: 64px 0;}
+	.story_wrap .story_content {padding: 0 44px ; }
+	.story_wrap .story_content .story_head span {font-size: 76px;}
+	.story_img .img_wrap {max-width: 500px;}
+	.story_wrap .story_content .story_head {width: 50%;}
+	.story_img {width: 50%;}
+	.img_content p {font-size: 16px;}
+	.journy_wrap {padding: 10px 0 64px;}
+	.journy_wrap .journy_sec .journy_heading {padding: 0 44px 64px ;}
+	.how_do_wrap {padding-top: 64px;}
+	.how_do_wrap .how_do {padding: 0 44px;}
+	.how_do_wrap .how_do .how_heading span {font-size: 110px;}
+	.floor_content {left: 40%;}
+	.floor_content p {font-size: 18px;}
+	.trusted_wrap .trusted_grp .trust_head h4 {font-size: 54px;}
+	.trust_logo ul {column-gap: 50px; row-gap: 50px;}
+	.trust_logo ul li {max-width: 200px;}
+	.trusted_wrap {padding: 64px 0;}
+	.trusted_wrap .trusted_grp .trust_head {padding-bottom: 64px;}
+	.team_wrap {padding: 64px 0;}
+	.team_wrap .section_content {padding-bottom: 64px;}
+	.team_wrap .container {padding: 0 44px;}
+	.team_wrap .our_team .team_dtl .team_content h6 {font-size: 20px; padding-bottom: 10px;}
+	.team_wrap .our_team .team_dtl .team_content {padding-top: 20px;}
+	.team_wrap .our_team .team_dtl .team_content span {font-size: 16px;}
+	.team_wrap .our_team .row {row-gap: 44px;}
+	.journy_scroll .journy_grp {width: 400px; min-width: 400px;}
+	.journy_dtl p {font-size: 16px;}
+	.journy_scroll {gap: 40px;}
+	/* ========== about_page style: end (By hardik) ========== */
 	 
 }
 @media (min-width: 768px) and (max-width: 991px) {
 	 
+	/* ========== Product_page style: start (By hardik) ========== */
+	.product_gallery .box {height: 807px;}
+	.product_banner .product_gallery {margin: 0 44px; padding: 187px 0 30px;}
+	.product_gallery .box .item0 {bottom: 30%;}
+	.product_gallery .box .item2 {top: 0;}
+	.product_gallery .box .desc .inn-desc .sec-tt {font-size: 96px;}
+	.product_gallery .box .desc .inn-desc p {font-size: 14px; margin-top: 16px;}
+	.product_gallery .box .desc {top: 41%;}
+	.product_section_one .product_grop {flex-direction: column; }
+	.product_section_one .product_grop .product_content {padding: 0 44px;}
+	.product_section_one {padding-top: 64px;}
+	.product_section_one .product_grop .product_content {width: 100%; max-width: 100%;}
+	.product_content h2 {font-size: 96px; padding-bottom: 24px;}
+	.product_content p {font-size: 14px; padding-bottom: 24px;}
+	.product_content .btnbox a {font-size: 14px;}
+	.product_section_one .product_grop .product_img_sec {width: 100%; max-width: 100%; padding-left: 44px; gap: 34px;}
+	.product_section_one .product_grop .product_img_sec .product_one {align-items: self-start;}
+	.product_section_one .product_grop .product_img_sec .product_one .small_img {width: 200px;}
+	.product_section_one .product_grop .product_img_sec .product_one .smallb_img {width: 300px; padding-left: 20px;}
+	.product_gallery .box .item1 {bottom: 231px;} 
+	.product_section_one .product_grop .product_img_sec .product_two .big_img::after {padding: 131.6% 0 0 0;}
+	.product_section_one .product_grop .product_img_sec .product_two .big_img img {height: 100%;}
+	.product_section_one.asa_prduct .product_grop {flex-direction: column;}
+	.product_section_one.asa_prduct .product_grop .product_img_sec {flex-direction: row; gap: 34px;}
+	.smallb_img img {left: 20px;}
+	.product_section_one:nth-child(even) .product_grop {flex-direction: column;} 
+	.product_section_one:nth-child(even) .product_grop .product_img_sec {flex-direction: row;}
+	/* ========== Product_page style: end (By hardik) ========== */
+
+	/* ========== about_page style: start (By hardik) ========== */
+	.about_page .about_section {padding: 130px 44px 32px;}
+	.section_content {flex-direction: column;}
+	.section_content .section_head {width: 100%; max-width: 400px; margin: 0 auto 0 0; padding-bottom: 16px;}
+	.section_content .sec_dtl {width: 100%; max-width: 100%;}
+	.section_content .section_head h1 {font-size: 96px;}
+	.section_content .sec_dtl p {font-size: 14px;}
+	.who_img .img_sec::after {padding-bottom: 78%;}
+	.story_wrap {padding: 64px 0 32px;}
+	.story_wrap .story_content {flex-direction: column;}
+	.story_wrap .story_content .story_head {width: 100%; padding: 0 44px;}
+	.story_wrap .story_content .story_head h2 {font-size: 64px;}
+	.story_wrap .story_content .story_head span {font-size: 120px;}
+	.story_wrap .story_content .story_head strong {font-size: 96px;}
+	.story_img {width: 100%; padding-top: 64px;}
+	.img_content {padding: 32px 44px;}
+	.img_content p {font-size: 14px;}
+	.journy_wrap {padding: 64px 0;}
+	.journy_wrap .journy_sec .journy_heading {padding: 0 44px 64px 44px;}
+	.journy_wrap .journy_sec .journy_heading h2 {font-size: 96px;}
+	.journy_wrap .journy_sec .journy_heading h2 span {font-size: 64px;}
+	.journy_scroll .journy_grp {width: 520px; min-width: 520px;}
+	.journy_dtl h6 {font-size: 20px;}
+	.journy_dtl p {font-size: 14px;}
+	.journy_dtl {padding-top: 88px;}
+	.line_scroll::before {margin-top: 44px;}
+	.line_scroll::after {margin-top: 44px;}
+	.round_wrap {margin-top: 35px;}
+	.how_do_wrap {padding-top: 64px;}
+	.how_do_wrap .how_do .how_heading {padding-bottom: 64px;}
+	.how_do_wrap .how_do {padding: 0 44px;}
+	.how_do_wrap .how_do .how_heading h2 {font-size: 96px;}
+	.how_do_wrap .how_do .how_heading span {font-size: 120px; text-align: right;}
+	.floor_content {left: 40%;}
+	.floor_content i {height: 64px;}
+	.floor_content h2 {font-size: 64px;}
+	.floor_content p {font-size: 14px;}
+	.trusted_wrap .trusted_grp .trust_head {padding-bottom: 44px;}
+	.trusted_wrap .trusted_grp .trust_head h4 {font-size: 44px;}
+	.trust_logo ul {column-gap: 40px; row-gap: 40px;}
+	.trust_logo ul li {max-width: 140px;}
+	.trusted_wrap {padding: 64px 0;}
+	.team_wrap {padding: 64px 44px;}
+	.team_wrap .section_content {padding-bottom: 64px;}
+	.team_wrap .section_content .section_head {width: 100%;}
+	.team_wrap .section_content .sec_dtl {width: 100%; max-width: 100%;}
+	.team_wrap .container {padding: 0;}
+	.team_wrap .our_team .team_dtl .team_content h6 {font-size: 16px; padding-bottom: 8px;}
+	.team_wrap .our_team .team_dtl .team_content {padding-top: 16px;}
+	.team_wrap .our_team .team_dtl .team_content span {font-size: 13px;}
+	.team_wrap .our_team .row {row-gap: 44px;}
+	.floor_content i {width: 64px;}
+	/* ========== about_page style: start (By hardik) ========== */
  
 }
 @media (max-width: 767px) {
@@ -33,6 +220,99 @@
 	.head_wrap .navigation_bar .right_part { display: none; }
 
 	/* ========== header style: End (By Kaushal) ========== */
+
+	/* ========== Product_page style: start (By hardik) ========== */
+	.product_section_one .product_grop .product_content { width: 100%; max-width: 100%; padding: 0 20px; height: 400px;}
+	.product_section_one .product_grop {flex-direction: column;}
+	.product_section_one .product_grop .product_img_sec {width: 100%; gap: 12px;} 
+	.product_section_one .product_grop .product_img_sec .product_one .small_img {width: 120px;}
+	.product_section_one .product_grop .product_img_sec .product_one .smallb_img {width: 158px;}
+	.product_section_one .product_grop .product_img_sec .product_one {align-items: flex-start; gap: 35px;}
+	.product_section_one .product_grop .product_img_sec .product_two .big_img {margin-top: -20px;}
+	.product_section_one .product_grop .product_img_sec .product_two .big_img img { height: 142.445%;}
+	.product_section_one.asa_prduct .product_grop {flex-direction: column;}
+	.product_section_one.asa_prduct .product_grop .product_img_sec {flex-direction: row;}
+	.product_section_one {padding-top: 20px;}
+	.product_content h2 {font-size: 44px;}
+	.product_content p {font-size: 12px; padding-bottom: 12px;}
+	.product_content .btnbox a {font-size: 12px;}
+	.product_banner .product_gallery {padding: 80px 20px 30px;}
+	.product_gallery .box {height: 667px;}
+	.product_gallery .box .desc .inn-desc .sec-tt {font-size: 44px;}
+	.product_gallery .box .desc .inn-desc p {font-size: 12px; margin-top: 12px;}
+	.product_gallery .box .item0 {bottom: 48%; width: 50.74%; left: 23%;}
+	.product_gallery .box .item1 {bottom: 140px;}
+	.product_gallery .box .item2 {top: 150px;}
+	.product_section_one:nth-child(even) .product_grop {flex-direction: column;}
+	.product_section_one:nth-child(even) .product_grop .product_img_sec .product_one {align-items: flex-end;}
+	/* ========== Product_page style: start (By hardik) ========== */
+
+	/* ========== about_page style: start (By hardik) ========== */
+	.about_page .about_section {padding: 91px 20px 20px;}
+	.section_content {flex-direction: column;padding-bottom: 24px;}
+	.section_content .section_head {width: 100%;}
+	.section_content .sec_dtl {width: 100%;}
+	.section_content .section_head h1 {font-size: 44px; padding: 0 0 16px; max-width: 185px;}
+	.section_content .sec_dtl p {font-size: 12px;}
+	.who_img .img_sec::after {padding-bottom: 71%;}
+	.who_img {padding: 0;}
+	.story_wrap {padding: 20px 0;}
+	.story_wrap .story_content {flex-direction: column; }
+	.story_wrap .story_content .story_head {max-width: 100%; width: 100%; padding: 0 20px;}
+	.story_wrap .story_content .story_head h2 {font-size: 32px;}
+	.story_wrap .story_content .story_head span {font-size: 64px;}
+	.story_wrap .story_content .story_head strong {font-size: 48px;}
+	.story_img {padding-top: 24px; width: 100%;}
+	.img_content {padding: 24px 20px;}
+	.img_content p {font-size: 12px;}
+	
+	.journy_scroll_pin {display: none;}
+	.journy_slider {display: block;}
+	.journy_slider .container {padding: 0 24px;}
+	.journy_wrap .journy_sec .journy_heading h2 {padding: 0 24px; font-size: 48px;} 
+	.journy_wrap .journy_sec .journy_heading h2 span {font-size: 32px;}
+	.journy_wrap .journy_sec .journy_heading {padding-bottom: 24px;}
+	.line_scroll::before {margin-top: 25px;}
+	.round_wrap {margin-top: 16px; border-color: var(--blackbg); left: 48%;}
+	.round_wrap::before {background-color: var(--blackbg);}
+	.journy_dtl {padding-top: 50px; opacity: 1; visibility: visible; transform: translateY(0);} 
+	.journy_dtl h6 {font-size: 16px;}
+	.journy_dtl p {font-size: 12px;}
+	.journy_img img {width: 100%; height: 100%;}
+	.journy_swipe .similar_slider_navigation {display: flex; align-items: center; margin-top: 24px;
+	justify-content: center; gap: 24px;}
+	.journy-slide-arrow {display: flex; justify-content: center; align-items: center; height: 24px;
+	width: 24px; border: 1px solid var(--blackbg); border-radius: 50%; transition: all 0.3s ease-in-out;}
+	.journy-slide-arrow i {display: flex; width: 5px;}
+	.journy_wrap {padding: 20px 0;}
+	.how_do_wrap {padding-top: 20px;}
+	.how_do_wrap .how_do .how_heading {padding-bottom: 20px;}
+	.how_do_wrap .how_do .how_heading h2 {font-size: 48px;}
+	.how_do_wrap .how_do .how_heading span {font-size: 48px; margin-left:100px;}
+	.how_do_wrap .how_do {padding: 0 20px;}
+	.floor_content {left: 40%;}
+	.floor_content i {width: 32px;}
+	.trusted_wrap .trusted_grp .trust_head h4 {font-size: 32px;}
+	.trusted_wrap {padding: 20px 0;}
+	.trusted_wrap .trusted_grp .trust_head {padding-bottom: 24px; max-width: 300px; margin: 0 auto;}
+	.trust_logo ul {column-gap: 18px; row-gap: 18px; justify-content: flex-start; padding: 0 24px;}
+	.trust_logo ul li {max-width: 97px;}
+	.team_wrap {padding: 20px 0;}
+	.team_wrap .section_content {flex-direction: column; padding-bottom: 24px; padding-left: 20px; padding-right: 20px;}
+	.team_wrap .section_content .section_head {width: 100%; max-width: 100%;}
+	.team_wrap .section_content .sec_dtl {width: 100%; max-width: 100%;}
+	.team_wrap .section_content .section_head h1{max-width: 300px;}
+	.team_wrap .our_team .team_dtl .team_content h6 {font-size: 14px; padding-bottom: 8px;}
+	.team_wrap .our_team .team_dtl .team_content {padding-top: 8px;}
+	.team_wrap .our_team .team_dtl .team_content span {font-size: 12px;}
+	.team_wrap .our_team .row {row-gap: 24px;}
+	.floor_content i img {width: 100%;}
+	.floor_content h2 {font-size: 32px;}
+	.floor_content p {font-size: 12px;}
+	.round_dots {right: 25px; bottom: 40%;}
+	/* ========== about_page style: end (By hardik) ========== */
+
+	
 }
 
 
