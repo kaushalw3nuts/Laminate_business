@@ -640,7 +640,18 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 .side_scroll_mobile_img_pin a .image_wrap { position: relative; height: 100vh; display: flex; }
 .side_scroll_mobile_img_pin a .image_wrap img { width: 100%; height: auto; object-fit: cover; }
 .side_scroll_mobile_img_pin a .image_wrap::after { position: absolute; content: ''; left: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); width: 100%; height: 100%; }
-.side_scroll_mobile_img_pin a .content_wrapper { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column; }
+.side_scroll_mobile_img_pin a .content_wrapper { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: flex; justify-content: space-between; align-items: center; flex-direction: column; padding: 20px; text-align: center; row-gap: 16px; }
+.side_scroll_mobile_img_pin a .content_wrapper .caption { max-width: 680px; font-family: 'Montserrat-Regular'; line-height: 1.4; color: var(--whitetxt); }
+.side_scroll_mobile_img_pin a .content_wrapper .center_img { width: 335px; pointer-events: none; position: relative; }
+.side_scroll_mobile_img_pin a .content_wrapper .center_img .image_data_hover { width: 100%; position: relative; overflow: hidden; }
+.side_scroll_mobile_img_pin a .content_wrapper .center_img .image_data_hover img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+.side_scroll_mobile_img_pin a .content_wrapper .center_img .image_data_hover::after { content: ''; display: block; padding: 41.792% 50%; }
+.side_scroll_mobile_img_pin a .content_wrapper .center_img .hover_dattxt { font-family: 'Montserrat-Medium'; font-size: var(--fz16); line-height: 1.75; text-transform: uppercase; color: var(--blacktxt); position: absolute; bottom: 0; left: 0; width: 100%; display: flex; align-items: center; align-content: center; justify-content: center; text-align: center; background-color: var(--whitebg); padding: 8px; }
+.side_scroll_mobile_img_pin a .content_wrapper .center_img .hover_dattxt i { display: flex; width: 20px; height: auto; margin: 0 8px 0 0; }
+.side_scroll_mobile_img_pin a .content_wrapper .center_img .hover_dattxt i img { width: 100%; height: auto; }
+.side_scroll_mobile_img_pin a .content_wrapper .side_scroll_text { display: block; }
+.side_scroll_mobile_img_pin a .content_wrapper .side_scroll_text h4 { font-size: 44px; line-height: 1; font-family: 'Gilroy-Light'; color: var(--whitetxt); text-transform: uppercase; }
+.side_scroll_mobile_img_pin a .content_wrapper .side_scroll_text h4 strong { display: block; width: 100%; font-weight: normal; font-family: 'Gilroy-ExtraBold'; }
 
 /* ========== product_listing_page section 3 style: End (By Kaushal) ========== */
 
