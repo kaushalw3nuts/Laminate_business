@@ -634,9 +634,10 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 .product_listing_page .side_scroll_img_sec { background-color: var(--whitebg); }
 .product_listing_page .side_scroll_img_title h4 { color: var(--blackbg); }
 .product_listing_page .similar_slider { display: none; }
-.mobile_scroll_img_sec { display: block; position: relative; }
+.mobile_scroll_img_sec { display: none; position: relative; }
 .side_scroll_mobile_img_pin { width: 100%; position: relative; height: 100vh !important; overflow: hidden; }
 .side_scroll_mobile_img_pin .pin_img_scroller { display: block; }
+.scroller_ani:not(:first-child) { transform: translateY(100%); position: absolute; top: 0; width: 100%; }
 .side_scroll_mobile_img_pin .pin_img_scroller .image_wrap { position: relative; height: 100vh; display: flex; }
 .side_scroll_mobile_img_pin .pin_img_scroller .image_wrap img { width: 100%; height: auto; object-fit: cover; }
 .side_scroll_mobile_img_pin .pin_img_scroller .image_wrap::after { position: absolute; content: ''; left: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); width: 100%; height: 100%; }

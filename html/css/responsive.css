@@ -524,6 +524,13 @@
 	.simmilar_mobile_filters .multi_select_wrap .select2-container .select2-selection--multiple .select2-selection__rendered { display: flex; flex-wrap: wrap; }
 	.simmilar_mobile_filters .clear_btn { display: flex; margin: 0 0 0 30px; width: 20%; }
 	.simmilar_mobile_filters .clear_btn a { display: flex; height: 42px; justify-content: center; align-items: center; border: 1px solid var(--blackbg); border-radius: 40px; padding: 0 30px; font-size: var(--fz14); font-family: 'Montserrat-Medium'; line-height: 1.75; color: var(--blacktxt); width: 100%; }
+	.side_scroll_img_sec { display: none; }
+	.mobile_scroll_img_sec { display: block; }
+	.side_scroll_mobile_img_pin .pin_img_scroller .content_wrapper { padding: 64px 44px; }
+	.side_scroll_mobile_img_pin .pin_img_scroller .content_wrapper .caption { font-size: var(--fz20); }
+	.side_scroll_mobile_img_pin .pin_img_scroller .content_wrapper .center_img { width: 450px; }
+	.side_scroll_mobile_img_pin .pin_img_scroller .content_wrapper .center_img .image_data_hover::after { padding: 35.556% 50%; }
+	.side_scroll_mobile_img_pin .pin_img_scroller .content_wrapper .side_scroll_text h4 { font-size: 46px; }
 
 	/* ========== footer style: Start (By Kaushal) ========== */
 
@@ -878,6 +885,13 @@
 	.simmilar_mobile_filters .multi_select_wrap .select2-container .select2-selection--multiple .select2-selection__rendered { display: flex; flex-wrap: wrap; }
 	.simmilar_mobile_filters .clear_btn { display: flex; margin: 0 0 0 30px; width: 20%; }
 	.simmilar_mobile_filters .clear_btn a { display: flex; height: 42px; justify-content: center; align-items: center; border: 1px solid var(--blackbg); border-radius: 40px; padding: 0 30px; font-size: var(--fz14); font-family: 'Montserrat-Medium'; line-height: 1.75; color: var(--blacktxt); width: 100%; }
+	.side_scroll_img_sec { display: none; }
+	.mobile_scroll_img_sec { display: block; }
+	.side_scroll_mobile_img_pin .pin_img_scroller .content_wrapper { padding: 64px 44px; }
+	.side_scroll_mobile_img_pin .pin_img_scroller .content_wrapper .caption { font-size: var(--fz20); }
+	.side_scroll_mobile_img_pin .pin_img_scroller .content_wrapper .center_img { width: 450px; }
+	.side_scroll_mobile_img_pin .pin_img_scroller .content_wrapper .center_img .image_data_hover::after { padding: 35.556% 50%; }
+	.side_scroll_mobile_img_pin .pin_img_scroller .content_wrapper .side_scroll_text h4 { font-size: 46px; }
 
 	/* ========== footer style: Start (By Kaushal) ========== */
 
@@ -1221,6 +1235,8 @@
 	.simmilar_mobile_filters .multi_select_wrap .select2-container .select2-selection--multiple .select2-selection__rendered { display: flex; flex-wrap: wrap; }
 	.simmilar_mobile_filters .clear_btn { display: flex; margin-top: 12px; }
 	.simmilar_mobile_filters .clear_btn a { display: flex; height: 42px; justify-content: center; align-items: center; border: 1px solid var(--blackbg); border-radius: 40px; padding: 0 30px; font-size: var(--fz14); font-family: 'Montserrat-Medium'; line-height: 1.75; color: var(--blacktxt); }
+	.side_scroll_img_sec { display: none; }
+	.mobile_scroll_img_sec { display: block; }
 
 	/* ========== footer style: Start (By Kaushal) ========== */
 
