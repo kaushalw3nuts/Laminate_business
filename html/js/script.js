@@ -547,6 +547,22 @@ jQuery(document).ready(function(){
 
 
 	// let sectionsPan = gsap.utils.toArray(".scroll_ani_img");
+
+	const featureTimeLine = gsap.timeline()
+    featureTimeLine.to('.shap_white_ani', {
+       width: 0,
+      duration: 2,
+      stagger: 0.5,
+      scrollTrigger: {
+        scrub: true,
+        start: `${jQuery('.home_hori_wrap').offset().top} ${jQuery('.home_hori_wrap').offset().top}`,
+        end: `${jQuery('.main_hori_img ').height() + jQuery('.main_hori_img').offset().top} bottom `,
+        invalidateOnRefresh: true
+      }
+    })
+
+	
+
 	let scrollTweenSection = gsap.to(sectionsPan, {
 		x: () => `-${maxWidth - window.innerWidth}`,
 		ease: "none", // <-- IMPORTANT!
@@ -586,7 +602,7 @@ jQuery(document).ready(function(){
 	}, "<");
 
 
-	gsap.to(".pintxt", {
+	gsap.to(".pintxt , .black_white_text_bottom", {
 		x:document.querySelector('.black_white_text.scroll_ani_img').offsetWidth,
 		ease: "none",
 		scrollTrigger: {
