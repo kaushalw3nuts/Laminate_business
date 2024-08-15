@@ -208,13 +208,13 @@ jQuery(document).ready(function(){
 
 	// niceselect: Start (By Kaushal)
 
-	$('select').niceSelect();
+	$('select:not(.basic-multiple-dropdown)').niceSelect();
 	
 	// niceselect: End (By Kaushal)
 
 	// select2: Start (By Kaushal)
 
-	// $('.basic-multiple-dropdown').select2();
+	$('.basic-multiple-dropdown').select2();
 	
 	// select2: End (By Kaushal)
 
