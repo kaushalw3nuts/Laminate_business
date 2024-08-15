@@ -1024,16 +1024,16 @@ jQuery(document).ready(function(){
 			
 			var t1 = gsap.timeline({
 				scrollTrigger: {
-				  trigger: ".how_do_img",
+				  trigger: ".scroller_pin_wrap_ani",
 				  start: "top top",
-				  end: "5000px top",
-				  scrub: 0.5,
+				  end: `${$('.scroller_pin_wrap_ani').innerHeight() * 2}px top`,
+				  scrub: 2,
 				  pin: true,
 				}
 			  });
 			  
 			  // Select all .how_scroll elements
-			  const howScrolls = document.querySelectorAll(".how_scroll");
+			  const howScrolls = document.querySelectorAll(".scroller_ani");
 			  
 			  // Loop through each .how_scroll element and add to the timeline
 			  howScrolls.forEach((scrollElement, index) => {
