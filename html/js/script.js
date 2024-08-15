@@ -998,33 +998,33 @@ jQuery(document).ready(function(){
 			});
 			});
 
-
-
-		
-		var t1 = gsap.timeline({scrollTrigger:{
-			trigger:".how_do_img",
-			// markers:true,
-			start:"top top",
-			end:"5000px top",
-			scrub: 0.5,
-			pin:true,
 			
-		}});
-		t1
-		.to("#scroll_2",{
-			y:'0',
-			toggleClass: {targets: ".how_scroll", className: "active"}
-		})
-		.to("#scroll_3",{
-			y:'0',
-			toggleClass: {targets: ".how_scroll", className: "active"}
-		})
-		.to("#scroll_4",{
-			y:'0'
-		})
-		.to("#scroll_5",{
-			y:'0'
-		});
+			
+			var t1 = gsap.timeline({
+				scrollTrigger: {
+				  trigger: ".how_do_img",
+				  start: "top top",
+				  end: "5000px top",
+				  scrub: 0.5,
+				  pin: true,
+				}
+			  });
+			  
+			  // Select all .how_scroll elements
+			  const howScrolls = document.querySelectorAll(".how_scroll");
+			  
+			  // Loop through each .how_scroll element and add to the timeline
+			  howScrolls.forEach((scrollElement, index) => {
+				t1.to(scrollElement, {
+				  y: '0',
+				  duration: 1, // Adjust the duration as needed
+				  onStart: function() {
+					console.log(`Animating scroll element ${index + 1}`);
+				  }
+				});
+			  });
+  
+
 
 		
 	// about page animation js by hdj
