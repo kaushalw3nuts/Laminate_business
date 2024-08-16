@@ -538,239 +538,274 @@ jQuery(document).ready(function(){
 	// Home Banner Animation Start by Mit
 
 	gsap.registerPlugin(ScrollTrigger);
-	if(jQuery('.home_hori_track').length > 0){
-	const sectionsPan = gsap.utils.toArray(".scroll_ani_img");
-	let maxWidth = 0;
+	if(jQuery('.home_hori_track').length > 0 && jQuery(window).width() > 991){
+		const sectionsPan = gsap.utils.toArray(".scroll_ani_img");
+		let maxWidth = 0;
 
-	const getMaxWidth = () => {
-	maxWidth = 0;
-	sectionsPan.forEach((section) => {
-		maxWidth += section.offsetWidth;
-	});
-	};
-	getMaxWidth();
-	ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
+		const getMaxWidth = () => {
+		maxWidth = 0;
+		sectionsPan.forEach((section) => {
+			maxWidth += section.offsetWidth;
+		});
+		};
+		getMaxWidth();
+		ScrollTrigger.addEventListener("refreshInit", getMaxWidth);
 
 
-	// let sectionsPan = gsap.utils.toArray(".scroll_ani_img");
+		// let sectionsPan = gsap.utils.toArray(".scroll_ani_img");
 
-	const featureTimeLine = gsap.timeline()
-    featureTimeLine.to('.shap_white_ani', {
-       width: 0,
-      duration: 2,
-      stagger: 0.5,
-      scrollTrigger: {
-        scrub: true,
-        start: `${jQuery('.home_hori_wrap').offset().top} ${jQuery('.home_hori_wrap').offset().top}`,
-        end: `${jQuery('.main_hori_img ').height() + jQuery('.main_hori_img').offset().top} bottom `,
-        invalidateOnRefresh: true
-      }
-    })
-
-	
-
-	let scrollTweenSection = gsap.to(sectionsPan, {
-		x: () => `-${maxWidth - window.innerWidth}`,
-		ease: "none", // <-- IMPORTANT!
+		const featureTimeLine = gsap.timeline()
+		featureTimeLine.to('.shap_white_ani', {
+		width: 0,
+		duration: 2,
+		stagger: 0.5,
 		scrollTrigger: {
-			trigger: ".home_hori_track",
-			pin: true,
-			scrub: 1,
-			end: () => `+=${maxWidth}`,
+			scrub: true,
+			start: `${jQuery('.home_hori_wrap').offset().top} ${jQuery('.home_hori_wrap').offset().top}`,
+			end: `${jQuery('.main_hori_img ').height() + jQuery('.main_hori_img').offset().top} bottom `,
 			invalidateOnRefresh: true
 		}
-	});
-	  gsap.set(".about_dtl_list_block", {y: (jQuery('.about_dtl_list_block').outerHeight() - jQuery('.about_dtl_list_block').css('padding-top').replace('px', '') - (jQuery('.about_dtl_list_block').css('padding-bottom').replace('px', '') / 2) - jQuery('.about_dtl_title').outerHeight())});
-	
-	  gsap.set(".main_hori_img .img_mian_hori", {scale:1.3});
-	  gsap.set(".crafting_blk", {xPercent:0});
-	  gsap.to(".main_hori_img .img_mian_hori", {
-		scale: 1,
-		ease: "none",
-		scrollTrigger: {
-			trigger: ".main_hori_img .img_mian_hori",
-			containerAnimation: scrollTweenSection,
-			start: "left center",
-			end: "right left",
-			scrub: true,
-		}
-	  });
-	gsap.to(".crafting_blk", {
-		xPercent: -15,
-		ease: "none",
-		scrollTrigger: {
-			trigger: ".crafting_blk",
-			containerAnimation: scrollTweenSection,
-			start: "left right",
-			end: "right center",
-			scrub: true,
-		}
-	}, "<");
+		})
+
+		
+
+		let scrollTweenSection = gsap.to(sectionsPan, {
+			x: () => `-${maxWidth - window.innerWidth}`,
+			ease: "none", // <-- IMPORTANT!
+			scrollTrigger: {
+				trigger: ".home_hori_track",
+				pin: true,
+				scrub: 1,
+				end: () => `+=${maxWidth}`,
+				invalidateOnRefresh: true
+			}
+		});
+		gsap.set(".about_dtl_list_block", {y: (jQuery('.about_dtl_list_block').outerHeight() - jQuery('.about_dtl_list_block').css('padding-top').replace('px', '') - (jQuery('.about_dtl_list_block').css('padding-bottom').replace('px', '') / 2) - jQuery('.about_dtl_title').outerHeight())});
+		
+		gsap.set(".main_hori_img .img_mian_hori", {scale:1.3});
+		gsap.set(".crafting_blk", {xPercent:0});
+		gsap.to(".main_hori_img .img_mian_hori", {
+			scale: 1,
+			ease: "none",
+			scrollTrigger: {
+				trigger: ".main_hori_img .img_mian_hori",
+				containerAnimation: scrollTweenSection,
+				start: "left center",
+				end: "right left",
+				scrub: true,
+			}
+		});
+		gsap.to(".crafting_blk", {
+			xPercent: -15,
+			ease: "none",
+			scrollTrigger: {
+				trigger: ".crafting_blk",
+				containerAnimation: scrollTweenSection,
+				start: "left right",
+				end: "right center",
+				scrub: true,
+			}
+		}, "<");
 
 
-	gsap.to(".pintxt , .black_white_text_bottom", {
-		x:document.querySelector('.black_white_text.scroll_ani_img').offsetWidth,
-		ease: "none",
-		scrollTrigger: {
-			trigger: ".black_white_text_pin",
-			containerAnimation: scrollTweenSection,
-			start: "left left",
-			end: "right left",
-			pin: ".black_white_text_pin",
-			scrub: true,
-			pinType: "transform",
-		}
-	}, "<");
-	gsap.to(".black_white_text_pin .center_text_img[data-outer-image]", {
-		x:document.querySelector('.black_white_text.scroll_ani_img').offsetWidth - 50,
-		ease: "none",
-		scrollTrigger: {
-			trigger: ".black_white_text_pin",
-			containerAnimation: scrollTweenSection,
-			start: "left left",
-			end: "right left",
-			pin: ".black_white_text_pin",
-			scrub: true,
-			pinType: "transform",
-		}
-	}, "<");
-	gsap.to(".about_dtl_block", {
-		x: document.querySelector('.about_dtl_wrp_blank.scroll_ani_img').offsetWidth,
-		ease: "none",
-		scrollTrigger: {
-			trigger: ".about_dtl_block_pin",
-			containerAnimation: scrollTweenSection,
-			start: "left left",
-			end: "right left",
-			pin: ".about_dtl_block_pin",
-			scrub: true,
-			pinType: "transform",
-			// markers:true,
-		}
-	}, "<");
-	// console.log(document.documentElement.clientHeight,);
-	
-	let about_dtl_right = gsap.to(".about_dtl_right", {
-		y: -(document.querySelector('.about_dtl_right').offsetHeight - document.documentElement.clientHeight),
-		ease: "none",
-		scrollTrigger: {
-			trigger: ".about_dtl_block_pin",
-			containerAnimation: scrollTweenSection,
-			start: "left left",
-			// start: "40% left",
-			end: "right left",
-			pin: ".about_dtl_block_pin",
-			scrub: true,
-			pinType: "transform",
-			// markers:true,
-		}
-	}, "<");
+		gsap.to(".pintxt , .black_white_text_bottom", {
+			x:document.querySelector('.black_white_text.scroll_ani_img').offsetWidth,
+			ease: "none",
+			scrollTrigger: {
+				trigger: ".black_white_text_pin",
+				containerAnimation: scrollTweenSection,
+				start: "left left",
+				end: "right left",
+				pin: ".black_white_text_pin",
+				scrub: true,
+				pinType: "transform",
+			}
+		}, "<");
+		gsap.to(".black_white_text_pin .center_text_img[data-outer-image]", {
+			x:document.querySelector('.black_white_text.scroll_ani_img').offsetWidth - 50,
+			ease: "none",
+			scrollTrigger: {
+				trigger: ".black_white_text_pin",
+				containerAnimation: scrollTweenSection,
+				start: "left left",
+				end: "right left",
+				pin: ".black_white_text_pin",
+				scrub: true,
+				pinType: "transform",
+			}
+		}, "<");
+		gsap.to(".about_dtl_block", {
+			x: document.querySelector('.about_dtl_wrp_blank.scroll_ani_img').offsetWidth,
+			ease: "none",
+			scrollTrigger: {
+				trigger: ".about_dtl_block_pin",
+				containerAnimation: scrollTweenSection,
+				start: "left left",
+				end: "right left",
+				pin: ".about_dtl_block_pin",
+				scrub: true,
+				pinType: "transform",
+				// markers:true,
+			}
+		}, "<");
+		// console.log(document.documentElement.clientHeight,);
+		
+		let about_dtl_right = gsap.to(".about_dtl_right", {
+			y: -(document.querySelector('.about_dtl_right').offsetHeight - document.documentElement.clientHeight),
+			ease: "none",
+			scrollTrigger: {
+				trigger: ".about_dtl_block_pin",
+				containerAnimation: scrollTweenSection,
+				start: "left left",
+				// start: "40% left",
+				end: "right left",
+				pin: ".about_dtl_block_pin",
+				scrub: true,
+				pinType: "transform",
+				// markers:true,
+			}
+		}, "<");
 
-	gsap.to(".about_dtl_list_block", {
-		y: 0,
-		ease: "none",
-		scrollTrigger: {
-			trigger: ".about_dtl_block_pin",
-			containerAnimation: scrollTweenSection,
-			// start: "left left",
-			start: "40% left",
-			end: "right left",
-			pin: ".about_dtl_block_pin",
-			scrub: true,
-			pinType: "transform",
-			// markers:true,
-		}
-	}, "<");
-	let objActImg = {
-		'about_dtl_right': {
-			'start': 'left left',
-			'end': 'right left',
-			'item': [{
-				'class': 'dtl_list_img1',
-				'duration': '0.5',
-				'yPercentFrom': '10',
-				'yPercent': '-16'
-			}, {
-				'class': 'dtl_list_img3',
-				'duration': '1',
-				'yPercentFrom': '20',
-				'yPercent': '-30'
-			}, {
-				'class': 'dtl_list_img4',
-				'duration': '0.5',
-				'yPercentFrom': '10',
-				'yPercent': '-60'
-			}, {
-				'class': 'dtl_list_img5',
-				'duration': '0.5',
-				'yPercentFrom': '20',
-				'yPercent': '-20'
-			}, {
-				'class': 'dtl_list_img6',
-				'duration': '0.5',
-				'yPercentFrom': '10',
-				'yPercent': '-80'
-			}, {
-				'class': 'dtl_list_img7',
-				'duration': '0.5',
-				'yPercentFrom': '80',
-				'yPercent': '-40'
-			}, {
-				'class': 'dtl_list_img8',
-				'duration': '0.5',
-				'yPercentFrom': '40',
-				'yPercent': '-20'
-			}]
-		}
-	};
-	actionBlockImg();
-	function actionBlockImg() {
-		var e = {};
-		$.each(objActImg, function(t, n) {
-			
-			e[t] = [];
-			$.each(n['item'], function(c, s) {
+		gsap.to(".about_dtl_list_block", {
+			y: 0,
+			ease: "none",
+			scrollTrigger: {
+				trigger: ".about_dtl_block_pin",
+				containerAnimation: scrollTweenSection,
+				// start: "left left",
+				start: "40% left",
+				end: "right left",
+				pin: ".about_dtl_block_pin",
+				scrub: true,
+				pinType: "transform",
+				// markers:true,
+			}
+		}, "<");
+		let objActImg = {
+			'about_dtl_right': {
+				'start': 'left left',
+				'end': 'right left',
+				'item': [{
+					'class': 'dtl_list_img1',
+					'duration': '0.5',
+					'yPercentFrom': '10',
+					'yPercent': '-16'
+				}, {
+					'class': 'dtl_list_img3',
+					'duration': '1',
+					'yPercentFrom': '20',
+					'yPercent': '-30'
+				}, {
+					'class': 'dtl_list_img4',
+					'duration': '0.5',
+					'yPercentFrom': '10',
+					'yPercent': '-60'
+				}, {
+					'class': 'dtl_list_img5',
+					'duration': '0.5',
+					'yPercentFrom': '20',
+					'yPercent': '-20'
+				}, {
+					'class': 'dtl_list_img6',
+					'duration': '0.5',
+					'yPercentFrom': '10',
+					'yPercent': '-80'
+				}, {
+					'class': 'dtl_list_img7',
+					'duration': '0.5',
+					'yPercentFrom': '80',
+					'yPercent': '-40'
+				}, {
+					'class': 'dtl_list_img8',
+					'duration': '0.5',
+					'yPercentFrom': '40',
+					'yPercent': '-20'
+				}]
+			}
+		};
+		actionBlockImg();
+		function actionBlockImg() {
+			var e = {};
+			$.each(objActImg, function(t, n) {
 				
-				e[t][c] = gsap.timeline({
-					scrollTrigger: {
-						// trigger: '.' + t,
-						trigger: ".about_dtl_block_pin",
-						start: n['start'],
-						end: n['end'],
-						scrub: 1,
-						pin: !1,
-						// markers: !1,
-						containerAnimation: scrollTweenSection,
-						// markers:true,
-					}
-				});
-				e[t][c].from('.' + t + ' .' + s['class'], {
-					yPercent: s['yPercentFrom'],
-					// duration: s['duration']
-				}).to('.' + t + ' .' + s['class'], {
-					yPercent: s['yPercent'],
-					// duration: s['duration']
+				e[t] = [];
+				$.each(n['item'], function(c, s) {
+					
+					e[t][c] = gsap.timeline({
+						scrollTrigger: {
+							// trigger: '.' + t,
+							trigger: ".about_dtl_block_pin",
+							start: n['start'],
+							end: n['end'],
+							scrub: 1,
+							pin: !1,
+							// markers: !1,
+							containerAnimation: scrollTweenSection,
+							// markers:true,
+						}
+					});
+					e[t][c].from('.' + t + ' .' + s['class'], {
+						yPercent: s['yPercentFrom'],
+						// duration: s['duration']
+					}).to('.' + t + ' .' + s['class'], {
+						yPercent: s['yPercent'],
+						// duration: s['duration']
+					})
 				})
 			})
+		};
+	}
+	if(jQuery('.home_hori_track').length > 0 && jQuery(window).width() <= 991){
+		const featureTimeLine = gsap.timeline()
+			featureTimeLine.to('.shap_white_ani', {
+			width: 0,
+			duration: 2,
+			stagger: 0.5,
+			scrollTrigger: {
+				scrub: true,
+				start: `${jQuery('.home_hori_wrap').offset().top} ${jQuery('.home_hori_wrap').offset().top}`,
+				end: `${jQuery('.main_hori_img ').height() + jQuery('.main_hori_img').offset().top} bottom `,
+				invalidateOnRefresh: true
+			}
+		});
+		gsap.timeline().to('.crafting_wrap_inner', {
+			y: -(jQuery('.crafting_blk .crafting_img_wrap .img_box_crafting').outerHeight() / 2),
+			duration: 2,
+			stagger: 0.5,
+			scrollTrigger: {
+				trigger: ".crafting_wrap",
+				scrub: true,
+				start: 'top bottom',
+				end: 'bottom center',
+				invalidateOnRefresh: true
+			}
+		});
+		
+		
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".black_white_text_hori",
+				scrub: true,
+				pin: true,
+				end: () => `+=${$(".black_white_text_hori").height()}`,
+			}
 		})
-	};
-	// gsap.to(".about_dtl_right", {
-	// 	y: -(document.querySelector('.about_dtl_right').offsetHeight - document.documentElement.clientHeight),
-	// 	ease: "none",
-	// 	scrollTrigger: {
-	// 		trigger: ".about_dtl_block_pin",
-	// 		containerAnimation: scrollTweenSection,
-	// 		start: "left left",
-	// 		end: "right left",
-	// 		pin: ".about_dtl_block_pin",
-	// 		scrub: true,
-	// 		pinType: "transform",
-	// 		// markers:true,
-	// 	}
-	// }, "<");
-	
-	
-	
+		.fromTo(".black_white_text_hori .blackbgwrap",{ x: '0',ease: "none"}, {x: '-50%',ease: "none" })
+		.fromTo(".black_white_text_hori .center_text_img ",{ margin: '0',ease: "none"}, {margin: '0 0 0 -2%',ease: "none" }, 0)
+
+		const tlkist = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".about_dtl_block",
+				scrub: true,
+				pin: true,
+				end: () => `+=${$(".about_dtl_left").height()}`,
+			}
+		})
+		// .fromTo(".about_dtl_list_block",{ x: '0',ease: "none"}, {x: '-50%',ease: "none" })
+		// .fromTo(".black_white_text_hori .center_text_img ",{ margin: '0',ease: "none"}, {margin: '0 0 0 -2%',ease: "none" }, 0)
+
+		.fromTo(".about_dtl_list_block", {y: (jQuery('.about_dtl_list_block').outerHeight() - jQuery('.about_dtl_list_block').css('padding-top').replace('px', '') - (jQuery('.about_dtl_list_block').css('padding-bottom').replace('px', '') / 2) - jQuery('.about_dtl_title').outerHeight())}, {y: '0',ease: "none" });
+
 	}
 	
 	// Home Banner Animation End by Mit
@@ -1042,7 +1077,7 @@ jQuery(document).ready(function(){
 			toggleClass: {targets: ".how_scroll", className: "active"}
 		})
 		.to("#scroll_4",{
-			y:'0'
+			y:'0',
 		})
 		.to("#scroll_5",{
 			y:'0'
