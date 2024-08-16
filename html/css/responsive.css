@@ -644,7 +644,7 @@
 	footer .footer-bottom-grid { max-width: 100%; padding: 0 44px; }
 	.footer-bottom-grid .ftr_detail { flex-direction: column; align-items: center; text-align: center; margin-bottom: 64px; }
 	.footer-bottom-grid .ftr_detail .news_letter { max-width: 100%; }
-	.footer-bottom-grid .ftr_detail .news_letter span { justify-content: center; }
+	.footer-bottom-grid .ftr_detail .news_letter .subscribe { justify-content: center; }
 	.footer-bottom-grid .ftr_detail .news_letter .news_form .news_mail { min-width: 468px; }
 	.footer-bottom-grid .ftr_detail .contact_detail { max-width: 100%; text-align: center; margin-top: 64px; }
 	.footer-bottom-grid .ftr_detail .contact_detail span { justify-content: center; }
@@ -1069,7 +1069,7 @@
 	footer .footer-bottom-grid { max-width: 100%; padding: 0 44px; }
 	.footer-bottom-grid .ftr_detail { flex-direction: column; align-items: center; text-align: center; margin-bottom: 64px; }
 	.footer-bottom-grid .ftr_detail .news_letter { max-width: 100%; }
-	.footer-bottom-grid .ftr_detail .news_letter span { justify-content: center; }
+	.footer-bottom-grid .ftr_detail .news_letter .subscribe { justify-content: center; }
 	.footer-bottom-grid .ftr_detail .news_letter .news_form .news_mail { min-width: 468px; }
 	.footer-bottom-grid .ftr_detail .contact_detail { max-width: 100%; text-align: center; margin-top: 64px; }
 	.footer-bottom-grid .ftr_detail .contact_detail span { justify-content: center; }
@@ -1488,7 +1488,7 @@
 	footer .footer-bottom-grid { max-width: 100%; padding: 0 20px; }
 	.footer-bottom-grid .ftr_detail { flex-direction: column; align-items: center; text-align: center; margin-bottom: 24px; }
 	.footer-bottom-grid .ftr_detail .news_letter { max-width: 100%; }
-	.footer-bottom-grid .ftr_detail .news_letter span { justify-content: center; }
+	.footer-bottom-grid .ftr_detail .news_letter .subscribe { justify-content: center; }
 	.footer-bottom-grid .ftr_detail .news_letter .news_form { flex-direction: column; align-items: center; }
 	.footer-bottom-grid .ftr_detail .news_letter .news_form .news_mail { min-width: 100%; height: 38px; font-size: 12px; }
 	.footer-bottom-grid .ftr_detail .news_letter .news_form .sub_button { margin: 24px 0 0 0; width: auto; height: 38px; font-size: 12px; }
