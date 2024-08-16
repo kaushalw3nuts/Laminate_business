@@ -208,13 +208,13 @@ jQuery(document).ready(function(){
 
 	// niceselect: Start (By Kaushal)
 
-	$('select').niceSelect();
+	$('select:not(.basic-multiple-dropdown)').niceSelect();
 	
 	// niceselect: End (By Kaushal)
 
 	// select2: Start (By Kaushal)
 
-	// $('.basic-multiple-dropdown').select2();
+	$('.basic-multiple-dropdown').select2();
 	
 	// select2: End (By Kaushal)
 
@@ -1055,33 +1055,33 @@ jQuery(document).ready(function(){
 			});
 			});
 
-
-
-		
-		var t1 = gsap.timeline({scrollTrigger:{
-			trigger:".how_do_img",
-			// markers:true,
-			start:"top top",
-			end:"5000px top",
-			scrub: 0.5,
-			pin:true,
 			
-		}});
-		t1
-		.to("#scroll_2",{
-			y:'0',
-			toggleClass: {targets: ".how_scroll", className: "active"}
-		})
-		.to("#scroll_3",{
-			y:'0',
-			toggleClass: {targets: ".how_scroll", className: "active"}
-		})
-		.to("#scroll_4",{
-			y:'0',
-		})
-		.to("#scroll_5",{
-			y:'0'
-		});
+			
+			var t1 = gsap.timeline({
+				scrollTrigger: {
+				  trigger: ".scroller_pin_wrap_ani",
+				  start: "top top",
+				  end: `${$('.scroller_pin_wrap_ani').innerHeight() * 2}px top`,
+				  scrub: 2,
+				  pin: true,
+				}
+			  });
+			  
+			  // Select all .how_scroll elements
+			  const howScrolls = document.querySelectorAll(".scroller_ani");
+			  
+			  // Loop through each .how_scroll element and add to the timeline
+			  howScrolls.forEach((scrollElement, index) => {
+				t1.to(scrollElement, {
+				  y: '0',
+				  duration: 1, // Adjust the duration as needed
+				  onStart: function() {
+					console.log(`Animating scroll element ${index + 1}`);
+				  }
+				});
+			  });
+  
+
 
 		
 	// about page animation js by hdj
