@@ -874,7 +874,7 @@ footer .footer-top-grid .footer-top-grid-content { overflow: hidden; position: r
 footer .footer-bottom-grid { max-width: 1672px; margin: 0 auto; }
 .footer-bottom-grid .ftr_detail { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 96px; }
 .footer-bottom-grid .ftr_detail .news_letter { max-width: 632px; position: relative; display: block; }
-.footer-bottom-grid .ftr_detail .news_letter span { display: flex; font-family: 'Montserrat-SemiBold'; font-size: var(--fz16); line-height: 1.5; color: var(--whitetxt); margin-bottom: 6px; }
+.footer-bottom-grid .ftr_detail .news_letter .subscribe { display: flex; font-family: 'Montserrat-SemiBold'; font-size: var(--fz16); line-height: 1.5; color: var(--whitetxt); margin-bottom: 6px; }
 .footer-bottom-grid .ftr_detail .news_letter p { font-family: 'Montserrat-Regular'; font-size: var(--fz14); line-height: 1.71; color: var(--whitetxt); margin-bottom: 24px; }
 .footer-bottom-grid .ftr_detail .news_letter .news_form { display: flex; width: 100%; }
 .footer-bottom-grid .ftr_detail .news_letter .news_form .news_mail { min-width: 500px; background: transparent; border-radius: 60px; border: 1px solid var(--whitebg); height: 56px; position: relative; font-family: 'Montserrat-Medium'; font-size: var(--fz16); line-height: 1.5; color: var(--whitetxt); padding: 0 24px; }
@@ -911,7 +911,7 @@ footer .footer-bottom-grid { max-width: 1672px; margin: 0 auto; }
 	footer .footer-bottom-grid { max-width: 87.038vw; }
 	.footer-bottom-grid .ftr_detail { margin-bottom: 4.997vw; }
 	.footer-bottom-grid .ftr_detail .news_letter { max-width: 32.9vw; }
-	.footer-bottom-grid .ftr_detail .news_letter span { margin-bottom: 0.312vw; }
+	.footer-bottom-grid .ftr_detail .news_letter .subscribe { margin-bottom: 0.312vw; }
 	.footer-bottom-grid .ftr_detail .news_letter p { margin-bottom: 1.249vw; }
 	.footer-bottom-grid .ftr_detail .news_letter .news_form .news_mail { min-width: 26.028vw; border-radius: 3.123vw; border: 0.052vw solid var(--whitebg); height: 2.915vw; padding: 0 1.249vw; }
 	.footer-bottom-grid .ftr_detail .news_letter .news_form .sub_button { height: 2.915vw; padding: 0 1.249vw; border: 0.052vw solid var(--whitebg); border-radius: 3.123vw; margin-left: 1.249vw; }
