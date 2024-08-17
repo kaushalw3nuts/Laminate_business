@@ -768,8 +768,10 @@ jQuery(document).ready(function(){
 				invalidateOnRefresh: true
 			}
 		});
-		gsap.timeline().to('.crafting_wrap_inner', {
-			y: -(jQuery('.crafting_blk .crafting_img_wrap .img_box_crafting').outerHeight() / 2),
+		gsap.timeline().fromTo('.crafting_wrap_inner', {
+			y: (jQuery('.crafting_blk .crafting_img_wrap .img_box_crafting').outerHeight() / 2),
+		}, {
+			y: -(jQuery('.crafting_blk .crafting_img_wrap .img_box_crafting').outerHeight() / 4),
 			duration: 2,
 			stagger: 0.5,
 			scrollTrigger: {
@@ -847,7 +849,7 @@ jQuery(document).ready(function(){
 	// Section Parallax Animation End by Mit
 
 	// Section Image with text Horizontal Animation Start by Mit
-	if(jQuery('.side_scroll_img_pin').length > 0){
+	if(jQuery('.side_scroll_img_pin').length > 0  && jQuery(window).width() > 991){
 		const tracks = document.querySelectorAll(".side_scroll_img_pin");
 
 		tracks.forEach((track, i) => {
@@ -881,6 +883,48 @@ jQuery(document).ready(function(){
 					});
 				});
 			});
+		}
+		if(jQuery('.side_scroll_img_pin').length > 0  && jQuery(window).width() <= 991){
+			console.clear();
+
+			gsap.registerPlugin(ScrollTrigger);
+
+			var panels_class = ".side_scroll_img_box";
+
+			gsap.set('.first', {autoAlpha:1});
+
+			var panels = gsap.utils.toArray(panels_class);
+
+			panels.forEach((panel, i) => {
+
+			// Last element
+			if ( i == ($(panels_class).length - 1) ) {
+				console.log(panel);
+				ScrollTrigger.create({
+				trigger: panel,
+				start: "top top",
+				end: "bottom bottom",
+				pin: true,
+				pinSpacing: false,
+				//markers: true,
+				});
+
+				return;
+			}
+
+			ScrollTrigger.create({
+				trigger: panel,
+				start: "top top",
+				end: "bottom top",
+				pin: true,
+				pinSpacing: false,
+				//markers: true
+			});
+
+			});
+
+
+
 		}
 
 		// Section Image with text Horizontal Animation End by Mit
