@@ -1064,6 +1064,7 @@
 	.side_scroll_mobile_img_pin .pin_img_scroller .content_wrapper .center_img { width: 450px; }
 	.side_scroll_mobile_img_pin .pin_img_scroller .content_wrapper .center_img .image_data_hover::after { padding: 35.556% 50%; }
 	.side_scroll_mobile_img_pin .pin_img_scroller .content_wrapper .side_scroll_text h4 { font-size: 46px; }
+	.product_listing_page .side_scroll_img_title h4 { color: var(--whitetxt); }
 
 	/* ========== footer style: Start (By Kaushal) ========== */
 
@@ -1532,7 +1533,7 @@
 	.simmilar_mobile_filters .multi_select_wrap .select2-container { width: 100% !important; }
 	.simmilar_mobile_filters .select2-container--default .select2-selection--multiple { padding: 6px; border-color: #959595; }
 	.simmilar_mobile_filters .select2-container--default.select2-container--focus .select2-selection--multiple { border-color: #959595; }
-	.simmilar_mobile_filters .select2-container--default .select2-search--inline .select2-search__field { margin: 0; font-size: var(--fz14); font-family: 'Montserrat-Medium'; line-height: 1.75; display: block; color: var(--blacktxt); }
+	.simmilar_mobile_filters .select2-container--default .select2-search--inline .select2-search__field { margin: 0; font-size: var(--fz14); font-family: 'Montserrat-Medium'; line-height: 1.75; display: block; color: var(--blacktxt); height: 24px; }
 	.select2-dropdown { border-color: #959595; }
 	.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable { background: var(--blackbg); }
 	.select2-results__option { font-size: var(--fz14); font-family: 'Montserrat-Medium'; line-height: 1.75; color: var(--blacktxt); }
@@ -1544,6 +1545,7 @@
 	.simmilar_mobile_filters .clear_btn a { display: flex; height: 42px; justify-content: center; align-items: center; border: 1px solid var(--blackbg); border-radius: 40px; padding: 0 30px; font-size: var(--fz14); font-family: 'Montserrat-Medium'; line-height: 1.75; color: var(--blacktxt); }
 	/* .side_scroll_img_sec { display: none; } */
 	.mobile_scroll_img_sec { display: block; }
+	.product_listing_page .side_scroll_img_title h4 { color: var(--whitetxt); }
 
 	/* ========== footer style: Start (By Kaushal) ========== */
 

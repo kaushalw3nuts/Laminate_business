@@ -214,7 +214,9 @@ jQuery(document).ready(function(){
 
 	// select2: Start (By Kaushal)
 
-	$('.basic-multiple-dropdown').select2();
+	$('.basic-multiple-dropdown').select2({
+		placeholder: "Select a catagory"
+	});
 	
 	// select2: End (By Kaushal)
 
