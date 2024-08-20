@@ -1004,26 +1004,28 @@ jQuery(document).ready(function(){
 
 		// Borser Section Start By Mit
 		
-		if(jQuery('.broser_box').length > 1){
-			let get_window_height = jQuery(window).height();
-			var projectoffset = jQuery('.broser_box:first-child .broser_dtl').offset().top + get_window_height;
-			var projectoffsetBottom = jQuery('.broser_box:last-child .broser_dtl').offset().top;
-			jQuery(window).on( "scroll", function() {
-					if (jQuery(window).scrollTop() >= projectoffset) {
-						
-						jQuery(".broser_wrap").addClass("project1");
-					}else {
-						jQuery(".broser_wrap").removeClass("project1");
-					}
-					if ((jQuery(window).scrollTop() - jQuery('.broser_box:last-child .broser_dtl').outerHeight()) >= projectoffsetBottom) {
-						
-						jQuery(".broser_wrap").addClass("project2");
-					}else {
-						jQuery(".broser_wrap").removeClass("project2");
-					}
+		if (jQuery(window).width() >= 1230) {
+			if(jQuery('.broser_box').length > 1){
+				let get_window_height = jQuery(window).height();
+				var projectoffset = jQuery('.broser_box:first-child .broser_dtl').offset().top + get_window_height;
+				var projectoffsetBottom = jQuery('.broser_box:last-child .broser_dtl').offset().top;
+				jQuery(window).on( "scroll", function() {
+						if (jQuery(window).scrollTop() >= projectoffset) {
+							
+							jQuery(".broser_wrap").addClass("project1");
+						}else {
+							jQuery(".broser_wrap").removeClass("project1");
+						}
+						if ((jQuery(window).scrollTop() - jQuery('.broser_box:last-child .broser_dtl').outerHeight()) >= projectoffsetBottom) {
+							
+							jQuery(".broser_wrap").addClass("project2");
+						}else {
+							jQuery(".broser_wrap").removeClass("project2");
+						}
 
-					
-				});
+						
+					});
+			}
 		}
 
 

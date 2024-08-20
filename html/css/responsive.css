@@ -853,6 +853,11 @@
 	.gallery_left .gallery_slider_txt { padding: 50px 50px 50px 84px; }
 	.gallery_thumb_wrap { width: calc(100% + 200px); margin-left: -200px; }
 	.gallery_thumb_wrap .gallery_thumb { width: calc((350px + 30px) * 3); }
+
+	.home_wrap .similar_slider { display: block; margin-top: 44px; overflow: hidden !important; }
+	.similar_product_back .simmilar_mobile_filters .clear_btn a { color: var(--whitetxt); border-color: var(--whitebg); }
+	.home_wrap .similar_slider .swiper-slide .sim_pro span { color: var(--whitetxt); }
+	.home_wrap .similar_slider .swiper-slide .sim_pro p { color: var(--whitetxt); }
 	/* Home page End (By Mit) */
 
 }
@@ -1275,7 +1280,7 @@
 	.home_wrap .similar_inner_product .simmilar_title h2 span { display: inline; }
 	.similar_product_back .similar_inner_product .simmilar_title ul li { line-height: 1.71429; }
 	.similar_product_back .simmilar_mobile_filters .clear_btn a { color: var(--whitetxt); border-color: var(--whitebg); }
-	.simmilar_mobile_filters { margin-bottom: 44px; align-items: center; }
+	.simmilar_mobile_filters { margin-bottom: 44px; }
 	.simmilar_mobile_filters .multi_select_wrap .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover { color: var(--blacktxt); }
 	.home_wrap 	.similar_slider .similar_slider_navigation .similar-slide-arrow { border: none !important; }
 	.home_wrap 	.similar_slider .similar_slider_navigation .similar-slide-arrow > svg { width: 100%;height: auto; }
@@ -1346,6 +1351,8 @@
 	.gallery_slider_main_wrps .swiper { display: -ms-flexbox; display: flex; }
 	.slider_gallery_main_img { height: 100%; }
 	.w3n_btn a { padding: 9px 32px; }
+
+	.home_wrap .similar_slider { display: block; }
 
 	/* Home page End (By Mit) */
 
@@ -1865,6 +1872,8 @@
 	.gallery_slider_main_wrps .swiper { display: -ms-flexbox; display: flex; }
 	.slider_gallery_main_img { height: 100%; }
 	.w3n_btn a { padding: 9px 32px; }
+
+	.home_wrap .similar_slider { display: block; }
 
 	/* Home page End (By Mit) */
 	
