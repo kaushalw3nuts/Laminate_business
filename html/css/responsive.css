@@ -96,6 +96,7 @@
 
 	/* ========== product_detail_page section 5 style: Start (By Kaushal) ========== */
 
+	.product_detail_broser .broser_dtl { max-width: 1600px; }
 	.product_detail_broser .broser_dtl_row { padding: 0 20px; }
 	.product_detail_broser .broser_dtl_row .broser_dtl_txt { max-width: 830px; }
 	.product_detail_broser .broser_dtl_row .broser_right_img { width: 550px; }
@@ -382,6 +383,7 @@
 
 	/* ========== product_detail_page section 5 style: Start (By Kaushal) ========== */
 
+	.product_detail_broser .broser_dtl { max-width: 1240px; }
 	.product_detail_broser .broser_dtl_row { padding: 0 20px; }
 	.product_detail_broser .broser_dtl_row .broser_dtl_txt { max-width: 650px; }
 	.product_detail_broser .broser_dtl_row .broser_dtl_txt h6 { padding-bottom: 22px; font-size: var(--fz20); }
@@ -1196,7 +1198,8 @@
 
 	/* ========== product_detail_page section 5 style: Start (By Kaushal) ========== */
 
-	.product_detail_broser .broser_dtl_row { text-align: center; padding: 0 44px; }
+	.product_detail_broser .broser_dtl { max-width: 680px; }
+	.product_detail_broser .broser_dtl_row { text-align: center; flex-direction: column; }
 	.product_detail_broser .broser_dtl_row .broser_dtl_txt { max-width: 100%; margin-bottom: 64px; }
 	.product_detail_broser .broser_dtl_row .broser_dtl_txt h6 { padding-bottom: 16px; font-size: var(--fz20); }
 	.product_detail_broser .broser_dtl_row .broser_dtl_txt h2 { padding-bottom: 16px; font-size: 54px; }
@@ -1706,7 +1709,7 @@
 
 	/* ========== product_detail_page section 5 style: Start (By Kaushal) ========== */
 
-	.product_detail_broser .broser_dtl_row { text-align: center; padding: 0 20px; }
+	.product_detail_broser .broser_dtl_row { text-align: center; flex-direction: column; }
 	.product_detail_broser .broser_dtl_row .broser_dtl_txt { max-width: 100%; margin-bottom: 16px; }
 	.product_detail_broser .broser_dtl_row .broser_dtl_txt h6 { padding-bottom: 8px; font-size: var(--fz14); }
 	.product_detail_broser .broser_dtl_row .broser_dtl_txt h2 { padding-bottom: 8px; font-size: 44px; }
