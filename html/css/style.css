@@ -1319,6 +1319,7 @@ flex-grow: 0; -ms-flex-negative: 0; flex-shrink: 0; -ms-flex-preferred-size: aut
 .similar_product_back .similar_inner_product .simmilar_title ul li span { color: var(--whitetxt); }
 .similar_product_back .simmilar_row .simmilar_col .sim_pro span { color: var(--whitetxt); }
 .similar_product_back .simmilar_row .simmilar_col .sim_pro p { color: var(--whitetxt); }
+.home_wrap .similar_slider { display: none; }
 
 .similar_marquee { display: -ms-flexbox; display: flex; -ms-flex-wrap: nowrap; flex-wrap: nowrap; width: 100%; overflow: hidden; margin-top: 62px; }
 .similar_marquee .similar_main { display: -ms-flexbox; display: flex; -ms-flex-wrap: nowrap; flex-wrap: nowrap; align-items: center; align-content: center; white-space: nowrap; -webkit-animation: marquee 40s linear infinite; animation: marquee 40s linear infinite; }
