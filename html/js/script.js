@@ -45,6 +45,7 @@ function bluesticky()
 jQuery(window).on('load' ,function() {
 	bluesticky();
 	jQuery('body').addClass('load-content');
+	getHeightStikyImage();
 	setTimeout(() => {
 		jQuery('body').addClass('load-content-delay');
 	}, 500);
@@ -98,6 +99,7 @@ jQuery(window).resize(function() {
 	bluesticky();
 	// getRotedImage();
 	getSimpleImage();
+	getHeightStikyImage();
 });
 
 // wow js (By Kaushal)
@@ -107,6 +109,7 @@ new WOW().init();
 // wow js (By Kaushal)
 
 jQuery(document).ready(function(){
+	getHeightStikyImage();
 	
 	// product_listing_page section 1 aimation: Start (By Kaushal)
 
@@ -150,7 +153,7 @@ jQuery(document).ready(function(){
 	} 
 
 	setTimeout(() => {
-		stickyImgFun()
+		// stickyImgFun()
 	}, 2000)	
 
 	// product_listing_page section 1 aimation: End (By Kaushal)
@@ -901,7 +904,7 @@ jQuery(document).ready(function(){
 
 			// Last element
 			if ( i == ($(panels_class).length - 1) ) {
-				console.log(panel);
+				// console.log(panel);
 				ScrollTrigger.create({
 				trigger: panel,
 				start: "top top",
@@ -1126,7 +1129,7 @@ jQuery(document).ready(function(){
 				  y: '0',
 				  duration: 1, // Adjust the duration as needed
 				  onStart: function() {
-					console.log(`Animating scroll element ${index + 1}`);
+					// console.log(`Animating scroll element ${index + 1}`);
 				  }
 				});
 			  });
@@ -1234,7 +1237,7 @@ function getRotedImage() {
 		jQuery(this).removeClass('active');
 		jQuery( ".center_text_img[data-outer-image="+jQuery(this).attr('data-inner-image')+"]" ).css({ left: + jQuery(this).offset().left - jQuery(this).parents('.black_white_text').offset().left , 'top': + jQuery(this).offset().top - jQuery(this).parents('.black_white_text').offset().top }).addClass('active');
 		jQuery(this).addClass('active');
-		console.log(jQuery(this).offset().top - jQuery(this).parents('.black_white_text').offset().top);
+		// console.log(jQuery(this).offset().top - jQuery(this).parents('.black_white_text').offset().top);
 		
 	});
 }
@@ -1619,3 +1622,18 @@ function actionBlock() {
 	}, 600);
   });
   
+
+function getHeightStikyImage(){
+	if($(window).width() > 767){
+		console.log('aa');
+		let getHeight = jQuery('.our-works .draggable-wrapper .container-draggable .box-contain').outerHeight();
+		jQuery('.our-works .draggable-wrapper .container-draggable').css('--heightimage', getHeight / 2+'px')
+		jQuery('.our-works').css('--heightsection', getHeight+'px')
+	}
+	else{
+		jQuery('.our-works .draggable-wrapper .container-draggable').css('--heightimage', '1px')
+		jQuery('.our-works').css('--heightsection', '1px')
+	}
+	// console.log(getHeight);
+	
+}
