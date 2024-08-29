@@ -175,34 +175,34 @@ jQuery(document).ready(function(){
 
 	// product_detail_page section 3 Slider: End (By Kaushal)
 
-	let similarSlider = new Swiper(".similar_slider", {
-		navigation: {
-			nextEl: ".similar-button-next",
-			prevEl: ".similar-button-prev",
-		},
-		breakpoints: {
-			0: {
-			  	slidesPerView: 2,
-			  	spaceBetween: 15,
-			},
-			768: {
-			  	slidesPerView: 3,
-			  	spaceBetween: 25,
-			},
-			992: {
-			  	slidesPerView: 4,
-			  	spaceBetween: 30,
-			},
-			1231: {
-				slidesPerView: 4,
-				spaceBetween: 42,
-			},
-			1600: {
-				slidesPerView: 5,
-				spaceBetween: 68,
-			},
-		},
-    });
+	// let similarSlider = new Swiper(".similar_slider", {
+	// 	navigation: {
+	// 		nextEl: ".similar-button-next",
+	// 		prevEl: ".similar-button-prev",
+	// 	},
+	// 	breakpoints: {
+	// 		0: {
+	// 		  	slidesPerView: 2,
+	// 		  	spaceBetween: 15,
+	// 		},
+	// 		768: {
+	// 		  	slidesPerView: 3,
+	// 		  	spaceBetween: 25,
+	// 		},
+	// 		992: {
+	// 		  	slidesPerView: 4,
+	// 		  	spaceBetween: 30,
+	// 		},
+	// 		1231: {
+	// 			slidesPerView: 4,
+	// 			spaceBetween: 42,
+	// 		},
+	// 		1600: {
+	// 			slidesPerView: 5,
+	// 			spaceBetween: 68,
+	// 		},
+	// 	},
+    // });
 
 	// product_detail_page section 3 Slider: End (By Kaushal)
 
@@ -1467,3 +1467,153 @@ function actionBlock() {
 // 		})
 // 	})
 // };
+
+
+
+ /***click to smooth scroll start ***/
+
+//  jQuery(".catalogues_hover_section .catalogues_box").click(function(e) {
+// 	e.preventDefault();
+	
+// 	jQuery(".hamburger_btn").removeClass('active');
+// 	if (jQuery('body').hasClass('open_menu')) {
+// 	  jQuery('body').removeClass('loaded_wrap');
+// 	  setTimeout(() => {
+// 		jQuery('body').removeClass('open_menu');
+// 	  }, 500);
+// 	}
+  
+// 	locoscrolls.start();
+  
+// 	setTimeout(() => {
+// 	  var section = jQuery(this).attr("href");
+// 	  var url = jQuery(this).attr("href");
+  
+// 	  if (isValidURL(section)) {
+// 		var format = /[#]+/;
+// 		if (format.test(section)) {
+// 		  var link = section.split("#");
+// 		  section = "#" + link[1];
+// 		} else {
+// 		  window.location = section;
+// 		  return;
+// 		}
+// 	  }
+  
+// 	  var link = section.split("#");
+// 	  section = "#" + link[1];
+  
+// 	  if (jQuery(section).length > 0) {
+// 		var scrollTarget = jQuery(section).offset().top;
+  
+// 		// Use Lenis to scroll smoothly
+// 		locoscrolls.scrollTo(scrollTarget);
+// 	  } else {
+// 		window.location = url;
+// 	  }
+// 	}, 600);
+//   });
+  
+//   // Function to check if a string is a valid URL
+//   function isValidURL(string) {
+// 	var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+// 	return (res !== null);
+//   }
+  
+//   // Additional Lenis scroll function
+//   function raf(time) {
+// 	locoscrolls.raf(time);
+// 	requestAnimationFrame(raf);
+//   }
+//   requestAnimationFrame(raf);
+  
+
+
+
+
+
+
+// Initialize Lenis.js
+
+  
+  
+  jQuery(".about_hover_section .box_wrap, .catalogues_hover_section .catalogues_box").click(function (e) {
+	e.preventDefault();  // Prevent default anchor click behavior
+  
+	jQuery(".hamburger_btn").removeClass('active');
+  
+	if (jQuery('body').hasClass('open_menu')) {
+	  jQuery('body').removeClass('loaded_wrap');
+	  setTimeout(() => {
+		jQuery('body').removeClass('open_menu');
+	  }, 500);
+	}
+  
+	locoscrolls.start();  // This seems specific to your use case. Make sure it's necessary.
+  
+	setTimeout(() => {
+	  var section = jQuery(this).attr("href");
+	  var url = jQuery(this).attr("href");
+  
+	  if (isValidURL(section)) {
+		var format = /[#]+/;
+		if (format.test(section)) {
+		  var link = section.split("#");
+		  section = "#" + link[1];
+		} else {
+		  window.location = section;
+		  return;  // Exit function if redirecting
+		}
+	  }
+  
+	  var link = section.split("#");
+	  section = "#" + link[1];
+  
+	  if (jQuery(section).length > 0) {
+		var scrol = jQuery(section).offset().top;
+		
+		// Use locoscrolls to scroll smoothly
+		locoscrolls.scrollTo(scrol);
+		
+	  } else {
+		window.location = url;
+	  }
+	}, 600);
+  });
+  
+  function isValidURL(string) {
+	var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+	return (res !== null);
+  }
+  
+  var pageURL = jQuery(location).attr("href");
+  var target = window.location.hash;
+  target = target.replace('#', '');
+  
+  // Delete hash so the page won't scroll to it
+  window.location.hash = "";
+  
+  jQuery(document).ready(function () {
+	setTimeout(() => {
+		
+		var href = pageURL.split('#');
+		var section = "#" + href[1];
+	  
+		if (jQuery(section).length > 0) {
+		  var scrol = jQuery(section).offset().top;
+	  
+		  // Use locoscrolls to scroll smoothly
+		  locoscrolls.scrollTo(scrol);
+	  
+		  jQuery('.about_hover_section .box_wrap, .catalogues_hover_section .catalogues_box').each(function () {
+			var $this = jQuery(this).attr('href');
+			var ele = jQuery(this);
+	  
+			if ($this.indexOf(section) !== -1) {
+			  ele.parent().addClass('active');
+			}
+		  });
+		}
+	}, 600);
+  });
+  
