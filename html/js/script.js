@@ -77,7 +77,6 @@ jQuery(window).on('load' ,function() {
 				// markers:true,
 			}
 		});
-		// console.log(jQuery(targetElementText).length);
 		
 		tltext.from(targetElementText, {
 			duration: 0.6,
@@ -653,7 +652,6 @@ jQuery(document).ready(function(){
 				// markers:true,
 			}
 		}, "<");
-		// console.log(document.documentElement.clientHeight,);
 		
 		let about_dtl_right = gsap.to(".about_dtl_right", {
 			y: -(document.querySelector('.about_dtl_right').offsetHeight - document.documentElement.clientHeight),
@@ -904,7 +902,6 @@ jQuery(document).ready(function(){
 
 			// Last element
 			if ( i == ($(panels_class).length - 1) ) {
-				// console.log(panel);
 				ScrollTrigger.create({
 				trigger: panel,
 				start: "top top",
@@ -1129,7 +1126,6 @@ jQuery(document).ready(function(){
 				  y: '0',
 				  duration: 1, // Adjust the duration as needed
 				  onStart: function() {
-					// console.log(`Animating scroll element ${index + 1}`);
 				  }
 				});
 			  });
@@ -1161,7 +1157,6 @@ jQuery(document).ready(function(){
 		entries.forEach(entry => {
 			// Find the index of the intersecting child element
 			const index = Array.from(childElements).indexOf(entry.target);
-			// console.log(`Child ${index + 1} is intersecting: ${entry.isIntersecting}`);
 
 			if (entry.isIntersecting) {
 				// Add 'active' class to corresponding separate div if it's intersecting
@@ -1186,14 +1181,10 @@ jQuery(document).ready(function(){
 					});
 					
 				}
-				
-				// console.log('reverce'+index);
 			}
 			 else {
 				// Remove 'active' class from corresponding separate div if it's not intersecting
-				separateDivs[index].classList.remove('active');
-				// console.log(index);
-				
+				separateDivs[index].classList.remove('active');				
 			}
 		});
 	}, { threshold: 0.5 }); // Adjust threshold as needed
@@ -1237,7 +1228,6 @@ function getRotedImage() {
 		jQuery(this).removeClass('active');
 		jQuery( ".center_text_img[data-outer-image="+jQuery(this).attr('data-inner-image')+"]" ).css({ left: + jQuery(this).offset().left - jQuery(this).parents('.black_white_text').offset().left , 'top': + jQuery(this).offset().top - jQuery(this).parents('.black_white_text').offset().top }).addClass('active');
 		jQuery(this).addClass('active');
-		// console.log(jQuery(this).offset().top - jQuery(this).parents('.black_white_text').offset().top);
 		
 	});
 }
@@ -1625,7 +1615,6 @@ function actionBlock() {
 
 function getHeightStikyImage(){
 	if($(window).width() > 767){
-		console.log('aa');
 		let getHeight = jQuery('.our-works .draggable-wrapper .container-draggable .box-contain').outerHeight();
 		jQuery('.our-works .draggable-wrapper .container-draggable').css('--heightimage', getHeight / 2+'px')
 		jQuery('.our-works').css('--heightsection', getHeight+'px')
@@ -1634,6 +1623,5 @@ function getHeightStikyImage(){
 		jQuery('.our-works .draggable-wrapper .container-draggable').css('--heightimage', '1px')
 		jQuery('.our-works').css('--heightsection', '1px')
 	}
-	// console.log(getHeight);
 	
 }
