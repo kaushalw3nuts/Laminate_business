@@ -1647,7 +1647,8 @@
 	.form_block .input-row { width: 100%; }
 	.form_block .input-row + .input-row { margin: 16px 0 0 0; }
 	.form-control { height: 46px; padding: 0 0 12px 0; font-size: 12px; }
-	.error_msg { font-size: 12px; margin-top: 6px; }
+	.error_msg,
+	.wpcf7-not-valid-tip { font-size: 12px; margin-top: 6px; }
 	.form_block + .form_block { margin-top: 16px; }
 	.textarea_wrap .address { height: 80px; }
 	.form_wrap .form_check { margin-top: 16px; }
@@ -1657,6 +1658,7 @@
 	.form-group label a { display: inline; }
 	.form_wrap .btnlink { margin-top: 32px; }
 	.form_wrap .btnlink .sub_btn { height: 46px; font-size: 12px; }
+	.form-group .wpcf7-list-item-label { display: inline; }
 
 	/* ========== contact_page section 3 style: End (By Kaushal) ========== */
 
