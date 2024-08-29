@@ -251,6 +251,8 @@ ul li { list-style: none; }
 
 .wpcf7 form.validating .wpcf7-response-output { display: none; }
 
+.no_product_found { text-align: center; margin: 0 auto; color: var(--redtxt); }
+
 .main-wapper { overflow: hidden; }
 
 textarea { resize: none; }

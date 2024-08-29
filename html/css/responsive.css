@@ -1002,6 +1002,7 @@
 	.kv-sec .kv-inner .kv-ttlWrap .kv-ttl-line h1 { font-size: 96px; }
 	.kv-sec .kv-inner .kv-ttlWrap .kv-ttl-line p { margin-top: 16px; }
 	p { font-size: var(--fz14); line-height: 1.43; }
+	.no_product_found { font-size: var(--fz16); }
 	.kv-sec .kv-img figure { height: 624px; }
 
 	/* ========== product_listing_page section 1 style: End (By Kaushal) ========== */
@@ -1500,6 +1501,7 @@
 	.kv-sec .kv-inner .kv-ttlWrap .kv-ttl-line h1 { font-size: 44px; }
 	.kv-sec .kv-inner .kv-ttlWrap .kv-ttl-line p { margin-top: 12px; }
 	p { font-size: 12px; line-height: 1.83; }
+	.no_product_found { font-size: var(--fz14); }
 	.kv-sec .kv-img figure { height: 304px; }
 
 	/* ========== product_listing_page section 1 style: End (By Kaushal) ========== */
