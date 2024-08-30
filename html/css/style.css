@@ -265,6 +265,8 @@ input::-webkit-inner-spin-button {
 	margin: 0;
 }
 
+.form-disable { pointer-events: none; }
+
 /* ========== product_listing_page section 1 style: Start (By Kaushal) ========== */
 
 .kv-sec { width: 100%; position: relative; display: block; background: var(--blackbg); overflow: hidden; }
