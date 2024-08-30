@@ -740,16 +740,19 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 .contactpop_one .offcanvas-body .form_wrap .inner_form .form_block + .form_block { margin-top: 50px; }
 .contactpop_one .offcanvas-body .form_wrap .inner_form .form_block .input-row + .input-row { margin-left: 44px; }
 .contactpop_one .offcanvas-body .form_wrap .inner_form .textarea_wrap .address { height: 80px; }
-.contactpop_one .offcanvas-body .form_wrap .inner_form .form_block .input-row .number_box { display: flex; }
-.contactpop_one .offcanvas-body .form_wrap .inner_form .form_block .input-row .number_box .nice-select { height: 100%; border-radius: 0; border: none; border-bottom: 1px solid #E2E2E2 !important; padding-left: 0; }
-.contactpop_one .offcanvas-body .form_wrap .inner_form .number_box .nice-select .current { font-size: var(--fz20); color: #161616; padding: 0 0 16px 0; font-family: 'Montserrat-Medium'; line-height: 1.5; }
+.contactpop_one .offcanvas-body .form_wrap .inner_form .form_block .input-row .number_box { display: flex; align-items: flex-start; }
+.contactpop_one .offcanvas-body .form_wrap .inner_form .form_block .input-row .number_box .nice-select { height: 48px; width: 90px; border-radius: 0; border: none; border-bottom: 1px solid #E2E2E2 !important; padding-left: 0; }
+.contactpop_one .offcanvas-body .form_wrap .inner_form .number_box .nice-select .current { font-size: var(--fz20); color: #161616; padding: 0; font-family: 'Montserrat-Medium'; line-height: 1.5; }
+.contactpop_one .offcanvas-body .form_wrap .inner_form .number_box .wpcf7-form-control-wrap .wpcf7-not-valid-tip { margin-left: -90px; }
 .contactpop_one .offcanvas-body .form_wrap .inner_form .nice-select .option { font-size: var(--fz16); }
+.contactpop_one .offcanvas-body .form_wrap .inner_form .nice-select .list { max-height: 200px; overflow-y: auto; }
 .contactpop_one .offcanvas-body .form_wrap .inner_form .nice-select::after { border: none; margin-top: -7px; height: 5px; width: 10px; transition: all 0.2s ease-in-out; right: 11px; background-image: url(../images/black-down-arrow.svg); background-size: cover; background-repeat: no-repeat; background-position: center center; transform: rotate(0) translate(0, -28%); transform-origin: center center; }
 .contactpop_one .offcanvas-body .form_wrap .inner_form .nice-select.open::after { -webkit-transform: rotate(-135deg); -ms-transform: rotate(-135deg); transform: rotate(-180deg); }
 .contactpop_one .offcanvas-body .form_wrap .btnlink { margin-top: auto; }
 .contactpop_one .offcanvas-body .form_wrap .btnlink .sub_btn { background: var(--blackbg); text-transform: capitalize; border-color: var(--blackbg); }
 .contactpop_one .offcanvas-body .form_wrap .btnlink .sub_btn::after { background: var(--whitebg); }
 .contactpop_one .offcanvas-body .form_wrap .btnlink .sub_btn:hover { color: var(--blacktxt); }
+.contactpop_one .offcanvas-body .wpcf7 { height: 100%; }
 
 @media (min-width: 1921px) {
 
@@ -764,10 +767,12 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 	.contactpop_one .offcanvas-body .form_wrap .inner_form .form_block + .form_block { margin-top: 2.603vw; }
 	.contactpop_one .offcanvas-body .form_wrap .inner_form .form_block .input-row + .input-row { margin-left: 2.29vw; }
 	.contactpop_one .offcanvas-body .form_wrap .inner_form .textarea_wrap .address { height: 4.164vw; }
-	.contactpop_one .offcanvas-body .form_wrap .inner_form .form_block .input-row .number_box .nice-select { border-bottom: 0.052vw solid #E2E2E2 !important; }
+	.contactpop_one .offcanvas-body .form_wrap .inner_form .form_block .input-row .number_box .nice-select { border-bottom: 0.052vw solid #E2E2E2 !important; height: 2.499vw; width: 4.685vw; }
 	.contactpop_one .offcanvas-body .form_wrap .inner_form .number_box .nice-select .current { padding: 0 0 0.833vw 0; }
 	.contactpop_one .offcanvas-body .form_wrap .inner_form .form_block .input-row .number_box .nice-select { padding-right: 1.562vw; }
 	.contactpop_one .offcanvas-body .form_wrap .inner_form .nice-select::after { margin-top: -0.48vw; height: 0.26vw; width: 0.521vw; right: 0.573vw; }
+	.contactpop_one .offcanvas-body .form_wrap .inner_form .number_box .wpcf7-form-control-wrap .wpcf7-not-valid-tip { margin-left: -4.685vw; }
+	.contactpop_one .offcanvas-body .form_wrap .inner_form .nice-select .list { max-height: 10.411vw; }
 }
 
 /* ========== Contact popup style: End (By Kaushal) ========== */
