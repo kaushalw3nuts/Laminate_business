@@ -753,6 +753,7 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 .contactpop_one .offcanvas-body .form_wrap .btnlink .sub_btn::after { background: var(--whitebg); }
 .contactpop_one .offcanvas-body .form_wrap .btnlink .sub_btn:hover { color: var(--blacktxt); }
 .contactpop_one .offcanvas-body .wpcf7 { height: 100%; }
+.contactpop_one .offcanvas-body .wpcf7 .wpcf7-form-control-wrap.new-phone-class {width: 100%;}
 
 @media (min-width: 1921px) {
 
