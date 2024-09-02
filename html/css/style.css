@@ -1092,6 +1092,21 @@ footer .footer-bottom-grid { max-width: 1672px; margin: 0 auto; }
 
 /* ========== header style: End (By Kaushal) ========== */
 
+/* ========== brosser popup style: Start (By Kaushal) ========== */
+
+.brosserpop_one .offcanvas-header h5 { display: block; }
+.brosserpop_one .offcanvas-body { margin-top: 24px; }
+.brosserpop_one .offcanvas-body .form_wrap .btnlink { margin-top: 0; }
+.brosserpop_one .offcanvas-body .form_wrap .inner_form .d-block .input-row + .input-row { margin: 50px 0 0 0; }
+
+@media (min-width: 1921px) {
+
+	.brosserpop_one .offcanvas-body { margin-top: 1.249vw; }
+	.brosserpop_one .offcanvas-body .form_wrap .inner_form .d-block .input-row + .input-row { margin: 2.603vw 0 0 0; }
+}
+
+/* ========== brosser popup style: End (By Kaushal) ========== */
+
 /* Header Start */
 
 header { width: 100%; position: fixed; left: 0; top: 0; width: 100%; padding: 44px 60px; z-index: 999; }

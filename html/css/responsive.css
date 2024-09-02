@@ -423,6 +423,7 @@
 	.contactpop_one .offcanvas-body .form_wrap .inner_form .form_block + .form_block { margin-top: 40px; }
 	.contactpop_one .offcanvas-body .form_wrap .inner_form .form_block .input-row + .input-row { margin-left: 34px; }
 	.contactpop_one .offcanvas-body .form_wrap .inner_form .number_box .nice-select .current { font-size: var(--fz18); }
+	.brosserpop_one .offcanvas-body .form_wrap .inner_form .d-block .input-row + .input-row { margin: 34px 0 0 0; }
 	
 	/* ========== Contact popup style: End (By Kaushal) ========== */
 
