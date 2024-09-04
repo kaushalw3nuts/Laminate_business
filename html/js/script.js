@@ -177,34 +177,34 @@ jQuery(document).ready(function(){
 
 	// product_detail_page section 3 Slider: End (By Kaushal)
 
-	// let similarSlider = new Swiper(".similar_slider", {
-	// 	navigation: {
-	// 		nextEl: ".similar-button-next",
-	// 		prevEl: ".similar-button-prev",
-	// 	},
-	// 	breakpoints: {
-	// 		0: {
-	// 		  	slidesPerView: 2,
-	// 		  	spaceBetween: 15,
-	// 		},
-	// 		768: {
-	// 		  	slidesPerView: 3,
-	// 		  	spaceBetween: 25,
-	// 		},
-	// 		992: {
-	// 		  	slidesPerView: 4,
-	// 		  	spaceBetween: 30,
-	// 		},
-	// 		1231: {
-	// 			slidesPerView: 4,
-	// 			spaceBetween: 42,
-	// 		},
-	// 		1600: {
-	// 			slidesPerView: 5,
-	// 			spaceBetween: 68,
-	// 		},
-	// 	},
-    // });
+	let similarSlider = new Swiper(".similar_slider", {
+		navigation: {
+			nextEl: ".similar-button-next",
+			prevEl: ".similar-button-prev",
+		},
+		breakpoints: {
+			0: {
+			  	slidesPerView: 2,
+			  	spaceBetween: 15,
+			},
+			768: {
+			  	slidesPerView: 3,
+			  	spaceBetween: 25,
+			},
+			992: {
+			  	slidesPerView: 4,
+			  	spaceBetween: 30,
+			},
+			1231: {
+				slidesPerView: 4,
+				spaceBetween: 42,
+			},
+			1600: {
+				slidesPerView: 5,
+				spaceBetween: 68,
+			},
+		},
+    });
 
 	// product_detail_page section 3 Slider: End (By Kaushal)
 
