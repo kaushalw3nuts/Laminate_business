@@ -308,6 +308,7 @@
 	.inner_since_journey .sub_inner_sec .contact_detail .right_part::after { bottom: 5px; }
 	.inner_since_journey .sub_inner_sec .contact_detail + .contact_detail { margin-top: 42px; }
 	.since_journey_section .since_logo { max-width: 600px; bottom: 30px; right: -60px; }
+	.contactpop_one .offcanvas-body .form_wrap .inner_form .form_block .input-row .selector_product .nice-select { font-size: var(--fz18); }
 
 	/* ========== contact_page section 1 style: End (By Kaushal) ========== */
 
@@ -702,6 +703,7 @@
 	.inner_since_journey .sub_inner_sec .contact_detail + .contact_detail { margin-top: 32px; }	
 	.inner_since_journey .sub_inner_sec .contact_detail .right_part::after { bottom: 5px; }
 	.since_journey_section .since_logo { position: relative; bottom: auto; right: auto; max-width: 810px; padding: 0 0 64px 0; margin: 0 -60px 0 auto; }
+	.contactpop_one .offcanvas-body .form_wrap .inner_form .form_block .input-row .selector_product .nice-select { font-size: var(--fz18); }
 
 	/* ========== contact_page section 1 style: End (By Kaushal) ========== */
 
@@ -1172,6 +1174,7 @@
 	.inner_since_journey .sub_inner_sec .contact_detail + .contact_detail { margin-top: 32px; }	
 	.inner_since_journey .sub_inner_sec .contact_detail .right_part::after { bottom: 5px; }
 	.since_journey_section .since_logo { position: relative; bottom: auto; right: -10px; max-width: 810px; padding: 0 0 64px 44px; margin-right: -42px; }
+	.contactpop_one .offcanvas-body .form_wrap .inner_form .form_block .input-row .selector_product .nice-select { font-size: var(--fz18); }
 
 	/* ========== contact_page section 1 style: End (By Kaushal) ========== */
 
@@ -1885,6 +1888,7 @@
 	.contactpop_one .offcanvas-body .form_wrap .inner_form .nice-select .option { font-size: var(--fz14); }
 	.contactpop_one .offcanvas-body .form_wrap .inner_form .number_box .nice-select .current { font-size: var(--fz16); }
 	.contactpop_one .offcanvas-body .form_wrap .inner_form .nice-select::after { margin-top: -6px; }
+	.contactpop_one .offcanvas-body .form_wrap .inner_form .form_block .input-row .selector_product .nice-select { font-size: var(--fz16); }
 	
 	/* ========== Contact popup style: End (By Kaushal) ========== */
 
