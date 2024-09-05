@@ -389,11 +389,11 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 .product_grp .product_content .product_discription p { font-size: var(--fz16); line-height: 1.75; color: var(--whitetxt); padding: 0; }
 .product_grp .product_content .product_specifications { display: block; position: relative; margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--black22); }
 .product_grp .product_content .product_specifications h5 { font-family: 'Montserrat-Bold'; font-size: var(--fz20); line-height: 1.2; color: var(--whitetxt); margin-bottom: 24px; }
-.product_grp .product_content .product_specifications ul { display: flex; align-items: center; gap: 16px; }
+.product_grp .product_content .product_specifications ul { display: flex; align-items: flex-start; gap: 16px; }
 .product_grp .product_content .product_specifications ul li { display: flex; align-items: flex-start; width: 50%; font-family: 'Montserrat-Medium'; font-size: var(--fz16); line-height: 1.25; color: var(--whitetxt); }
 .product_grp .product_content .product_specifications ul li span { display: flex; }
 .product_grp .product_content .product_specifications ul + ul { margin-top: 16px; }
-.product_grp .product_content .item_specifications { display: block; position: relative; }
+.product_grp .product_content .item_specifications { display: block; position: relative; margin-bottom: 20px; }
 .product_grp .product_content .item_specifications ul { display: flex; align-items: flex-start; gap: 64px; }
 .product_grp .product_content .item_specifications ul li { display: flex; align-items: center; }
 .product_grp .product_content .item_specifications ul li i { display: flex; font-size: 0; width: 44px; height: 44px; border-radius: 50%; overflow: hidden; margin-right: 16px; }
@@ -467,6 +467,7 @@ html.has-scroll-dragging { -webkit-user-select: none; -moz-user-select: none; -m
 	.product_grp .product_content .selector_product .nice-select .option { padding: 0.416vw 0.729vw; }
 	.product_grp .product_content .item_specifications ul { gap: 3.332vw; }
 	.product_grp .product_content .item_specifications ul li i { width: 2.29vw; height: 2.29vw; margin-right: 0.833vw; }
+	.product_grp .product_content .item_specifications { margin-bottom: 1.041vw; }
 }
 
 /* ========== product_detail_page section 1 style: End (By Kaushal) ========== */

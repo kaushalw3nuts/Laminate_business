@@ -168,6 +168,10 @@ jQuery(document).ready(function(){
 		loop: false,
 		effect: "fade",
 		speed: 1000,
+		autoplay: {
+			delay: 1500,
+			disableOnInteraction: false,
+		},
 		thumbs: {
 		  	swiper: productDetail,
 		},
