@@ -1909,7 +1909,7 @@ flex-grow: 0; -ms-flex-negative: 0; flex-shrink: 0; -ms-flex-preferred-size: aut
 .product_section_one .product_grop .product_img_sec .product_one .small_img img {position: absolute; left: 0; top: 0; height: 100%; object-fit: cover;}
 .product_section_one .product_grop .product_img_sec .product_one .smallb_img{position: relative; width: 400px;}
 .product_section_one .product_grop .product_img_sec .product_one .smallb_img::after{content: ''; display: block; padding: 125% 0 0 0;}
-.smallb_img img {position: absolute; left: 0; top: 0; height: 100%; object-fit: cover;}
+.smallb_img img {position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover;}
 .product_section_one .product_grop .product_img_sec .product_two .big_img::after{content: ''; display: block; padding: 100% 0 0 0;}
 .product_section_one .product_grop .product_img_sec .product_two{width: 100%;}
 .product_section_one .product_grop .product_img_sec .product_two .big_img{position: relative; width: 600px; margin-top: 22px; width: 100%;}
