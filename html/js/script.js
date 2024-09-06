@@ -1600,6 +1600,11 @@ function actionBlock() {
 	  
 		if (jQuery(section).length > 0) {
 		  var scrol = jQuery(section).offset().top;
+		  const currentURL = window.location.href;
+			// Remove hash from URL
+			const urlWithoutHash = currentURL.split('#')[0];
+			// Update address bar
+			window.history.replaceState({}, document.title, urlWithoutHash);
 	  
 		  // Use locoscrolls to scroll smoothly
 		  locoscrolls.scrollTo(scrol);
