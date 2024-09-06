@@ -165,6 +165,8 @@
 	.trialpop_one .offcanvas-body { margin-top: 44px; }
 	/* Home page End (By Mit) */
 
+	.about_dtl_list_block { padding: 60px 60px 60px 190px; }
+
 }
 
 @media (min-width: 1231px) and (max-width: 1599px) {
