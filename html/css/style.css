@@ -1405,7 +1405,7 @@ flex-grow: 0; -ms-flex-negative: 0; flex-shrink: 0; -ms-flex-preferred-size: aut
 .similar_product_v2 .similar_inner_product .simmilar_title { margin-bottom: 30px; }
 .similar_product_v2 .simmilar_row .simmilar_col { width: 33.33%; }
 .similar_product_v2 .simmilar_row .simmilar_col .sim_pro .img_wrap:after{ padding: 37.115% 50%; }
-.simmilar_row { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 0 -34px; }
+.simmilar_row { display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; margin: 0 -34px; justify-content: center; }
 .simmilar_row .simmilar_col { width: 20%; padding: 34px; }
 .simmilar_row .simmilar_col .sim_pro { display: block; width: 100%; }
 .simmilar_row .simmilar_col .sim_pro .img_wrap { overflow: hidden; position: relative; margin-bottom: 16px; } 
