@@ -495,6 +495,13 @@
 	.gallery_thumb_wrap .gallery_thumb { width: calc((350px + 30px) * 3); }
 	/* Home page End (By Mit) */
 
+
+	/* footer update design css */
+	.footer-bottom-grid .ftr_description {padding-bottom: 20px;}
+	.footer-bottom-grid .ftr_detail {margin-bottom: 0;}
+	.footer-bottom-grid .ftr_detail .contact_detail .addresh i img {width: auto;}
+	.footer-bottom-grid .ftr_detail .contact_detail .addresh {align-items: flex-start;}
+
 }
  
 @media (min-width: 992px) and (max-width: 1230px) {
@@ -933,6 +940,17 @@
 	.home_wrap .simmilar_mobile_filters .multi_select_wrap .nice-select .list { width: 100%; max-height: 240px; overflow-y: auto; }
 	.home_wrap .simmilar_mobile_filters .multi_select_wrap .nice-select .list::-webkit-scrollbar { display: none; }
 	/* Home page End (By Mit) */
+
+	/* footer update design css */
+	.f_part_1 {gap: 50px; flex-direction: column;}
+	.footer-bottom-grid .ftr_detail .contact_detail {margin-top: 0;}
+	.footer-bottom-grid .ftr_detail .contact_detail .addresh i img {width: auto;}
+	.footer-bottom-grid .ftr_description p {text-align: left;}
+	.footer-bottom-grid .ftr_description {padding-bottom: 0;}
+	.footer-bottom-grid .ftr_detail .contact_detail span {justify-content: flex-start;}
+	.footer-bottom-grid .ftr_detail .contact_detail .link {justify-content: flex-start;}
+	.footer-bottom-grid .ftr_detail {margin-bottom: 0;}
+	.footer-bottom-grid .copy_social {max-width: 800px; margin: 0 auto;}
 
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1474,6 +1492,17 @@
 	.home_wrap .simmilar_mobile_filters .multi_select_wrap .nice-select .list::-webkit-scrollbar { display: none; }
 
 	/* Home page End (By Mit) */
+
+	/* footer update design css */
+	.f_part_1 {gap: 50px; flex-direction: column;}
+	.footer-bottom-grid .ftr_detail .contact_detail {margin-top: 0;}
+	.footer-bottom-grid .ftr_detail .contact_detail .addresh i img {width: auto;}
+	.footer-bottom-grid .ftr_description p {text-align: left;}
+	.footer-bottom-grid .ftr_description {padding-bottom: 0;}
+	.footer-bottom-grid .ftr_detail .contact_detail span {justify-content: flex-start;}
+	.footer-bottom-grid .ftr_detail .contact_detail .link {justify-content: flex-start;}
+	.footer-bottom-grid .ftr_detail {margin-bottom: 0;}
+	.footer-bottom-grid .copy_social {max-width: 800px; margin: 0 auto;}
 
 }
 @media (max-width: 767px) {
@@ -2041,7 +2070,19 @@
 	.home_wrap .similar_slider { display: block; }
 
 	/* Home page End (By Mit) */
-	
+
+
+	/* footer update design css */
+	.f_part_1 {flex-direction: column; gap: 0; padding-bottom: 44px;}
+	footer .footer-bottom-grid {margin-top: 20px;}
+	.f_part_1 .ftr_description .f_logo {display: flex; justify-content: center; max-width: 148px; margin: 0 auto;}
+	.f_part_1 .ftr_description .f_logo img {width: 100%; }
+	.f_part_1 .ftr_description .f_des .f_descri {padding-bottom: 24px;}
+	.f_part_1 .ftr_description .social_network .media_wrap {justify-content: center;}
+	.footer-bottom-grid .ftr_detail .contact_detail span {font-size: 16px;} 
+	.footer-bottom-grid .ftr_detail .contact_detail .addresh i img {width: auto;}
+	.footer-bottom-grid .ftr_detail .contact_detail .addresh p {text-align: left;}
+	.footer-bottom-grid .ftr_detail {margin-bottom: 0;}
 
 }
 
