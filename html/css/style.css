@@ -1121,7 +1121,7 @@ footer .footer-bottom-grid { max-width: 1672px; margin: 0 auto; }
 
 header { width: 100%; position: fixed; left: 0; top: 0; width: 100%; padding: 44px 60px; z-index: 999; }
 .header_inner { width: 100%; position: relative; display: -ms-flexbox; display: flex; align-items: center; align-content: center; justify-content: space-between; }
-.logo a img { width: 140px; height: auto; transition: all 0.3s ease-in-out; }
+.logo a img { width: 180px; height: auto; transition: all 0.3s ease-in-out; }
 
 .menubar { position: relative; z-index: unset; }
 
@@ -1169,7 +1169,7 @@ body.open_menu .bg_menu_shap { -webkit-transform: scale(75) translate3d(1%, 1%, 
 
 @media (min-width: 1921px) {
 	.head_wrap { padding: 2.29vw 3.123vw; }
-	.logo a img { width: 7.288vw; }
+	.logo a img { width: 9.37vw; }
 	.hamburger_btn .hamburger_icon { height: 2.915vw; width: 2.915vw; border: solid 1px #E2E2E2; margin-right: 0.833vw; }
 	
 	.navbar_toggler_icon { width:1.249vw; height:0.104vw; border-radius: 0.208vw; }
